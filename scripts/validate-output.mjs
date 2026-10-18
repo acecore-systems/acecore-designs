@@ -3,6 +3,13 @@ import { existsSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { approvedLocales, approvedPrices } from '../tests/approved-services.mjs'
 import { htmlLangMap, ogLocaleMap } from '../src/data/locales.mjs'
+import { portfolioWorks } from '../src/data/portfolio.mjs'
+
+const portfolioUrls = new Set(
+  portfolioWorks.flatMap((work) =>
+    [work.sourceUrl, work.workUrl].filter(Boolean),
+  ),
+)
 
 const origin = 'https://designs.acecore.net'
 const dist = new URL('../dist/', import.meta.url)
@@ -105,7 +112,10 @@ for (const locale of approvedLocales) {
   assert.equal(meta(html, 'og:description'), catalog.description)
   assert.equal(meta(html, 'og:image'), `${origin}/uploads/og-default.png`)
   assert.equal(meta(html, 'twitter:card'), 'summary_large_image')
-  const cards = [...html.matchAll(/<article\b([^>]*)>(.*?)<\/article>/gs)]
+  const articles = [...html.matchAll(/<article\b([^>]*)>(.*?)<\/article>/gs)]
+  const cards = articles.filter(
+    (card) => attributes(card[1])['data-service-id'],
+  )
   assert.equal(cards.length, 13)
   for (const [index, service] of catalog.groups
     .flatMap((group) => group.services)
@@ -144,6 +154,43 @@ for (const locale of approvedLocales) {
       ],
     )
     assert.equal(inquiry.hash, '#contact-form')
+  }
+  const workCopy = JSON.parse(
+    readFileSync(
+      new URL(`../src/content/ui/${locale}.json`, import.meta.url),
+      'utf8',
+    ),
+  ).portfolio
+  const workCards = articles.filter(
+    (card) => attributes(card[1])['data-portfolio-work'],
+  )
+  assert.equal(workCards.length, portfolioWorks.length, `${locale}: 公開作品数`)
+  for (const work of portfolioWorks) {
+    const card = workCards.find(
+      (card) => attributes(card[1])['data-portfolio-work'] === work.id,
+    )
+    assert.equal(attributes(card[1]).id, `work-${work.id}`)
+    const text = workCopy.works[work.id]
+    for (const value of [text.title, text.description, text.credit]) {
+      assert.ok(decode(card[2]).includes(value), `${locale}: ${work.id} の紹介`)
+    }
+    const workLinks = tags(card[2], 'a')
+    assert.ok(workLinks.some((link) => link.href === work.sourceUrl))
+    if (work.workUrl)
+      assert.ok(workLinks.some((link) => link.href === work.workUrl))
+    assert.deepEqual(
+      workLinks
+        .filter((link) => link['data-work-service'])
+        .map((link) => link.href),
+      work.services.map((id) => `#${id}`),
+    )
+    if (work.image) {
+      const image = tags(card[2], 'img')[0]
+      assert.equal(image.src, work.image.src)
+      assert.equal(image.alt, text.alt)
+      assert.equal(image.width, String(work.image.width))
+      assert.equal(image.height, String(work.image.height))
+    }
   }
   const structured = [
     ...html.matchAll(
@@ -198,7 +245,7 @@ for (const locale of approvedLocales) {
           'acecore.net',
           'schools.acecore.net',
           'hatt.acecore.net',
-        ].includes(target.hostname),
+        ].includes(target.hostname) || portfolioUrls.has(target.href),
         `未確認のリンク: ${target}`,
       )
       if (target.origin !== origin) continue
@@ -249,5 +296,5 @@ assert.ok(read('robots.txt').includes(`Sitemap: ${origin}/sitemap-index.xml`))
 assert.ok(read('_headers').includes('Access-Control-Allow-Origin: *'))
 assert.ok(existsSync(new URL('uploads/og-default.png', dist)))
 console.log(
-  `出力検証OK: 13料金 × 9言語、公開JSON、問い合わせ、内部リンク、SEO、sitemap、404 (${fileURLToPath(dist)})`,
+  `出力検証OK: 13料金 × 9言語、公開作品${portfolioWorks.length}件、公開JSON、問い合わせ、内部リンク、SEO、sitemap、404 (${fileURLToPath(dist)})`,
 )

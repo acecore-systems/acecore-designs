@@ -58,5 +58,60 @@
       "Can I discuss training or creative support?"
     ],
     "contactTitle": "Discuss your project with Acecore."
+  },
+  "portfolio": {
+    "title": "Selected works by our creator",
+    "intro": "Explore Hatt’s personal and publicly shared work, then follow the links to related creative services.",
+    "viewSource": "Source on Hatt (Japanese)",
+    "relatedServices": "Related creative services",
+    "viewRelatedWork": "See a related work",
+    "actions": {
+      "watch": "Watch the introduction",
+      "read": "Read the story (Japanese)",
+      "listen": "Listen to the reading (Japanese)"
+    },
+    "kinds": {
+      "illustration": "Illustration",
+      "avatar": "3D avatar",
+      "gimmick": "3D interactive feature",
+      "writing": "Fiction",
+      "reading": "Reading aloud"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "Sailing across the desert",
+        "description": "A monochrome scene of a sail, dunes and a figure. Explore the atmosphere and the sense of a story within the image.",
+        "alt": "Monochrome illustration of a figure in a sailing vehicle crossing the desert",
+        "credit": "Illustration: Hatt"
+      },
+      "centipede": {
+        "title": "A centipede carrying a pillbox",
+        "description": "A creature carrying gun turrets. The design combines organic and mechanical forms with detailed drawing.",
+        "alt": "Monochrome illustration of a many-legged creature carrying gun turrets",
+        "credit": "Illustration: Hatt"
+      },
+      "moku": {
+        "title": "モク / Moku",
+        "description": "A fox-boy avatar for VRChat. The introduction shows its expressions, glasses and changes of clothing.",
+        "alt": "Introduction image of Moku, a 3D fox avatar wearing glasses",
+        "credit": "3D work: Hatt"
+      },
+      "bright-friend": {
+        "title": "あかるい友達 / Bright Friend",
+        "description": "An avatar light in handheld, lantern and staff-lantern forms. The video shows light adjustment and responsive movement.",
+        "alt": "Bright Friend 3D work showing a small glowing character and a lantern",
+        "credit": "3D work: Hatt"
+      },
+      "letter": {
+        "title": "「手紙」 / Letter",
+        "description": "A short story set in a laboratory. Read the Japanese text to explore Hatt’s choice of words and narrative construction.",
+        "credit": "Written by Hatt"
+      },
+      "buying-mittens": {
+        "title": "手袋を買いに / Buying Mittens",
+        "description": "Hatt reads a story by Niimi Nankichi in this public video. Listen to the voice, pace and pauses of the reading.",
+        "credit": "Original story: Niimi Nankichi / Reading: Hatt"
+      }
+    }
   }
 }

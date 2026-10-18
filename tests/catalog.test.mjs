@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict'
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync, statSync } from 'node:fs'
 import test from 'node:test'
 import { approvedLocales, approvedPrices } from './approved-services.mjs'
 import { locales, inquiryUrl } from '../src/data/locales.mjs'
 import { purposeServices } from '../src/data/service-navigation.mjs'
+import { portfolioCheckedAt, portfolioWorks } from '../src/data/portfolio.mjs'
 
 const readJson = (path) =>
   JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'))
@@ -42,6 +43,82 @@ test('相談案内は9言語で同じ構造・用途と工程の数を持つ', (
     assert.equal(guidance.steps.length, guidance.stepDescriptions.length)
     assert.equal(guidance.questions.length, 4)
     checkText(guidance)
+  }
+})
+
+test('公開作品は出典・実画像・承認済みサービスへの対応を持つ', () => {
+  assert.match(portfolioCheckedAt, /^\d{4}-\d{2}-\d{2}$/)
+  assert.equal(
+    new Set(portfolioWorks.map((work) => work.id)).size,
+    portfolioWorks.length,
+  )
+  for (const kind of [
+    'illustration',
+    'avatar',
+    'gimmick',
+    'writing',
+    'reading',
+  ]) {
+    assert.ok(
+      portfolioWorks.some((work) => work.kind === kind),
+      kind,
+    )
+  }
+  for (const work of portfolioWorks) {
+    assert.equal(new URL(work.sourceUrl).origin, 'https://hatt.acecore.net')
+    assert.ok(work.services.length > 0, work.id)
+    assert.equal(new Set(work.services).size, work.services.length, work.id)
+    for (const id of work.services)
+      assert.ok(Object.hasOwn(approvedPrices, id), id)
+    for (const field of [
+      'price',
+      'priceJpy',
+      'priceLabel',
+      'boothUrl',
+      'checkoutUrl',
+    ]) {
+      assert.equal(
+        work[field],
+        undefined,
+        `${work.id}: 販売情報を持ち込みません`,
+      )
+    }
+    if (work.workUrl) {
+      const url = new URL(work.workUrl)
+      assert.equal(url.protocol, 'https:')
+      assert.ok(['www.youtube.com', 'ncode.syosetu.com'].includes(url.hostname))
+    }
+    if (work.image) {
+      assert.equal(
+        new URL(work.image.originalUrl).origin,
+        'https://hatt.acecore.net',
+      )
+      assert.ok(work.image.src.startsWith('/portfolio/hatt/'))
+      const path = new URL(`../public${work.image.src}`, import.meta.url)
+      assert.ok(existsSync(path), work.id)
+      assert.ok(statSync(path).size < 100_000, `${work.id}: 画像サイズ`)
+      assert.ok(work.image.width > 0 && work.image.height > 0)
+    }
+  }
+})
+
+test('公開作品のUI・説明・代替テキストは9言語で整合する', () => {
+  const baseline = readJson('../src/content/ui/ja.json').portfolio
+  const ids = portfolioWorks.map((work) => work.id).sort()
+  for (const locale of approvedLocales) {
+    const copy = readJson(`../src/content/ui/${locale}.json`).portfolio
+    assert.deepEqual(shape(copy), shape(baseline), locale)
+    assert.deepEqual(Object.keys(copy.works).sort(), ids, locale)
+    for (const work of portfolioWorks) {
+      const text = copy.works[work.id]
+      assert.ok(text.credit.includes('Hatt'), `${locale}: ${work.id}`)
+      assert.ok(copy.kinds[work.kind], `${locale}: ${work.kind}`)
+      if (work.image)
+        assert.ok(text.alt?.trim(), `${locale}: ${work.id} の代替テキスト`)
+      if (work.action)
+        assert.ok(copy.actions[work.action], `${locale}: ${work.action}`)
+    }
+    checkText(copy)
   }
 })
 

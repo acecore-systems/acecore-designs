@@ -53,5 +53,60 @@
       "교육이나 제작 지원도 상담할 수 있나요?"
     ],
     "contactTitle": "제작 상담은 Acecore로."
+  },
+  "portfolio": {
+    "title": "제작 담당자의 공개 작품",
+    "intro": "Hatt의 개인 창작 및 공개 작품을 소개합니다. 작품의 표현을 살펴보며 관련 제작 서비스를 확인할 수 있습니다.",
+    "viewSource": "Hatt 원문 보기(일본어)",
+    "relatedServices": "관련 제작 서비스",
+    "viewRelatedWork": "관련 공개 작품 보기",
+    "actions": {
+      "watch": "소개 영상 보기",
+      "read": "소설 읽기(일본어)",
+      "listen": "낭독 듣기(일본어)"
+    },
+    "kinds": {
+      "illustration": "일러스트",
+      "avatar": "3D 아바타",
+      "gimmick": "3D 기믹",
+      "writing": "소설",
+      "reading": "낭독"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "사막을 항해하는 인물",
+        "description": "돛과 모래언덕, 인물을 흑백으로 그린 작품입니다. 장면의 분위기와 이야기를 떠올리게 하는 표현을 볼 수 있습니다.",
+        "alt": "돛을 단 탈것으로 사막을 건너는 인물의 흑백 일러스트",
+        "credit": "일러스트: Hatt"
+      },
+      "centipede": {
+        "title": "토치카를 등에 진 지네 괴물",
+        "description": "포탑을 등에 진 괴물을 그린 작품입니다. 생물과 기계를 결합한 형태와 세부 묘사를 볼 수 있습니다.",
+        "alt": "포탑을 등에 진 다리가 많은 괴물의 흑백 일러스트",
+        "credit": "일러스트: Hatt"
+      },
+      "moku": {
+        "title": "モク / 모쿠",
+        "description": "여우 소년을 형상화한 VRChat 아바타입니다. 소개 영상에서 표정과 안경, 의상 변화를 볼 수 있습니다.",
+        "alt": "안경을 쓴 여우 3D 아바타 모쿠의 소개 이미지",
+        "credit": "3D 제작: Hatt"
+      },
+      "bright-friend": {
+        "title": "あかるい友達 / 밝은 친구",
+        "description": "손 위에 올리는 형태, 랜턴, 지팡이 랜턴의 세 종류가 있는 아바타 조명입니다. 밝기 조절과 반응 동작을 소개합니다.",
+        "alt": "작게 빛나는 캐릭터와 랜턴을 표현한 3D 작품 밝은 친구",
+        "credit": "3D 제작: Hatt"
+      },
+      "letter": {
+        "title": "「手紙」 / 편지",
+        "description": "연구실에서의 한 장면을 그린 단편 소설입니다. 일본어 본문에서 Hatt의 어휘 선택과 이야기 구성을 살펴볼 수 있습니다.",
+        "credit": "글: Hatt"
+      },
+      "buying-mittens": {
+        "title": "手袋を買いに / 장갑을 사러",
+        "description": "니이미 난키치의 동화를 Hatt가 낭독한 공개 영상입니다. 목소리의 어조와 속도, 쉼을 들어볼 수 있습니다.",
+        "credit": "원작: 니이미 난키치 / 낭독: Hatt"
+      }
+    }
   }
 }

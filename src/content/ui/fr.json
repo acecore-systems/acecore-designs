@@ -58,5 +58,60 @@
       "Puis-je demander une formation ou un accompagnement créatif ?"
     ],
     "contactTitle": "Parlez de votre projet à Acecore."
+  },
+  "portfolio": {
+    "title": "Œuvres de notre créateur",
+    "intro": "Découvrez des créations personnelles et publiques de Hatt, puis les services créatifs associés.",
+    "viewSource": "Source sur Hatt (japonais)",
+    "relatedServices": "Services créatifs associés",
+    "viewRelatedWork": "Voir une œuvre associée",
+    "actions": {
+      "watch": "Voir la présentation",
+      "read": "Lire le récit (japonais)",
+      "listen": "Écouter la lecture (japonais)"
+    },
+    "kinds": {
+      "illustration": "Illustration",
+      "avatar": "Avatar 3D",
+      "gimmick": "Fonction interactive 3D",
+      "writing": "Fiction",
+      "reading": "Lecture à voix haute"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "Naviguer dans le désert",
+        "description": "Une scène monochrome avec une voile, des dunes et un personnage. L’image invite à observer son atmosphère et à imaginer une histoire.",
+        "alt": "Illustration monochrome d’un personnage sur un véhicule à voile dans le désert",
+        "credit": "Illustration : Hatt"
+      },
+      "centipede": {
+        "title": "Un mille-pattes portant un blockhaus",
+        "description": "Une créature portant des tourelles. Le dessin associe des formes organiques et mécaniques à de nombreux détails.",
+        "alt": "Illustration monochrome d’une créature aux nombreuses pattes portant des tourelles",
+        "credit": "Illustration : Hatt"
+      },
+      "moku": {
+        "title": "モク / Moku",
+        "description": "Un avatar de garçon-renard pour VRChat. La vidéo présente ses expressions, ses lunettes et ses changements de tenue.",
+        "alt": "Image de présentation de Moku, avatar 3D de renard avec des lunettes",
+        "credit": "Création 3D : Hatt"
+      },
+      "bright-friend": {
+        "title": "あかるい友達 / Ami lumineux",
+        "description": "Une lumière pour avatar, à tenir en main, en lanterne ou en lanterne sur bâton. La vidéo montre le réglage lumineux et les réactions animées.",
+        "alt": "Création 3D Ami lumineux avec un petit personnage lumineux et une lanterne",
+        "credit": "Création 3D : Hatt"
+      },
+      "letter": {
+        "title": "「手紙」 / Lettre",
+        "description": "Un récit court situé dans un laboratoire. Le texte japonais permet de découvrir les mots et la construction narrative de Hatt.",
+        "credit": "Texte : Hatt"
+      },
+      "buying-mittens": {
+        "title": "手袋を買いに / Acheter des moufles",
+        "description": "Dans cette vidéo publique, Hatt lit un conte de Niimi Nankichi. Écoutez la voix, le rythme et les pauses de la lecture.",
+        "credit": "Œuvre originale : Niimi Nankichi / Lecture : Hatt"
+      }
+    }
   }
 }

@@ -58,5 +58,60 @@
       "Posso consultar sobre formação ou apoio criativo?"
     ],
     "contactTitle": "Converse com a Acecore sobre seu projeto."
+  },
+  "portfolio": {
+    "title": "Obras de nosso criador",
+    "intro": "Conheça obras pessoais e públicas de Hatt e encontre os serviços criativos relacionados.",
+    "viewSource": "Fonte no Hatt (japonês)",
+    "relatedServices": "Serviços criativos relacionados",
+    "viewRelatedWork": "Ver uma obra relacionada",
+    "actions": {
+      "watch": "Assistir à apresentação",
+      "read": "Ler o conto (japonês)",
+      "listen": "Ouvir a leitura (japonês)"
+    },
+    "kinds": {
+      "illustration": "Ilustração",
+      "avatar": "Avatar 3D",
+      "gimmick": "Recurso interativo 3D",
+      "writing": "Ficção",
+      "reading": "Leitura em voz alta"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "Navegando pelo deserto",
+        "description": "Uma cena monocromática com vela, dunas e uma pessoa. A imagem permite observar a atmosfera e imaginar uma história.",
+        "alt": "Ilustração monocromática de uma pessoa em um veículo à vela no deserto",
+        "credit": "Ilustração: Hatt"
+      },
+      "centipede": {
+        "title": "Uma centopeia com uma casamata",
+        "description": "Uma criatura carregando torres de artilharia. O desenho combina formas orgânicas e mecânicas com detalhes minuciosos.",
+        "alt": "Ilustração monocromática de uma criatura de muitas patas com torres de artilharia",
+        "credit": "Ilustração: Hatt"
+      },
+      "moku": {
+        "title": "モク / Moku",
+        "description": "Um avatar de menino raposa para VRChat. O vídeo mostra expressões, óculos e mudanças de roupa.",
+        "alt": "Imagem de apresentação de Moku, avatar 3D de raposa com óculos",
+        "credit": "Criação 3D: Hatt"
+      },
+      "bright-friend": {
+        "title": "あかるい友達 / Amigo luminoso",
+        "description": "Uma luz para avatares nas formas de mão, lanterna e cajado com lanterna. O vídeo mostra ajuste de luz e movimentos de reação.",
+        "alt": "Obra 3D Amigo luminoso com um pequeno personagem brilhante e uma lanterna",
+        "credit": "Criação 3D: Hatt"
+      },
+      "letter": {
+        "title": "「手紙」 / Carta",
+        "description": "Um conto ambientado em um laboratório. O texto em japonês apresenta a escolha de palavras e a construção narrativa de Hatt.",
+        "credit": "Texto: Hatt"
+      },
+      "buying-mittens": {
+        "title": "手袋を買いに / Comprar luvas",
+        "description": "Neste vídeo público, Hatt lê um conto de Niimi Nankichi. Ouça a voz, o ritmo e as pausas da leitura.",
+        "credit": "Obra original: Niimi Nankichi / Leitura: Hatt"
+      }
+    }
   }
 }

@@ -1,0 +1,137 @@
+---
+import { catalogs, ui, type Locale } from '../data/catalog'
+import { portfolioWorks } from '../data/portfolio.mjs'
+import Arrow from './Arrow.astro'
+
+interface Props {
+  locale: Locale
+}
+const { locale } = Astro.props
+const copy = catalogs[locale]
+const labels = ui[locale].portfolio
+const services = new Map(
+  copy.groups
+    .flatMap((group) => group.services)
+    .map((service) => [service.id, service]),
+)
+---
+
+<section
+  id="creator"
+  class="ac-section bg-white"
+  aria-labelledby="portfolio-heading"
+>
+  <div class="ac-container">
+    <div class="portfolio-heading">
+      <div class="max-w-3xl">
+        <p class="portfolio-eyebrow">{copy.creatorTitle} · Hatt</p>
+        <h2 id="portfolio-heading" class="ac-heading text-2xl sm:text-4xl">
+          {labels.title}
+        </h2>
+        <p class="ac-muted mt-4">{labels.intro}</p>
+        <p class="ac-muted mt-3 text-sm">{copy.creatorBody}</p>
+      </div>
+      <a href="https://hatt.acecore.net/" class="text-link"
+        >{copy.portfolioLabel}<Arrow /></a
+      >
+    </div>
+    <div class="portfolio-grid">
+      {
+        portfolioWorks.map((work) => {
+          const text = labels.works[work.id]
+          return (
+            <article
+              id={`work-${work.id}`}
+              class="ac-card portfolio-card"
+              data-portfolio-work={work.id}
+            >
+              {work.image ? (
+                <div class="portfolio-image">
+                  <img
+                    src={work.image.src}
+                    width={work.image.width}
+                    height={work.image.height}
+                    alt={text.alt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              ) : (
+                <div
+                  class={`portfolio-text-preview portfolio-text-preview--${work.kind}`}
+                  aria-hidden="true"
+                >
+                  {work.kind === 'writing' ? (
+                    <svg
+                      width="48"
+                      height="48"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                    >
+                      <path d="M12 5c-3-2-7-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-2-1-6-1-9 1ZM12 5v15" />
+                    </svg>
+                  ) : (
+                    <svg
+                      width="64"
+                      height="48"
+                      viewBox="0 0 32 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    >
+                      <path d="M2 10v4M7 6v12M12 2v20M17 7v10M22 4v16M27 8v8M32 11v2" />
+                    </svg>
+                  )}
+                  <span>{text.title}</span>
+                  <span class="portfolio-preview-credit">{text.credit}</span>
+                </div>
+              )}
+              <div class="portfolio-card-body">
+                <p class="portfolio-kind">{labels.kinds[work.kind]}</p>
+                <h3 class="text-lg font-800 leading-snug text-brand-950">
+                  {text.title}
+                </h3>
+                <p class="ac-muted mt-3 text-sm">{text.description}</p>
+                <p class="portfolio-credit">{text.credit}</p>
+                <div class="portfolio-source-links">
+                  <a
+                    href={work.sourceUrl}
+                    aria-label={`${text.title} — ${labels.viewSource}`}
+                  >
+                    {labels.viewSource}
+                    <Arrow />
+                  </a>
+                  {work.workUrl && (
+                    <a
+                      href={work.workUrl}
+                      aria-label={`${text.title} — ${labels.actions[work.action]}`}
+                    >
+                      {labels.actions[work.action]}
+                      <Arrow />
+                    </a>
+                  )}
+                </div>
+                <div class="portfolio-services">
+                  <p>{labels.relatedServices}</p>
+                  <ul>
+                    {work.services.map((id) => (
+                      <li>
+                        <a href={`#${id}`} data-work-service={id}>
+                          {services.get(id)!.title}
+                          <Arrow />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </article>
+          )
+        })
+      }
+    </div>
+  </div>
+</section>

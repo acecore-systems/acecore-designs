@@ -53,5 +53,60 @@
       "研修や制作支援も相談できますか？"
     ],
     "contactTitle": "制作のご相談は、Acecoreへ。"
+  },
+  "portfolio": {
+    "title": "制作担当の公開作品",
+    "intro": "Hattの自主制作・公開作品をご紹介します。作品の表現を見ながら、関連する制作サービスをご覧いただけます。",
+    "viewSource": "Hattの公開元を見る",
+    "relatedServices": "関連する制作サービス",
+    "viewRelatedWork": "関連する公開作品を見る",
+    "actions": {
+      "watch": "紹介動画を見る",
+      "read": "小説を読む",
+      "listen": "朗読を聴く"
+    },
+    "kinds": {
+      "illustration": "イラスト",
+      "avatar": "3Dアバター",
+      "gimmick": "3Dギミック",
+      "writing": "小説",
+      "reading": "朗読"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "砂漠を帆走する人物",
+        "description": "帆と砂丘、人物をモノクロで描いた一枚。場面の空気感や、物語を想像させる表現をご覧いただけます。",
+        "alt": "砂漠の帆走車と人物を描いたモノクロイラスト",
+        "credit": "イラスト：Hatt"
+      },
+      "centipede": {
+        "title": "トーチカを背負った百足の怪物",
+        "description": "砲台を背負った怪物を描いた作品。生き物と機械を組み合わせた造形や、細部の描き込みが見られます。",
+        "alt": "砲台を背負った多脚の怪物のモノクロイラスト",
+        "credit": "イラスト：Hatt"
+      },
+      "moku": {
+        "title": "モク",
+        "description": "きつねの男の子をかたどったVRChat向けアバター。表情や眼鏡、衣装の変化を紹介動画で見られます。",
+        "alt": "眼鏡をかけたきつねの3Dアバター「モク」の紹介画像",
+        "credit": "3D制作：Hatt"
+      },
+      "bright-friend": {
+        "title": "あかるい友達",
+        "description": "手乗り・カンテラ・杖付きカンテラの3タイプがあるアバターライト。光量の調整や反応する動きを紹介しています。",
+        "alt": "小さな光るキャラクターとカンテラの3D作品「あかるい友達」",
+        "credit": "3D制作：Hatt"
+      },
+      "letter": {
+        "title": "「手紙」",
+        "description": "研究室での一幕を描いた短編小説。Hattの言葉選びや物語の組み立てを、日本語の本文でご覧いただけます。",
+        "credit": "作：Hatt"
+      },
+      "buying-mittens": {
+        "title": "手袋を買いに",
+        "description": "新美南吉の童話をHattが朗読した公開動画。声の調子や間の取り方を聴いていただけます。",
+        "credit": "原作：新美南吉 ／ 朗読：Hatt"
+      }
+    }
   }
 }

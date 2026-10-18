@@ -4,12 +4,18 @@ import { catalogs, ui, type Locale } from '../data/catalog'
 import { inquiryUrl, localePath } from '../data/locales.mjs'
 import { purposeServices } from '../data/service-navigation.mjs'
 import Arrow from './Arrow.astro'
+import PortfolioSection from './PortfolioSection.astro'
+import { portfolioWorks } from '../data/portfolio.mjs'
 interface Props {
   locale: Locale
 }
 const { locale } = Astro.props
 const copy = catalogs[locale]
 const guidance = ui[locale].guidance
+const portfolio = ui[locale].portfolio
+const serviceWork = Object.fromEntries(
+  portfolioWorks.flatMap((work) => work.services.map((id) => [id, work.id])),
+)
 const services = new Map(
   copy.groups
     .flatMap((group) => group.services)
@@ -121,6 +127,8 @@ const offerCatalog = {
     </div>
   </section>
 
+  <PortfolioSection locale={locale} />
+
   <section
     id="catalog"
     class="ac-section bg-slate-50"
@@ -217,6 +225,16 @@ const offerCatalog = {
                     >
                       {copy.consultLabel}
                     </a>
+                    {serviceWork[service.id] && (
+                      <a
+                        href={`#work-${serviceWork[service.id]}`}
+                        class="work-reference"
+                        data-service-work={service.id}
+                      >
+                        {portfolio.viewRelatedWork}
+                        <Arrow />
+                      </a>
+                    )}
                   </article>
                 ))}
               </div>
@@ -343,16 +361,7 @@ const offerCatalog = {
   </section>
 
   <section class="ac-section bg-white">
-    <div class="ac-container grid gap-10 lg:grid-cols-2">
-      <div id="creator">
-        <h2 class="ac-heading text-2xl">{copy.creatorTitle}</h2>
-        <p class="ac-muted mt-4">
-          {copy.creatorBody}
-        </p>
-        <a href="https://hatt.acecore.net/" class="ac-btn-outline mt-5"
-          >{copy.portfolioLabel}</a
-        >
-      </div>
+    <div class="ac-container">
       <div aria-labelledby="schools-heading">
         <h2 id="schools-heading" class="ac-heading text-2xl">
           {copy.schoolsTitle}

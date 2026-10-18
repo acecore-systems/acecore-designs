@@ -58,5 +58,60 @@
       "¿Puedo consultar sobre formación o apoyo creativo?"
     ],
     "contactTitle": "Consulta tu proyecto con Acecore."
+  },
+  "portfolio": {
+    "title": "Obras de nuestro creador",
+    "intro": "Descubra obras personales y públicas de Hatt y acceda a los servicios creativos relacionados.",
+    "viewSource": "Fuente en Hatt (japonés)",
+    "relatedServices": "Servicios creativos relacionados",
+    "viewRelatedWork": "Ver una obra relacionada",
+    "actions": {
+      "watch": "Ver la presentación",
+      "read": "Leer el relato (japonés)",
+      "listen": "Escuchar la lectura (japonés)"
+    },
+    "kinds": {
+      "illustration": "Ilustración",
+      "avatar": "Avatar 3D",
+      "gimmick": "Función interactiva 3D",
+      "writing": "Ficción",
+      "reading": "Lectura en voz alta"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "Navegar por el desierto",
+        "description": "Una escena monocroma de una vela, dunas y una figura. La imagen permite apreciar su atmósfera e imaginar una historia.",
+        "alt": "Ilustración monocroma de una persona en un vehículo de vela por el desierto",
+        "credit": "Ilustración: Hatt"
+      },
+      "centipede": {
+        "title": "Un ciempiés con un fortín",
+        "description": "Una criatura que carga torretas. El dibujo combina formas orgánicas y mecánicas con detalles minuciosos.",
+        "alt": "Ilustración monocroma de una criatura de muchas patas con torretas",
+        "credit": "Ilustración: Hatt"
+      },
+      "moku": {
+        "title": "モク / Moku",
+        "description": "Un avatar de niño zorro para VRChat. El vídeo muestra expresiones, gafas y cambios de ropa.",
+        "alt": "Imagen de presentación de Moku, avatar 3D de zorro con gafas",
+        "credit": "Creación 3D: Hatt"
+      },
+      "bright-friend": {
+        "title": "あかるい友達 / Amigo luminoso",
+        "description": "Una luz para avatares con formas de mano, farol y bastón con farol. El vídeo muestra el ajuste de luz y los movimientos de respuesta.",
+        "alt": "Obra 3D Amigo luminoso con un pequeño personaje brillante y un farol",
+        "credit": "Creación 3D: Hatt"
+      },
+      "letter": {
+        "title": "「手紙」 / Carta",
+        "description": "Un relato breve situado en un laboratorio. El texto japonés permite explorar las palabras y la construcción narrativa de Hatt.",
+        "credit": "Texto: Hatt"
+      },
+      "buying-mittens": {
+        "title": "手袋を買いに / Comprar manoplas",
+        "description": "En este vídeo público, Hatt lee un cuento de Niimi Nankichi. Permite escuchar la voz, el ritmo y las pausas de la lectura.",
+        "credit": "Obra original: Niimi Nankichi / Lectura: Hatt"
+      }
+    }
   }
 }

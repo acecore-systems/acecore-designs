@@ -64,5 +64,60 @@
       "Kann ich Schulungen oder kreative Unterstützung anfragen?"
     ],
     "contactTitle": "Besprechen Sie Ihr Projekt mit Acecore."
+  },
+  "portfolio": {
+    "title": "Arbeiten unseres Kreativen",
+    "intro": "Entdecken Sie persönliche und öffentlich geteilte Arbeiten von Hatt sowie die passenden kreativen Leistungen.",
+    "viewSource": "Quelle bei Hatt (Japanisch)",
+    "relatedServices": "Passende kreative Leistungen",
+    "viewRelatedWork": "Passende Arbeit ansehen",
+    "actions": {
+      "watch": "Vorstellung ansehen",
+      "read": "Geschichte lesen (Japanisch)",
+      "listen": "Lesung anhören (Japanisch)"
+    },
+    "kinds": {
+      "illustration": "Illustration",
+      "avatar": "3D-Avatar",
+      "gimmick": "Interaktive 3D-Funktion",
+      "writing": "Erzählung",
+      "reading": "Lesung"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "Durch die Wüste segeln",
+        "description": "Eine monochrome Szene mit Segel, Dünen und einer Figur. Das Bild vermittelt Atmosphäre und regt zu einer Geschichte an.",
+        "alt": "Monochrome Illustration einer Figur auf einem Segelfahrzeug in der Wüste",
+        "credit": "Illustration: Hatt"
+      },
+      "centipede": {
+        "title": "Ein Hundertfüßer mit Bunker",
+        "description": "Ein Wesen mit Geschütztürmen auf dem Rücken. Die Zeichnung verbindet organische und mechanische Formen mit vielen Details.",
+        "alt": "Monochrome Illustration eines vielbeinigen Wesens mit Geschütztürmen",
+        "credit": "Illustration: Hatt"
+      },
+      "moku": {
+        "title": "モク / Moku",
+        "description": "Ein Fuchsjungen-Avatar für VRChat. Das Video zeigt Gesichtsausdrücke, Brille und wechselnde Kleidung.",
+        "alt": "Vorstellungsbild von Moku, einem 3D-Fuchsavatar mit Brille",
+        "credit": "3D-Arbeit: Hatt"
+      },
+      "bright-friend": {
+        "title": "あかるい友達 / Heller Freund",
+        "description": "Ein Avatar-Licht als Handfigur, Laterne oder Stablaterne. Das Video zeigt Lichtregelung und reagierende Bewegungen.",
+        "alt": "3D-Arbeit Heller Freund mit einer kleinen leuchtenden Figur und einer Laterne",
+        "credit": "3D-Arbeit: Hatt"
+      },
+      "letter": {
+        "title": "「手紙」 / Brief",
+        "description": "Eine Kurzgeschichte, die in einem Labor spielt. Der japanische Text zeigt Hatts Wortwahl und Erzählaufbau.",
+        "credit": "Text: Hatt"
+      },
+      "buying-mittens": {
+        "title": "手袋を買いに / Handschuhe kaufen",
+        "description": "Hatt liest in diesem öffentlichen Video eine Geschichte von Niimi Nankichi. Zu hören sind Stimme, Tempo und Pausen der Lesung.",
+        "credit": "Originalgeschichte: Niimi Nankichi / Lesung: Hatt"
+      }
+    }
   }
 }
