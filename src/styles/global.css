@@ -1,0 +1,129 @@
+@import 'tailwindcss/index.css' source('../');
+
+@theme {
+  --color-brand-50: #eef6ff;
+  --color-brand-100: #d8eaff;
+  --color-brand-200: #acd3ff;
+  --color-brand-300: #73b2f8;
+  --color-brand-400: #3287e6;
+  --color-brand-500: #0b5fd3;
+  --color-brand-600: #063d91;
+  --color-brand-700: #053373;
+  --color-brand-800: #062c5f;
+  --color-brand-900: #08254d;
+  --color-brand-950: #00022b;
+  --font-sans:
+    'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+    'Yu Gothic UI', 'Yu Gothic', Meiryo, system-ui, sans-serif;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  [id] {
+    scroll-margin-top: 7rem;
+  }
+
+  main :where(h1, h2, h3, h4, p, li, a) {
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  :where(a, button, summary):focus-visible {
+    outline: 2px solid var(--color-brand-400);
+    outline-offset: 4px;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility ac-container {
+  @apply mx-auto max-w-[70rem] px-5 sm:px-6 lg:px-8;
+}
+
+@utility ac-section {
+  @apply py-14 sm:py-16 lg:py-20;
+}
+
+@utility ac-heading {
+  @apply font-800 leading-tight text-slate-950;
+}
+
+@utility ac-muted {
+  @apply leading-relaxed text-slate-600;
+}
+
+@utility ac-card {
+  @apply rounded-lg border border-slate-200/90 bg-white shadow-[0_10px_28px_rgba(15,35,56,0.06)];
+}
+
+@utility ac-chip {
+  @apply inline-flex min-h-11 items-center rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs font-700 text-slate-600 no-underline transition-colors hover:border-brand-300 hover:bg-brand-50 hover:text-brand-600;
+}
+
+@utility ac-icon-box {
+  @apply inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-brand-200 bg-brand-50 text-brand-600 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.7)];
+}
+
+@utility ac-touch {
+  @apply inline-flex min-h-11 min-w-11 items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2;
+}
+
+@utility ac-btn {
+  @apply inline-flex min-h-11 items-center justify-center rounded-md px-5 py-3 text-sm font-800 no-underline transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2;
+}
+
+@utility ac-btn-primary {
+  @apply ac-btn bg-brand-600 text-white shadow-[0_10px_24px_rgba(6,61,145,0.18)] hover:bg-brand-700 active:bg-brand-800;
+}
+
+@utility ac-btn-secondary {
+  @apply ac-btn border-2 border-brand-600 bg-brand-600 text-white hover:border-brand-700 hover:bg-brand-700 active:border-brand-800 active:bg-brand-800;
+}
+
+@utility ac-btn-outline {
+  @apply ac-btn border-2 border-brand-600 bg-white text-brand-600 hover:bg-brand-50;
+}
+
+@utility footer-link {
+  @apply inline-flex min-h-11 items-center underline-offset-4 hover:text-brand-600 hover:underline;
+}
+
+.skip-link {
+  position: absolute;
+  top: -10rem;
+  left: 1rem;
+  z-index: 100;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-brand-600);
+  color: white;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}

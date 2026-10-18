@@ -1,0 +1,204 @@
+---
+import { catalogs, ui, type Locale } from '../data/catalog'
+import {
+  htmlLangMap,
+  localeLabels,
+  localePath,
+  locales,
+  inquiryUrl,
+} from '../data/locales.mjs'
+
+interface Props {
+  locale: Locale
+}
+const { locale } = Astro.props
+const copy = catalogs[locale]
+const labels = ui[locale]
+const home = localePath(locale)
+const links = [
+  { href: `${home}#catalog`, label: copy.catalogHeading },
+  { href: `${home}#flow`, label: copy.flowTitle },
+  { href: `${home}#creator`, label: copy.creatorTitle },
+  { href: inquiryUrl(locale), label: labels.contact },
+]
+---
+
+<header class="sticky top-0 z-40 border-b border-slate-200 bg-white">
+  <div class="ac-container flex min-h-20 items-center justify-between gap-3">
+    <a
+      href={home}
+      class="flex shrink-0 items-center gap-2.5 no-underline"
+      aria-label="Acecore Designs"
+    >
+      <img src="/favicon.svg" alt="" width="32" height="32" class="h-8 w-8" />
+      <span class="font-800 tracking-tight text-brand-950 text-base sm:text-lg"
+        >Acecore <span
+          class="mx-0.5 font-normal text-slate-400"
+          aria-hidden="true">/</span
+        > Designs</span
+      >
+    </a>
+    <nav
+      class="hidden flex-1 flex-wrap justify-end gap-x-5 gap-y-1 xl:flex"
+      aria-label={labels.mainNav}
+    >
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="inline-flex min-h-11 items-center text-sm font-700 leading-snug text-slate-600 no-underline hover:text-brand-600"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="flex shrink-0 items-center gap-1">
+      <details class="relative" data-language-menu>
+        <summary
+          class="ac-touch cursor-pointer list-none gap-2 rounded-md px-2 text-sm text-slate-600 hover:bg-slate-50"
+          aria-label={localeLabels[locale]}
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            aria-hidden="true"
+            ><circle cx="12" cy="12" r="9"></circle><path
+              d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"></path></svg
+          >
+          <span class="hidden sm:inline">{localeLabels[locale]}</span>
+          <svg
+            class="hidden sm:block"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg
+          >
+        </summary>
+        <ul
+          class="absolute right-0 z-50 mt-2 max-h-[65vh] w-44 overflow-y-auto rounded-lg border border-slate-200 bg-white py-1 shadow-lg"
+        >
+          {
+            locales.map((language) => (
+              <li>
+                <a
+                  href={localePath(language)}
+                  lang={htmlLangMap[language]}
+                  hreflang={htmlLangMap[language]}
+                  aria-current={language === locale ? 'page' : undefined}
+                  class:list={[
+                    'block min-h-11 px-4 py-2.5 text-sm no-underline hover:bg-brand-50',
+                    language === locale
+                      ? 'bg-brand-50 font-700 text-brand-600'
+                      : 'text-slate-700',
+                  ]}
+                >
+                  {localeLabels[language]}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </details>
+      <button
+        id="menu-toggle"
+        type="button"
+        hidden
+        class="ac-touch rounded-md text-brand-950 hover:bg-slate-50 xl:hidden"
+        aria-controls="mobile-navigation"
+        aria-expanded="false"
+        aria-label={labels.openMenu}
+        data-open-label={labels.openMenu}
+        data-close-label={labels.closeMenu}
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg
+        >
+      </button>
+    </div>
+  </div>
+  <nav
+    id="mobile-navigation"
+    class="mobile-navigation border-t border-slate-100 xl:hidden"
+    aria-label={labels.mobileNav}
+  >
+    <div class="ac-container grid gap-1 py-3">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="min-h-11 rounded-md px-3 py-3 text-sm font-700 text-slate-700 no-underline hover:bg-brand-50 hover:text-brand-600"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('#menu-toggle')
+  const navigation = document.querySelector<HTMLElement>('#mobile-navigation')
+  if (button && navigation) {
+    const close = (restoreFocus = false) => {
+      navigation.hidden = true
+      button.setAttribute('aria-expanded', 'false')
+      button.setAttribute('aria-label', button.dataset.openLabel ?? '')
+      if (restoreFocus) button.focus()
+    }
+    button.hidden = false
+    close()
+    button.addEventListener('click', () => {
+      const opening = navigation.hidden
+      navigation.hidden = !opening
+      button.setAttribute('aria-expanded', String(opening))
+      button.setAttribute(
+        'aria-label',
+        opening
+          ? (button.dataset.closeLabel ?? '')
+          : (button.dataset.openLabel ?? ''),
+      )
+    })
+    navigation.addEventListener('click', (event) => {
+      if ((event.target as Element).closest('a')) close()
+    })
+    document.addEventListener('click', (event) => {
+      if (
+        !button.contains(event.target as Node) &&
+        !navigation.contains(event.target as Node)
+      )
+        close()
+    })
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !navigation.hidden) close(true)
+    })
+    matchMedia('(min-width: 1280px)').addEventListener('change', () => close())
+  }
+  document
+    .querySelectorAll<HTMLDetailsElement>('[data-language-menu]')
+    .forEach((menu) => {
+      document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target as Node)) menu.open = false
+      })
+      menu.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          menu.open = false
+          menu.querySelector('summary')?.focus()
+        }
+      })
+    })
+</script>

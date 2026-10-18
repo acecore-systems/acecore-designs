@@ -1,0 +1,194 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro'
+import { catalogs, type Locale } from '../data/catalog'
+import { inquiryUrl, localePath } from '../data/locales.mjs'
+interface Props {
+  locale: Locale
+}
+const { locale } = Astro.props
+const copy = catalogs[locale]
+const pageUrl = new URL(localePath(locale), 'https://designs.acecore.net/').href
+const offerCatalog = {
+  '@type': 'OfferCatalog',
+  name: copy.title,
+  url: pageUrl,
+  itemListElement: copy.groups.map((group) => ({
+    '@type': 'OfferCatalog',
+    name: group.title,
+    itemListElement: group.services.map((service) => ({
+      '@type': 'Offer',
+      url: `${pageUrl}#${service.id}`,
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        minPrice: service.price,
+        priceCurrency: 'JPY',
+        valueAddedTaxIncluded: true,
+      },
+      itemOffered: {
+        '@type': 'Service',
+        name: service.title,
+        description: service.description,
+        provider: { '@id': 'https://acecore.net/#organization' },
+      },
+    })),
+  })),
+}
+---
+
+<SiteLayout locale={locale} jsonLd={offerCatalog}>
+  <section class="ac-section bg-brand-950 text-white">
+    <div class="ac-container">
+      <p class="text-xs font-800 uppercase tracking-widest text-brand-200">
+        Acecore Designs
+      </p>
+      <h1 class="mt-3 max-w-4xl text-3xl font-800 leading-tight sm:text-5xl">
+        {copy.heroTitle}
+      </h1>
+      <p
+        class="mt-6 max-w-3xl text-base leading-relaxed text-brand-100 sm:text-lg"
+      >
+        {copy.heroLead}
+      </p>
+      <a href="#catalog" class="ac-btn-primary mt-7">{copy.catalogHeading}</a>
+    </div>
+  </section>
+
+  <section
+    id="catalog"
+    class="ac-section bg-slate-50"
+    aria-labelledby="catalog-heading"
+  >
+    <div class="ac-container">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-5">
+        <h2 id="catalog-heading" class="ac-heading text-2xl sm:text-3xl">
+          {copy.catalogHeading}
+        </h2>
+        <nav class="flex flex-wrap gap-2" aria-label={copy.catalogHeading}>
+          {
+            copy.groups.map((group) => (
+              <a href={`#${group.id}`} class="ac-chip">
+                {group.title}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+      <div class="ac-card mb-10 p-6">
+        <h3 class="text-base font-800 text-slate-950">
+          {copy.conditionsTitle}
+        </h3>
+        <p class="ac-muted mt-2 text-sm">{copy.conditionsBody}</p>
+      </div>
+      <div class="space-y-12">
+        {
+          copy.groups.map((group) => (
+            <section id={group.id} aria-labelledby={`${group.id}-heading`}>
+              <div class="mb-5 flex items-center gap-3">
+                <span class="ac-icon-box" aria-hidden="true">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    {group.id === 'illustration' && (
+                      <g>
+                        <path d="M12 3a9 9 0 1 0 0 18h1.2a2 2 0 0 0 1.6-3.2 1.5 1.5 0 0 1 1.2-2.4h1A4 4 0 0 0 21 11a9 9 0 0 0-9-8Z" />
+                        <path
+                          d="M7.5 10h.01M10 6.5h.01M15 7h.01M6.5 14h.01"
+                          stroke-width="3"
+                        />
+                      </g>
+                    )}
+                    {group.id === '3d' && (
+                      <path d="m12 3 9 5v9l-9 5-9-5V8Z M3 8l9 5 9-5M12 13v9M7.5 5.5l9 5" />
+                    )}
+                    {group.id === 'writing-audio' && (
+                      <path d="M12 5c-4-2-8-2-10-1v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-2-1-6-1-10 1ZM12 5v15" />
+                    )}
+                  </svg>
+                </span>
+                <h3
+                  id={`${group.id}-heading`}
+                  class="ac-heading text-xl sm:text-2xl"
+                >
+                  {group.title}
+                </h3>
+              </div>
+              <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {group.services.map((service) => (
+                  <article
+                    id={service.id}
+                    class="ac-card flex flex-col p-6"
+                    data-service-id={service.id}
+                  >
+                    <h4 class="text-lg font-800 leading-snug text-slate-950">
+                      {service.title}
+                    </h4>
+                    <p class="ac-muted mt-3 flex-1 text-sm">
+                      {service.description}
+                    </p>
+                    <p
+                      class="mt-5 text-xl font-800 text-brand-600"
+                      data-service-price={service.price}
+                    >
+                      <span class="sr-only">{service.title} — </span>
+                      {copy.priceLabel.replace(
+                        '{price}',
+                        service.price.toLocaleString('ja-JP'),
+                      )}
+                    </p>
+                    <a
+                      href={inquiryUrl(locale, service.id)}
+                      class="ac-btn-secondary mt-5"
+                      aria-label={`${service.title} — ${copy.consultLabel}`}
+                    >
+                      {copy.consultLabel}
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="ac-section bg-white">
+    <div class="ac-container grid gap-10 lg:grid-cols-2">
+      <div id="flow">
+        <h2 class="ac-heading text-2xl">{copy.flowTitle}</h2>
+        <p class="ac-muted mt-4">
+          {copy.flowBody}
+        </p>
+      </div>
+      <div id="creator">
+        <h2 class="ac-heading text-2xl">{copy.creatorTitle}</h2>
+        <p class="ac-muted mt-4">
+          {copy.creatorBody}
+        </p>
+        <a href="https://hatt.acecore.net/" class="ac-btn-outline mt-5"
+          >{copy.portfolioLabel}</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="ac-section bg-brand-50" aria-labelledby="schools-heading">
+    <div class="ac-container">
+      <h2 id="schools-heading" class="ac-heading text-2xl">
+        {copy.schoolsTitle}
+      </h2>
+      <p class="ac-muted mt-4 max-w-3xl">{copy.schoolsBody}</p>
+      <a
+        href="https://schools.acecore.net/learning/#creative-services"
+        class="ac-btn-primary mt-6">{copy.schoolsLabel}</a
+      >
+    </div>
+  </section>
+</SiteLayout>

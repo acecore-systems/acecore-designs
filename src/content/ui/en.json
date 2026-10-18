@@ -1,0 +1,24 @@
+{
+  "company": "Acecore Co., Ltd.",
+  "contact": "Contact",
+  "about": "About",
+  "skipToContent": "Skip to content",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "mainNav": "Main navigation",
+  "mobileNav": "Mobile navigation",
+  "privacy": "Privacy Policy",
+  "terms": "Acecore ID Terms of Use",
+  "home": "Home",
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for could not be found. Please check the URL or navigate from the home page.",
+    "heading": "Page Not Found",
+    "body": "The page may have been moved or deleted.",
+    "searchHint": "Please check the URL or search below.",
+    "searchPlaceholder": "Search this site...",
+    "goHome": "Go to Home",
+    "viewBlog": "View Blog",
+    "latestArticles": "Latest Articles"
+  }
+}
