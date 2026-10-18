@@ -1,0 +1,24 @@
+{
+  "company": "株式会社Acecore",
+  "contact": "联系我们",
+  "about": "关于我们",
+  "skipToContent": "跳至正文",
+  "openMenu": "打开菜单",
+  "closeMenu": "关闭菜单",
+  "mainNav": "主导航",
+  "mobileNav": "移动端导航",
+  "privacy": "隐私政策",
+  "terms": "Acecore ID 使用条款",
+  "home": "首页",
+  "notFound": {
+    "title": "页面未找到",
+    "description": "您所查找的页面未找到。请确认URL或从首页开始浏览。",
+    "heading": "页面未找到",
+    "body": "您查找的页面可能已被移动或删除。",
+    "searchHint": "请确认URL或使用以下方式搜索。",
+    "searchPlaceholder": "搜索站内内容...",
+    "goHome": "返回首页",
+    "viewBlog": "浏览博客",
+    "latestArticles": "最新文章"
+  }
+}

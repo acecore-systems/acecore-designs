@@ -1,0 +1,30 @@
+{
+  "company": "株式会社Acecore",
+  "contact": "Kontakt",
+  "about": "Über uns",
+  "skipToContent": "Zum Inhalt springen",
+  "openMenu": "Menü öffnen",
+  "closeMenu": "Menü schließen",
+  "mainNav": "Hauptnavigation",
+  "mobileNav": "Mobile Navigation",
+  "privacy": "Datenschutzerklärung",
+  "terms": "Nutzungsbedingungen für Acecore ID",
+  "home": "Startseite",
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Die angeforderte Seite wurde nicht gefunden.",
+    "heading": "404",
+    "body": "Die Seite wurde möglicherweise verschoben oder gelöscht.",
+    "searchHint": "Bitte überprüfen Sie die URL oder suchen Sie unten.",
+    "searchPlaceholder": "Diese Seite durchsuchen...",
+    "goHome": "Zur Startseite",
+    "viewBlog": "Blog anzeigen",
+    "latestArticles": "Neueste Artikel",
+    "message": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "heroImgAlt": "404-Landschaft",
+    "linkHome": "Startseite",
+    "linkBlog": "Blog",
+    "linkContact": "Kontakt",
+    "linkAbout": "Über uns"
+  }
+}

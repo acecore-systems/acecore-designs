@@ -1,0 +1,12 @@
+---
+import NotFoundPage from '../../components/NotFoundPage.astro'
+import { locales } from '../../data/locales.mjs'
+import type { Locale } from '../../data/catalog'
+export const getStaticPaths = () =>
+  locales
+    .filter((locale) => locale !== 'ja')
+    .map((locale) => ({ params: { locale } }))
+const locale = Astro.params.locale as Locale
+---
+
+<NotFoundPage locale={locale} />

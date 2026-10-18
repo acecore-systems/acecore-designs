@@ -1,0 +1,12 @@
+---
+import DesignsPage from '../../components/DesignsPage.astro'
+import { locales } from '../../data/locales.mjs'
+import type { Locale } from '../../data/catalog'
+export const getStaticPaths = () =>
+  locales
+    .filter((locale) => locale !== 'ja')
+    .map((locale) => ({ params: { locale } }))
+const locale = Astro.params.locale as Locale
+---
+
+<DesignsPage locale={locale} />
