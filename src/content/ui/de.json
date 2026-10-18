@@ -26,5 +26,43 @@
     "linkBlog": "Blog",
     "linkContact": "Kontakt",
     "linkAbout": "Über uns"
+  },
+  "guidance": {
+    "consultProject": "Projekt besprechen",
+    "purposeTitle": "Finden Sie, was Sie gestalten möchten.",
+    "purposes": [
+      "Figuren gestalten und weiterentwickeln",
+      "Produkte und Inhalte vermitteln",
+      "Ideen in 3D und Bewegung umsetzen"
+    ],
+    "briefTitle": "Vor Ihrer Anfrage",
+    "briefItems": [
+      "Verwendungszweck und Einsatzort",
+      "Inhalt und Umfang des Projekts",
+      "Gewünschter Liefertermin",
+      "Lieferformat und Zielumgebung",
+      "Referenzen und bereitgestellte Materialien",
+      "Nutzungsbedingungen und Änderungswünsche"
+    ],
+    "steps": [
+      "Anfrage",
+      "Angebot und Vereinbarung",
+      "Produktion und Abstimmung",
+      "Lieferung"
+    ],
+    "stepDescriptions": [
+      "Wir prüfen Ihre Anfrage und die Machbarkeit.",
+      "Wir klären Verwendungszweck und Umfang.",
+      "Wir arbeiten nach den vereinbarten Bedingungen.",
+      "Nach Prüfung und Korrekturen liefern wir."
+    ],
+    "faqTitle": "Häufige Fragen",
+    "questions": [
+      "Ist der angezeigte Preis der Endpreis?",
+      "Wie läuft die Produktion ab?",
+      "Kann ich Arbeiten des Kreativen ansehen?",
+      "Kann ich Schulungen oder kreative Unterstützung anfragen?"
+    ],
+    "contactTitle": "Besprechen Sie Ihr Projekt mit Acecore."
   }
 }

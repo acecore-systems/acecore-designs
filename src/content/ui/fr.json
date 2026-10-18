@@ -20,5 +20,43 @@
     "goHome": "Retour à l'accueil",
     "viewBlog": "Voir le blog",
     "latestArticles": "Derniers articles"
+  },
+  "guidance": {
+    "consultProject": "Parler de votre projet",
+    "purposeTitle": "Trouvez ce que vous souhaitez créer.",
+    "purposes": [
+      "Créer et développer un personnage",
+      "Présenter des produits et des idées",
+      "Donner forme et mouvement en 3D"
+    ],
+    "briefTitle": "Avant de nous contacter",
+    "briefItems": [
+      "Usage prévu et supports de diffusion",
+      "Contenu et périmètre du projet",
+      "Date de livraison souhaitée",
+      "Format de livraison et environnement cible",
+      "Références et éléments fournis",
+      "Conditions d’utilisation et retouches"
+    ],
+    "steps": [
+      "Prise de contact",
+      "Devis et accord",
+      "Création et validation",
+      "Livraison"
+    ],
+    "stepDescriptions": [
+      "Nous étudions votre demande et sa faisabilité.",
+      "Nous précisons l’usage et le périmètre.",
+      "Nous suivons les conditions convenues.",
+      "Nous livrons après validation et retouches."
+    ],
+    "faqTitle": "Questions fréquentes",
+    "questions": [
+      "Le prix affiché est-il le coût final ?",
+      "Comment se déroule la création ?",
+      "Puis-je voir les œuvres du créateur ?",
+      "Puis-je demander une formation ou un accompagnement créatif ?"
+    ],
+    "contactTitle": "Parlez de votre projet à Acecore."
   }
 }
