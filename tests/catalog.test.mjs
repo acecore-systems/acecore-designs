@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { approvedLocales, approvedPrices } from './approved-services.mjs'
 import { locales, inquiryUrl } from '../src/data/locales.mjs'
+import { purposeServices } from '../src/data/service-navigation.mjs'
 
 const readJson = (path) =>
   JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'))
@@ -24,6 +25,24 @@ const checkText = (value) => {
 
 test('公開対象は日本語と既存の8翻訳', () => {
   assert.deepEqual(locales, approvedLocales)
+})
+
+test('用途別入口から承認済み13サービスを重複なく選べる', () => {
+  const ids = purposeServices.flat()
+  assert.equal(ids.length, new Set(ids).size)
+  assert.deepEqual([...ids].sort(), Object.keys(approvedPrices).sort())
+})
+
+test('相談案内は9言語で同じ構造・用途と工程の数を持つ', () => {
+  const baseline = readJson('../src/content/ui/ja.json').guidance
+  for (const locale of approvedLocales) {
+    const guidance = readJson(`../src/content/ui/${locale}.json`).guidance
+    assert.deepEqual(shape(guidance), shape(baseline), locale)
+    assert.equal(guidance.purposes.length, purposeServices.length)
+    assert.equal(guidance.steps.length, guidance.stepDescriptions.length)
+    assert.equal(guidance.questions.length, 4)
+    checkText(guidance)
+  }
 })
 
 for (const locale of approvedLocales) {

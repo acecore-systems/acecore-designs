@@ -20,5 +20,43 @@
     "goHome": "Go to Home",
     "viewBlog": "View Blog",
     "latestArticles": "Latest Articles"
+  },
+  "guidance": {
+    "consultProject": "Discuss your project",
+    "purposeTitle": "Find what you want to create.",
+    "purposes": [
+      "Create and develop a character",
+      "Communicate products and ideas",
+      "Bring ideas into 3D and motion"
+    ],
+    "briefTitle": "Before you contact us",
+    "briefItems": [
+      "Purpose and where it will be used",
+      "What to create and project scope",
+      "Preferred delivery date",
+      "Delivery format and target environment",
+      "References and supplied materials",
+      "Usage terms and revision requests"
+    ],
+    "steps": [
+      "Consultation",
+      "Quote and agreement",
+      "Production and review",
+      "Delivery"
+    ],
+    "stepDescriptions": [
+      "We review your request and whether we can help.",
+      "We confirm the intended use and scope.",
+      "We proceed under the agreed conditions.",
+      "We deliver after review and revisions."
+    ],
+    "faqTitle": "Frequently asked questions",
+    "questions": [
+      "Is the displayed price the final cost?",
+      "How does production proceed?",
+      "Can I see the creator’s work?",
+      "Can I discuss training or creative support?"
+    ],
+    "contactTitle": "Discuss your project with Acecore."
   }
 }

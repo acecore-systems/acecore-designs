@@ -62,7 +62,7 @@
 }
 
 @utility ac-container {
-  @apply mx-auto max-w-[70rem] px-5 sm:px-6 lg:px-8;
+  @apply mx-auto max-w-[80rem] px-5 sm:px-6 lg:px-8;
 }
 
 @utility ac-section {
@@ -126,4 +126,222 @@
 
 .skip-link:focus {
   top: 0.5rem;
+}
+
+.designs-hero {
+  padding-block: clamp(3rem, 6vw, 6rem);
+}
+.hero-layout {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+.hero-title {
+  font-size: clamp(2.25rem, 4.8vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.hero-title:lang(ja) {
+  white-space: pre-line;
+  text-wrap: initial;
+  font-size: clamp(2rem, 4.3vw, 4rem);
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.hero-actions a,
+.contact-button {
+  gap: 1.5rem;
+}
+.hero-consult {
+  border: 1px solid #fff;
+  color: #fff;
+}
+.hero-consult:hover {
+  background: var(--color-brand-900);
+}
+.hero-index a {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.2rem;
+  padding-block: 1.7rem;
+  font-size: clamp(1rem, 1.7vw, 1.4rem);
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #ffffff50;
+}
+.hero-index a:first-child {
+  border-top: 1px solid #ffffff50;
+}
+.hero-index a:hover {
+  color: var(--color-brand-200);
+}
+.hero-number {
+  color: var(--color-brand-200);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.purpose-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.purpose-column ul {
+  margin-top: 1rem;
+}
+.purpose-column a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 3.2rem;
+  padding-block: 0.8rem;
+  color: var(--color-brand-600);
+  border-bottom: 1px solid #e2e8f0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.purpose-column a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+.purpose-column svg,
+.hero-index svg,
+.hero-actions svg,
+.contact-button svg,
+.text-link svg {
+  flex-shrink: 0;
+}
+.flow-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.flow-grid li {
+  border-top: 1px solid #cbd5e1;
+  padding-top: 1.5rem;
+}
+.step-number {
+  display: block;
+  color: var(--color-brand-600);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+.flow-grid h3 {
+  color: var(--color-brand-950);
+  font-size: 1rem;
+  font-weight: 800;
+}
+.brief-layout,
+.faq-layout {
+  display: grid;
+  gap: 2.5rem;
+}
+.brief-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--color-brand-200);
+  color: var(--color-brand-950);
+  font-weight: 600;
+}
+.brief-list svg {
+  flex-shrink: 0;
+  color: var(--color-brand-600);
+}
+.faq-list {
+  border-top: 1px solid #cbd5e1;
+}
+.faq-list details {
+  border-bottom: 1px solid #cbd5e1;
+}
+.faq-list summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  padding: 1.5rem 0.25rem;
+  font-weight: 700;
+  color: var(--color-brand-950);
+}
+.faq-list summary svg {
+  flex-shrink: 0;
+  transform: rotate(90deg);
+}
+.faq-list details[open] summary svg {
+  transform: rotate(-90deg);
+}
+.faq-answer {
+  padding: 0 0.25rem 1.5rem;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 44px;
+  margin-top: 0.75rem;
+  color: var(--color-brand-600);
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+.contact-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.contact-button {
+  background: white;
+  color: var(--color-brand-950);
+}
+.contact-button:hover {
+  background: var(--color-brand-100);
+}
+article[data-service-id]:target {
+  outline: 3px solid var(--color-brand-400);
+  outline-offset: 5px;
+}
+article[data-service-id] h4 {
+  text-wrap: pretty;
+}
+@media (min-width: 640px) {
+  .flow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .hero-layout {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+  }
+  .purpose-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+  .purpose-column + .purpose-column {
+    border-left: 1px solid #cbd5e1;
+    padding-left: 2.5rem;
+  }
+  .flow-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .brief-layout,
+  .faq-layout {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+  }
 }

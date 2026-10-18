@@ -20,5 +20,43 @@
     "goHome": "Ir para o início",
     "viewBlog": "Ver blog",
     "latestArticles": "Últimos artigos"
+  },
+  "guidance": {
+    "consultProject": "Consultar sobre um projeto",
+    "purposeTitle": "Encontre o que você quer criar.",
+    "purposes": [
+      "Criar e desenvolver um personagem",
+      "Comunicar produtos e ideias",
+      "Dar forma e movimento em 3D"
+    ],
+    "briefTitle": "Antes de entrar em contato",
+    "briefItems": [
+      "Finalidade e local de uso",
+      "Conteúdo e escopo do projeto",
+      "Data de entrega desejada",
+      "Formato de entrega e ambiente de uso",
+      "Referências e materiais fornecidos",
+      "Condições de uso e revisões"
+    ],
+    "steps": [
+      "Consulta",
+      "Orçamento e acordo",
+      "Produção e revisão",
+      "Entrega"
+    ],
+    "stepDescriptions": [
+      "Analisamos o pedido e a viabilidade.",
+      "Confirmamos a finalidade e o escopo.",
+      "Seguimos as condições acordadas.",
+      "Entregamos após a revisão e os ajustes."
+    ],
+    "faqTitle": "Perguntas frequentes",
+    "questions": [
+      "O preço exibido é o custo final?",
+      "Como a produção é realizada?",
+      "Posso ver trabalhos do criador?",
+      "Posso consultar sobre formação ou apoio criativo?"
+    ],
+    "contactTitle": "Converse com a Acecore sobre seu projeto."
   }
 }
