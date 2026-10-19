@@ -1,6 +1,7 @@
 ---
 import { ui, type Locale } from '../data/catalog'
 import { corporateUrl, inquiryUrl, localePath } from '../data/locales.mjs'
+import { routePath } from '../data/routes.mjs'
 interface Props {
   locale: Locale
 }
@@ -25,6 +26,13 @@ const labels = ui[locale]
         class="flex max-w-2xl flex-wrap gap-x-6 gap-y-2"
         aria-label={labels.company}
       >
+        {
+          ['services', 'works', 'pricing', 'process'].map((route) => (
+            <a class="footer-link" href={routePath(locale, route)}>
+              {labels.site.nav[route]}
+            </a>
+          ))
+        }
         <a class="footer-link" href={corporateUrl(locale, 'about/')}
           >{labels.about}</a
         >
@@ -33,9 +41,6 @@ const labels = ui[locale]
           class="footer-link"
           href="https://schools.acecore.net/learning/#creative-services"
           >Acecore Schools</a
-        >
-        <a class="footer-link" href={`${localePath(locale)}#works`}
-          >{labels.portfolio.navLabel}</a
         >
         <a class="footer-link" href={corporateUrl(locale, 'privacy/')}
           >{labels.privacy}</a

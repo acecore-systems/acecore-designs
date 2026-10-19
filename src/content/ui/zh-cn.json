@@ -116,5 +116,43 @@
     "deliverableLabel": "成品",
     "consultThisWork": "咨询类似项目",
     "faqAnswer": "案例涵盖插画、3D角色及交互效果、小说与朗读录制。了解制作内容和成品后，可从各案例向Acecore咨询相关服务。"
+  },
+  "site": {
+    "nav": {
+      "services": "制作服务",
+      "works": "制作案例",
+      "pricing": "价格",
+      "process": "委托流程"
+    },
+    "breadcrumbs": "面包屑导航",
+    "homeServicesTitle": "从想制作的领域开始选择。",
+    "viewDetails": "了解制作内容",
+    "serviceCount": "{count}项服务",
+    "priceLabel": "含税起价",
+    "servicesIntro": "从设计与插画、3D、文字与音频三个领域中选择所需的制作内容。",
+    "pricingIntro": "介绍13项制作服务的含税起价。确认用途与制作范围后，提供个别报价。",
+    "diagramTitle": "从需求资料到成品。",
+    "diagramStages": ["需求资料", "制作内容", "成品"],
+    "diagramNote": "流程因所选服务而异。制作范围与交付格式将在报价时确认。",
+    "groups": {
+      "illustration": {
+        "intro": "提供角色设计、追加插画、设定图与三视图、封面、说明插图及表情图片六项服务。",
+        "input": "用途、期望形象、已有角色与参考资料",
+        "production": "角色设计／插画与设定图制作",
+        "output": "角色、封面、说明插图和设定资料等"
+      },
+      "3d": {
+        "intro": "提供角色及小物的3D模型制作、已有模型调整、交互功能与效果四项服务。",
+        "input": "用途、使用环境、已有模型与参考资料",
+        "production": "模型制作／已有模型调整／交互功能与效果制作",
+        "output": "3D角色、小物、显示切换与发光等功能"
+      },
+      "writing-audio": {
+        "intro": "提供故事、视频与音频台本、提供文稿的旁白与朗读三项服务。",
+        "input": "主题、设定与企划／用于录音的提供文稿",
+        "production": "故事与台本创作／提供文稿的朗读与录制",
+        "output": "故事或台本文稿／旁白与朗读音频数据"
+      }
+    }
   }
 }

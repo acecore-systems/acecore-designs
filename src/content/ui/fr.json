@@ -125,5 +125,43 @@
     "deliverableLabel": "Résultat",
     "consultThisWork": "Parler d’un projet similaire",
     "faqAnswer": "Les cas couvrent l’illustration, les avatars et fonctions interactives 3D, la fiction et les lectures enregistrées. Consultez la réalisation et le résultat, puis contactez Acecore pour le service associé depuis chaque cas."
+  },
+  "site": {
+    "nav": {
+      "services": "Services",
+      "works": "Réalisations",
+      "pricing": "Tarifs",
+      "process": "Déroulement"
+    },
+    "breadcrumbs": "Fil d’Ariane",
+    "homeServicesTitle": "Choisissez ce que vous souhaitez créer.",
+    "viewDetails": "Voir les détails",
+    "serviceCount": "{count} services",
+    "priceLabel": "Tarif de départ TTC",
+    "servicesIntro": "Choisissez entre design et illustration, 3D, et écriture et audio.",
+    "pricingIntro": "Tarifs de départ TTC pour 13 services créatifs. Un devis individuel est établi après confirmation de l’usage et du périmètre.",
+    "diagramTitle": "De vos éléments au résultat final.",
+    "diagramStages": ["Éléments de départ", "Réalisation", "Résultat final"],
+    "diagramNote": "Le parcours dépend du service choisi. Le périmètre et le format de livraison sont confirmés lors du devis.",
+    "groups": {
+      "illustration": {
+        "intro": "Six services de conception de personnages, illustrations complémentaires, fiches de personnage, couvertures, illustrations éditoriales et images de réaction.",
+        "input": "Usage, style souhaité, personnages existants et références",
+        "production": "Conception de personnages / illustrations et fiches de personnage",
+        "output": "Personnages, couvertures, illustrations éditoriales et fiches de personnage"
+      },
+      "3d": {
+        "intro": "Quatre services de modèles de personnages et d’objets, d’ajustement de modèles existants, de fonctions interactives et d’effets.",
+        "input": "Usage, environnement cible, modèles existants et références",
+        "production": "Modélisation / ajustement de modèles existants / fonctions interactives et effets",
+        "output": "Personnages et objets 3D, changements d’affichage et effets lumineux"
+      },
+      "writing-audio": {
+        "intro": "Trois services de récits, de scripts vidéo et audio, et de narration ou lecture de textes fournis.",
+        "input": "Thèmes, univers et projets / texte fourni pour l’enregistrement",
+        "production": "Écriture de récits et scripts / lecture et enregistrement du texte fourni",
+        "output": "Texte de récit ou de script / données audio de narration et de lecture"
+      }
+    }
   }
 }

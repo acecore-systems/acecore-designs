@@ -125,5 +125,43 @@
     "deliverableLabel": "Finished work",
     "consultThisWork": "Discuss a project like this",
     "faqAnswer": "Our cases cover illustration, 3D avatars and interactive features, fiction and recorded readings. Review the production and finished work, then contact Acecore about the related service from each case."
+  },
+  "site": {
+    "nav": {
+      "services": "Services",
+      "works": "Work",
+      "pricing": "Pricing",
+      "process": "Process"
+    },
+    "breadcrumbs": "Breadcrumbs",
+    "homeServicesTitle": "Choose what you want to create.",
+    "viewDetails": "Explore the details",
+    "serviceCount": "{count} services",
+    "priceLabel": "Starting price, tax included",
+    "servicesIntro": "Choose from three fields: design and illustration, 3D, and writing and audio.",
+    "pricingIntro": "Explore tax-included starting prices for 13 creative services. We prepare an individual quote after confirming your use and scope.",
+    "diagramTitle": "From your brief to the finished work.",
+    "diagramStages": ["Your brief", "Production", "Finished work"],
+    "diagramNote": "The path depends on the selected service. We confirm scope and delivery format when preparing your quote.",
+    "groups": {
+      "illustration": {
+        "intro": "Six services covering character design, additional illustrations, character sheets, covers, editorial illustrations and reaction images.",
+        "input": "Purpose, desired look, existing characters and reference materials",
+        "production": "Character design / illustration and character-sheet production",
+        "output": "Characters, cover illustrations, editorial images and character sheets"
+      },
+      "3d": {
+        "intro": "Four services for character and object models, adjustments to existing models, and interactive features and effects.",
+        "input": "Purpose, target environment, existing models and references",
+        "production": "Modelling / adjustments to existing models / interactive features and effects",
+        "output": "3D characters, objects, display switching, lighting effects and other functions"
+      },
+      "writing-audio": {
+        "intro": "Three services for stories, video and audio scripts, and narration or reading of supplied text.",
+        "input": "Themes, settings and plans / supplied text for recording",
+        "production": "Story and script writing / reading and recording supplied text",
+        "output": "Story or script text / narration and reading audio data"
+      }
+    }
   }
 }

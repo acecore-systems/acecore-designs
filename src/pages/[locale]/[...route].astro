@@ -1,0 +1,21 @@
+---
+import DesignsPage from '../../components/DesignsPage.astro'
+import { locales } from '../../data/locales.mjs'
+import { routeKeys, routeSegments } from '../../data/routes.mjs'
+import type { Locale } from '../../data/catalog'
+export const getStaticPaths = () =>
+  locales
+    .filter((locale) => locale !== 'ja')
+    .flatMap((locale) =>
+      routeKeys
+        .filter((route) => route !== 'home')
+        .map((route) => ({
+          params: { locale, route: routeSegments[route] },
+          props: { route },
+        })),
+    )
+const locale = Astro.params.locale as Locale
+const { route } = Astro.props
+---
+
+<DesignsPage locale={locale} route={route} />

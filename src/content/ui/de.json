@@ -131,5 +131,43 @@
     "deliverableLabel": "Ergebnis",
     "consultThisWork": "Ähnliches Projekt besprechen",
     "faqAnswer": "Die Beispiele umfassen Illustrationen, 3D-Avatare und interaktive Funktionen, Erzählungen und aufgezeichnete Lesungen. Sehen Sie sich Umsetzung und Ergebnis an und fragen Sie Acecore direkt zum passenden Angebot."
+  },
+  "site": {
+    "nav": {
+      "services": "Leistungen",
+      "works": "Projekte",
+      "pricing": "Preise",
+      "process": "Ablauf"
+    },
+    "breadcrumbs": "Brotkrumennavigation",
+    "homeServicesTitle": "Wählen Sie, was Sie gestalten möchten.",
+    "viewDetails": "Details ansehen",
+    "serviceCount": "{count} Leistungen",
+    "priceLabel": "Startpreis inklusive Steuern",
+    "servicesIntro": "Wählen Sie zwischen Design und Illustration, 3D sowie Text und Audio.",
+    "pricingIntro": "Startpreise inklusive Steuern für 13 kreative Leistungen. Nach Klärung von Nutzung und Umfang erstellen wir ein individuelles Angebot.",
+    "diagramTitle": "Von Ihren Unterlagen zum Ergebnis.",
+    "diagramStages": ["Ihre Unterlagen", "Umsetzung", "Ergebnis"],
+    "diagramNote": "Der Ablauf hängt von der gewählten Leistung ab. Umfang und Lieferformat werden beim Angebot geklärt.",
+    "groups": {
+      "illustration": {
+        "intro": "Sechs Leistungen für Charakterdesign, ergänzende Illustrationen, Charakterblätter, Titelbilder, redaktionelle Illustrationen und Reaktionsbilder.",
+        "input": "Verwendung, gewünschter Stil, bestehende Figuren und Referenzen",
+        "production": "Charakterdesign / Illustrationen und Charakterblätter",
+        "output": "Figuren, Titelbilder, redaktionelle Illustrationen und Charakterblätter"
+      },
+      "3d": {
+        "intro": "Vier Leistungen für Figuren- und Objektmodelle, Anpassungen bestehender Modelle sowie interaktive Funktionen und Effekte.",
+        "input": "Verwendung, Zielumgebung, bestehende Modelle und Referenzen",
+        "production": "Modellierung / Anpassung bestehender Modelle / interaktive Funktionen und Effekte",
+        "output": "3D-Figuren, Objekte, Anzeigewechsel und Lichteffekte"
+      },
+      "writing-audio": {
+        "intro": "Drei Leistungen für Geschichten, Video- und Audioskripte sowie das Einsprechen bereitgestellter Texte.",
+        "input": "Themen, Szenarien und Pläne / bereitgestellter Aufnahmetext",
+        "production": "Geschichten und Skripte schreiben / bereitgestellte Texte lesen und aufnehmen",
+        "output": "Geschichten- oder Skripttext / Audiodaten für Sprecheraufnahmen und Lesungen"
+      }
+    }
   }
 }

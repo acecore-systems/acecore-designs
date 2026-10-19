@@ -5,6 +5,13 @@ import { approvedLocales, approvedPrices } from './approved-services.mjs'
 import { locales, inquiryUrl } from '../src/data/locales.mjs'
 import { purposeServices } from '../src/data/service-navigation.mjs'
 import { portfolioCheckedAt, portfolioWorks } from '../src/data/portfolio.mjs'
+import {
+  routeKeys,
+  groupIds,
+  routePath,
+  servicePath,
+  legacyTargets,
+} from '../src/data/routes.mjs'
 
 const readJson = (path) =>
   JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'))
@@ -122,6 +129,68 @@ test('制作実績の内容・成果物・クレジットは9言語で整合す�
         assert.ok(copy.actions[work.action], `${locale}: ${work.action}`)
     }
     checkText(copy)
+  }
+})
+
+test('8ページ構成は9言語で重複せず分野別6/4/3サービスへ到達する', () => {
+  assert.equal(routeKeys.length, 8)
+  const paths = approvedLocales.flatMap((locale) =>
+    routeKeys.map((route) => routePath(locale, route)),
+  )
+  assert.equal(paths.length, 72)
+  assert.equal(new Set(paths).size, 72)
+  assert.throws(() => routePath('ja', 'unknown'))
+  for (const locale of approvedLocales) {
+    const catalog = readJson(`../src/content/catalog/${locale}.json`)
+    assert.deepEqual(
+      catalog.groups.map((group) => group.services.length),
+      [6, 4, 3],
+    )
+    for (const group of catalog.groups) {
+      assert.ok(groupIds.includes(group.id))
+      for (const service of group.services)
+        assert.equal(
+          servicePath(locale, catalog, service.id),
+          `${routePath(locale, group.id)}#${service.id}`,
+        )
+    }
+    assert.throws(() => servicePath(locale, catalog, 'unknown'))
+  }
+})
+
+test('旧トップのサービス・実績・工程アンカーは対応ページへ引き継ぐ', () => {
+  for (const locale of approvedLocales) {
+    const catalog = readJson(`../src/content/catalog/${locale}.json`)
+    const targets = legacyTargets(locale, catalog)
+    assert.equal(targets.catalog, routePath(locale, 'pricing'))
+    assert.equal(targets.creator, routePath(locale, 'works'))
+    assert.equal(targets.works, routePath(locale, 'works'))
+    assert.equal(targets.flow, `${routePath(locale, 'process')}#flow`)
+    for (const service of catalog.groups.flatMap((group) => group.services))
+      assert.equal(
+        targets[service.id],
+        servicePath(locale, catalog, service.id),
+      )
+    for (const work of portfolioWorks)
+      assert.equal(
+        targets[`work-${work.id}`],
+        `${routePath(locale, 'works')}#work-${work.id}`,
+      )
+    assert.equal(Object.hasOwn(targets, 'main'), false)
+    assert.equal(Object.hasOwn(targets, 'unknown'), false)
+    assert.equal(Object.hasOwn(targets, '__proto__'), false)
+  }
+})
+
+test('ページ案内と分野別の相談材料・制作・成果物は9言語で整合する', () => {
+  const baseline = readJson('../src/content/ui/ja.json').site
+  for (const locale of approvedLocales) {
+    const site = readJson(`../src/content/ui/${locale}.json`).site
+    assert.deepEqual(shape(site), shape(baseline), locale)
+    assert.deepEqual(Object.keys(site.groups), groupIds)
+    assert.equal(site.diagramStages.length, 3)
+    assert.equal(site.serviceCount.split('{count}').length, 2)
+    checkText(site)
   }
 })
 

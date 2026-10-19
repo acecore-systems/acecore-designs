@@ -24,7 +24,7 @@ git diff --check
 ```
 
 `npm run build` は共有画像生成、静的サイトのビルド、出力検証を実行します。
-出力検証では13サービス×9言語の料金と文言、問い合わせURL、公開JSON、内部リンク・アセット、canonical・hreflang・OG、sitemap、404を確認します。
+出力検証では72ページ（8種類×9言語）の料金と文言、問い合わせURL、公開JSON、全内部リンク・アンカー・アセット、同じページの言語切替、canonical・hreflang・OG・構造化データ、sitemap、404を確認します。旧トップのhash転送333件とクエリ保持、JavaScript無効時の13サービスへのリンクも検証します。
 GitHub Actions も同じコマンドを実行します。公開済み外部サイトへの問い合わせ送信は行いません。
 
 ```sh
@@ -76,10 +76,14 @@ npm run preview -- --host 127.0.0.1 --port 4324
 
 ## ルートとSEO
 
-- 日本語: `/`、各翻訳: `/en/`、`/zh-cn/`、`/es/`、`/pt/`、`/fr/`、`/ko/`、`/de/`、`/ru/`
-- 正規URLと hreflang / x-default は専用ドメインを参照します。
+- 日本語は `/`、`/services/`、3分野詳細 `/services/illustration/`・`/services/3d/`・`/services/writing-audio/`、`/works/`、`/pricing/`、`/process/` の8種類です。翻訳はそれぞれ `/en/`、`/zh-cn/`、`/es/`、`/pt/`、`/fr/`、`/ko/`、`/de/`、`/ru/` を先頭に付けます。
+- 正規URLと hreflang / x-default、言語切替は現在のページに対応します。ルート定義と旧hash対応は `src/data/routes.mjs` に集約します。
+- トップは総合案内、分野詳細は入力資料→制作→成果物の図とサービスカード、実績は制作内容・成果物・関連サービス、料金は正本13件、工程は準備物・FAQも案内します。カタログを複製した13個のサービスページは作りません。
+- 旧トップの `#catalog`・`#works`・`#creator`・`#flow`・各サービスID等は対応ページへ移り、クエリを保持します。JavaScript無効時も主ナビと13サービスへのリンク一覧から進めます。
 - sitemap: `/sitemap-index.xml`、robots: `/robots.txt`
 - 404: `/404.html` と各翻訳の `/{locale}/404/`。すべて noindex、canonical / hreflang は付けません。Cloudflare Pages が未知のURLへ返す既定404はルートの日本語版で、言語選択から各言語へ戻れます。
+
+比較20対象の根拠、画像と図の採否、ページ構成の判断は[追加調査・実装記録](docs/design/competitor-research/multipage-research.md)を参照してください。旧調査資料・画面案は当時の記録で、現在の制作実績や公開状態を示すものではありません。
 
 ## Cloudflare Pages
 

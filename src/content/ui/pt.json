@@ -125,5 +125,43 @@
     "deliverableLabel": "Resultado",
     "consultThisWork": "Consultar um projeto semelhante",
     "faqAnswer": "Os casos incluem ilustrações, avatares e recursos interativos 3D, ficção e leituras gravadas. Veja a produção e o resultado e consulte a Acecore sobre o serviço relacionado a partir de cada caso."
+  },
+  "site": {
+    "nav": {
+      "services": "Serviços",
+      "works": "Projetos",
+      "pricing": "Preços",
+      "process": "Processo"
+    },
+    "breadcrumbs": "Navegação estrutural",
+    "homeServicesTitle": "Escolha o que deseja criar.",
+    "viewDetails": "Ver os detalhes",
+    "serviceCount": "{count} serviços",
+    "priceLabel": "Preço inicial com impostos",
+    "servicesIntro": "Escolha entre design e ilustração, 3D, e escrita e áudio.",
+    "pricingIntro": "Preços iniciais com impostos para 13 serviços criativos. Preparamos um orçamento individual após confirmar o uso e o escopo.",
+    "diagramTitle": "Das referências ao trabalho concluído.",
+    "diagramStages": ["Informações iniciais", "Produção", "Trabalho concluído"],
+    "diagramNote": "O caminho depende do serviço escolhido. O escopo e o formato de entrega são confirmados no orçamento.",
+    "groups": {
+      "illustration": {
+        "intro": "Seis serviços de design de personagens, ilustrações adicionais, fichas de personagem, capas, ilustrações editoriais e imagens de reação.",
+        "input": "Uso, aparência desejada, personagens existentes e referências",
+        "production": "Design de personagens / ilustrações e fichas de personagem",
+        "output": "Personagens, capas, ilustrações editoriais e fichas de personagem"
+      },
+      "3d": {
+        "intro": "Quatro serviços de modelos de personagens e objetos, ajustes em modelos existentes e recursos interativos e efeitos.",
+        "input": "Uso, ambiente de destino, modelos existentes e referências",
+        "production": "Modelagem / ajustes em modelos existentes / recursos interativos e efeitos",
+        "output": "Personagens e objetos 3D, alternância de exibição e efeitos de luz"
+      },
+      "writing-audio": {
+        "intro": "Três serviços de histórias, roteiros de vídeo e áudio, e narração ou leitura de textos fornecidos.",
+        "input": "Temas, cenários e planos / texto fornecido para gravação",
+        "production": "Escrita de histórias e roteiros / leitura e gravação do texto fornecido",
+        "output": "Texto de história ou roteiro / dados de áudio de narração e leitura"
+      }
+    }
   }
 }

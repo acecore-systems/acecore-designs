@@ -2,12 +2,23 @@
 import { catalogs, ui, type Locale } from '../data/catalog'
 import { portfolioWorks } from '../data/portfolio.mjs'
 import { inquiryUrl } from '../data/locales.mjs'
+import { routePath, servicePath } from '../data/routes.mjs'
 import Arrow from './Arrow.astro'
 
 interface Props {
   locale: Locale
+  variant?: 'full' | 'summary'
+  groupId?: string
+  featured?: boolean
+  showHeading?: boolean
 }
-const { locale } = Astro.props
+const {
+  locale,
+  variant = 'full',
+  groupId,
+  featured = false,
+  showHeading = true,
+} = Astro.props
 const copy = catalogs[locale]
 const labels = ui[locale].portfolio
 const services = new Map(
@@ -15,24 +26,49 @@ const services = new Map(
     .flatMap((group) => group.services)
     .map((service) => [service.id, service]),
 )
+const group = copy.groups.find((group) => group.id === groupId)
+const works = featured
+  ? portfolioWorks.filter((work) =>
+      ['desert-sketch', 'moku', 'bright-friend'].includes(work.id),
+    )
+  : group
+    ? portfolioWorks.filter((work) =>
+        work.services.some((id) =>
+          group.services.some((service) => service.id === id),
+        ),
+      )
+    : portfolioWorks
+const CardHeading = showHeading ? 'h3' : 'h2'
+const sectionId = variant === 'full' ? 'works' : 'related-works'
 ---
 
-<span id="creator" class="block" aria-hidden="true"></span>
-<section id="works" class="ac-section bg-white" aria-labelledby="works-heading">
+{variant === 'full' && <span id="creator" class="block" aria-hidden="true" />}
+<section
+  id={sectionId}
+  class="ac-section bg-white"
+  aria-labelledby={showHeading ? 'works-heading' : 'page-heading'}
+>
   <div class="ac-container">
-    <div class="portfolio-heading">
-      <div class="max-w-3xl">
-        <p class="portfolio-eyebrow">Acecore Designs</p>
-        <h2 id="works-heading" class="ac-heading text-2xl sm:text-4xl">
-          {labels.title}
-        </h2>
-        <p class="ac-muted mt-4">{labels.intro}</p>
-      </div>
-      <a href="#catalog" class="text-link">{copy.catalogHeading}<Arrow /></a>
-    </div>
+    {
+      showHeading && (
+        <div class="portfolio-heading">
+          <div class="max-w-3xl">
+            <p class="portfolio-eyebrow">Acecore Designs</p>
+            <h2 id="works-heading" class="ac-heading text-2xl sm:text-4xl">
+              {labels.title}
+            </h2>
+            <p class="ac-muted mt-4">{labels.intro}</p>
+          </div>
+          <a href={routePath(locale, 'works')} class="text-link">
+            {labels.viewWorks}
+            <Arrow />
+          </a>
+        </div>
+      )
+    }
     <div class="portfolio-grid">
       {
-        portfolioWorks.map((work, index) => {
+        works.map((work, index) => {
           const text = labels.works[work.id]
           return (
             <article
@@ -89,33 +125,55 @@ const services = new Map(
                   <span aria-hidden="true">0{index + 1} / </span>
                   {labels.kinds[work.kind]}
                 </p>
-                <h3 class="text-lg font-800 leading-snug text-brand-950">
+                <CardHeading class="text-lg font-800 leading-snug text-brand-950">
                   {text.title}
-                </h3>
-                <dl class="portfolio-case-details">
-                  <div>
-                    <dt>{labels.productionLabel}</dt>
-                    <dd class="ac-muted">{text.description}</dd>
-                  </div>
-                  <div class="portfolio-deliverable">
-                    <dt>{labels.deliverableLabel}</dt>
-                    <dd class="ac-muted">{text.deliverable}</dd>
-                  </div>
-                </dl>
-                <p class="portfolio-credit">{text.credit}</p>
-                <div class="portfolio-services">
-                  <p>{labels.relatedServices}</p>
-                  <ul>
-                    {work.services.map((id) => (
-                      <li>
-                        <a href={`#${id}`} data-work-service={id}>
-                          {services.get(id)!.title}
-                          <Arrow />
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                </CardHeading>
+                {variant === 'full' ? (
+                  <>
+                    <dl class="portfolio-case-details">
+                      <div>
+                        <dt>{labels.productionLabel}</dt>
+                        <dd class="ac-muted">{text.description}</dd>
+                      </div>
+                      <div class="portfolio-deliverable">
+                        <dt>{labels.deliverableLabel}</dt>
+                        <dd class="ac-muted">{text.deliverable}</dd>
+                      </div>
+                    </dl>
+                    <p class="portfolio-credit">{text.credit}</p>
+                    <div class="portfolio-services">
+                      <p>{labels.relatedServices}</p>
+                      <ul>
+                        {work.services.map((id) => (
+                          <li>
+                            <a
+                              href={servicePath(locale, copy, id)}
+                              data-work-service={id}
+                            >
+                              {services.get(id)!.title}
+                              <Arrow />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <p class="ac-muted mt-3 text-sm">{text.description}</p>
+                    <p class="portfolio-deliverable ac-muted mt-4 text-sm">
+                      {text.deliverable}
+                    </p>
+                    <p class="portfolio-credit">{text.credit}</p>
+                    <a
+                      class="text-link mt-auto pt-4"
+                      href={`${routePath(locale, 'works')}#work-${work.id}`}
+                    >
+                      {ui[locale].site.viewDetails}
+                      <Arrow />
+                    </a>
+                  </>
+                )}
                 <a
                   href={inquiryUrl(locale, work.offering)}
                   class="ac-btn-primary mt-4 gap-3"

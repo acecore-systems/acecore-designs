@@ -7,26 +7,43 @@ import {
   serializeJsonForHtml,
   type Locale,
 } from '../data/catalog'
-import {
-  htmlLangMap,
-  ogLocaleMap,
-  locales,
-  localePath,
-} from '../data/locales.mjs'
+import { htmlLangMap, ogLocaleMap, locales } from '../data/locales.mjs'
+import { groupIds, routePath } from '../data/routes.mjs'
 import '../styles/global.css'
 
 interface Props {
   locale: Locale
+  route?: string
   title?: string
   description?: string
   jsonLd?: Record<string, unknown>
   isErrorPage?: boolean
 }
-const { locale, title, description, jsonLd, isErrorPage = false } = Astro.props
+const {
+  locale,
+  route = 'home',
+  title,
+  description,
+  jsonLd,
+  isErrorPage = false,
+} = Astro.props
 const copy = catalogs[locale]
 const pageTitle = title ?? `${copy.title} | ${copy.seoTitleContext}`
 const pageDescription = description ?? copy.description
-const canonical = new URL(localePath(locale), Astro.site).href
+const canonical = new URL(routePath(locale, route), Astro.site).href
+const routeTitle =
+  copy.groups.find((group) => group.id === route)?.title ??
+  ui[locale].site.nav[route] ??
+  copy.title
+const crumbs = [
+  { name: ui[locale].home, item: new URL(routePath(locale), Astro.site).href },
+]
+if (groupIds.includes(route))
+  crumbs.push({
+    name: ui[locale].site.nav.services,
+    item: new URL(routePath(locale, 'services'), Astro.site).href,
+  })
+crumbs.push({ name: routeTitle, item: canonical })
 const image = new URL('/uploads/og-default.png', Astro.site).href
 const organization = {
   '@type': 'Organization',
@@ -57,13 +74,17 @@ const organization = {
           <link
             rel="alternate"
             hreflang={htmlLangMap[language]}
-            href={new URL(localePath(language), Astro.site).href}
+            href={new URL(routePath(language, route), Astro.site).href}
           />
         ))
     }
     {
       !isErrorPage && (
-        <link rel="alternate" hreflang="x-default" href={Astro.site} />
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={new URL(routePath('ja', route), Astro.site).href}
+        />
       )
     }
     <meta property="og:type" content="website" />
@@ -97,6 +118,27 @@ const organization = {
                 publisher: { '@id': organization['@id'] },
                 inLanguage: htmlLangMap[locale],
               },
+              {
+                '@type': 'WebPage',
+                '@id': `${canonical}#webpage`,
+                url: canonical,
+                name: pageTitle,
+                description: pageDescription,
+                inLanguage: htmlLangMap[locale],
+                isPartOf: { '@id': 'https://designs.acecore.net/#website' },
+              },
+              ...(route !== 'home'
+                ? [
+                    {
+                      '@type': 'BreadcrumbList',
+                      itemListElement: crumbs.map((crumb, index) => ({
+                        '@type': 'ListItem',
+                        position: index + 1,
+                        ...crumb,
+                      })),
+                    },
+                  ]
+                : []),
               ...(jsonLd ? [jsonLd] : []),
             ],
           })}
@@ -106,7 +148,7 @@ const organization = {
   </head>
   <body class="flex min-h-screen flex-col bg-white font-sans text-slate-800">
     <a href="#main" class="skip-link">{ui[locale].skipToContent}</a>
-    <Header locale={locale} />
+    <Header locale={locale} route={route} />
     <main id="main" tabindex="-1" class="flex-1"><slot /></main>
     <Footer locale={locale} />
   </body>

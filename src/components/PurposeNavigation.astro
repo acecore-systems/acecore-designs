@@ -1,0 +1,49 @@
+---
+import { catalogs, ui, type Locale } from '../data/catalog'
+import { purposeServices } from '../data/service-navigation.mjs'
+import { servicePath } from '../data/routes.mjs'
+import Arrow from './Arrow.astro'
+interface Props {
+  locale: Locale
+}
+const { locale } = Astro.props
+const copy = catalogs[locale]
+const labels = ui[locale].guidance
+const services = new Map(
+  copy.groups
+    .flatMap((group) => group.services)
+    .map((service) => [service.id, service]),
+)
+---
+
+<section class="ac-section bg-slate-50" aria-labelledby="purpose-heading">
+  <div class="ac-container">
+    <h2 id="purpose-heading" class="ac-heading text-2xl sm:text-4xl">
+      {labels.purposeTitle}
+    </h2>
+    <div class="purpose-grid">
+      {
+        purposeServices.map((ids, index) => (
+          <div class="purpose-column">
+            <h3 class="text-lg font-800 text-brand-950">
+              {labels.purposes[index]}
+            </h3>
+            <ul>
+              {ids.map((id) => (
+                <li>
+                  <a
+                    href={servicePath(locale, copy, id)}
+                    data-purpose-service={id}
+                  >
+                    <span>{services.get(id)!.title}</span>
+                    <Arrow />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
