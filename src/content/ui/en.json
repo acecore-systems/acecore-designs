@@ -54,17 +54,17 @@
     "questions": [
       "Is the displayed price the final cost?",
       "How does production proceed?",
-      "Can I see the creator’s work?",
+      "What kinds of work have you produced?",
       "Can I discuss training or creative support?"
     ],
     "contactTitle": "Discuss your project with Acecore."
   },
   "portfolio": {
-    "title": "Selected works by our creator",
-    "intro": "Explore Hatt’s personal and publicly shared work, then follow the links to related creative services.",
-    "viewSource": "Source on Hatt (Japanese)",
+    "title": "Creative work",
+    "intro": "Explore illustration, 3D, writing and audio projects. Each case explains the production, the finished work and related creative services.",
+    "viewSource": "View source",
     "relatedServices": "Related creative services",
-    "viewRelatedWork": "See a related work",
+    "viewRelatedWork": "See a related case",
     "actions": {
       "watch": "Watch the introduction",
       "read": "Read the story (Japanese)",
@@ -79,39 +79,51 @@
     },
     "works": {
       "desert-sketch": {
-        "title": "Sailing across the desert",
-        "description": "A monochrome scene of a sail, dunes and a figure. Explore the atmosphere and the sense of a story within the image.",
+        "title": "Desert sailing illustration",
+        "description": "Created a monochrome illustration of a sailing vehicle, dunes and a figure.",
         "alt": "Monochrome illustration of a figure in a sailing vehicle crossing the desert",
-        "credit": "Illustration: Hatt"
+        "credit": "Illustration: Hatt",
+        "deliverable": "One monochrome illustration bringing a desert landscape and a figure together in a single scene."
       },
       "centipede": {
-        "title": "A centipede carrying a pillbox",
-        "description": "A creature carrying gun turrets. The design combines organic and mechanical forms with detailed drawing.",
+        "title": "Centipede creature illustration",
+        "description": "Designed and illustrated a many-legged creature carrying gun turrets, combining organic and mechanical forms.",
         "alt": "Monochrome illustration of a many-legged creature carrying gun turrets",
-        "credit": "Illustration: Hatt"
+        "credit": "Illustration: Hatt",
+        "deliverable": "One character illustration with detailed legs, armour and gun turrets."
       },
       "moku": {
-        "title": "モク / Moku",
-        "description": "A fox-boy avatar for VRChat. The introduction shows its expressions, glasses and changes of clothing.",
+        "title": "Moku 3D avatar",
+        "description": "Created Moku, a fox-boy avatar for VRChat.",
         "alt": "Introduction image of Moku, a 3D fox avatar wearing glasses",
-        "credit": "3D work: Hatt"
+        "credit": "3D work: Hatt",
+        "deliverable": "An original 3D avatar with changing expressions, glasses and clothing controls."
       },
       "bright-friend": {
-        "title": "あかるい友達 / Bright Friend",
-        "description": "An avatar light in handheld, lantern and staff-lantern forms. The video shows light adjustment and responsive movement.",
+        "title": "Bright Friend avatar light",
+        "description": "Created Bright Friend, an avatar light for VRChat.",
         "alt": "Bright Friend 3D work showing a small glowing character and a lantern",
-        "credit": "3D work: Hatt"
+        "credit": "3D work: Hatt",
+        "deliverable": "Handheld, lantern and staff-lantern forms, with light adjustment and a petting response in the handheld version."
       },
       "letter": {
-        "title": "「手紙」 / Letter",
-        "description": "A short story set in a laboratory. Read the Japanese text to explore Hatt’s choice of words and narrative construction.",
-        "credit": "Written by Hatt"
+        "title": "Letter: short-story writing",
+        "description": "Wrote Letter, a short story about a scene in a laboratory.",
+        "credit": "Written by Hatt",
+        "deliverable": "A Japanese short-story text published on a fiction platform."
       },
       "buying-mittens": {
-        "title": "手袋を買いに / Buying Mittens",
-        "description": "Hatt reads a story by Niimi Nankichi in this public video. Listen to the voice, pace and pauses of the reading.",
-        "credit": "Original story: Niimi Nankichi / Reading: Hatt"
+        "title": "Buying Mittens: recorded reading",
+        "description": "Read and recorded Niimi Nankichi’s story Buying Mittens.",
+        "credit": "Original story: Niimi Nankichi / Reading: Hatt",
+        "deliverable": "A video of the Japanese reading published on YouTube with credit to the original author."
       }
-    }
+    },
+    "navLabel": "Work",
+    "viewWorks": "Explore our work",
+    "productionLabel": "Production",
+    "deliverableLabel": "Finished work",
+    "consultThisWork": "Discuss a project like this",
+    "faqAnswer": "Our cases cover illustration, 3D avatars and interactive features, fiction and recorded readings. Review the production and finished work, then contact Acecore about the related service from each case."
   }
 }

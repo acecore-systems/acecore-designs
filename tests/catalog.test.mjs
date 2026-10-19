@@ -46,7 +46,7 @@ test('相談案内は9言語で同じ構造・用途と工程の数を持つ', (
   }
 })
 
-test('公開作品は出典・実画像・承認済みサービスへの対応を持つ', () => {
+test('制作実績は出典・実画像・承認済みサービスの相談先を持つ', () => {
   assert.match(portfolioCheckedAt, /^\d{4}-\d{2}-\d{2}$/)
   assert.equal(
     new Set(portfolioWorks.map((work) => work.id)).size,
@@ -68,6 +68,7 @@ test('公開作品は出典・実画像・承認済みサービスへの対応�
     assert.equal(new URL(work.sourceUrl).origin, 'https://hatt.acecore.net')
     assert.ok(work.services.length > 0, work.id)
     assert.equal(new Set(work.services).size, work.services.length, work.id)
+    assert.ok(work.services.includes(work.offering), `${work.id}: 相談先の対応`)
     for (const id of work.services)
       assert.ok(Object.hasOwn(approvedPrices, id), id)
     for (const field of [
@@ -102,7 +103,7 @@ test('公開作品は出典・実画像・承認済みサービスへの対応�
   }
 })
 
-test('公開作品のUI・説明・代替テキストは9言語で整合する', () => {
+test('制作実績の内容・成果物・クレジットは9言語で整合する', () => {
   const baseline = readJson('../src/content/ui/ja.json').portfolio
   const ids = portfolioWorks.map((work) => work.id).sort()
   for (const locale of approvedLocales) {
@@ -111,6 +112,8 @@ test('公開作品のUI・説明・代替テキストは9言語で整合する',
     assert.deepEqual(Object.keys(copy.works).sort(), ids, locale)
     for (const work of portfolioWorks) {
       const text = copy.works[work.id]
+      assert.ok(text.description.trim(), `${locale}: ${work.id} の制作内容`)
+      assert.ok(text.deliverable.trim(), `${locale}: ${work.id} の成果物`)
       assert.ok(text.credit.includes('Hatt'), `${locale}: ${work.id}`)
       assert.ok(copy.kinds[work.kind], `${locale}: ${work.kind}`)
       if (work.image)

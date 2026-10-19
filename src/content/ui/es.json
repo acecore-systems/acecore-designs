@@ -54,17 +54,17 @@
     "questions": [
       "¿El precio indicado es el coste final?",
       "¿Cómo se desarrolla la producción?",
-      "¿Puedo ver obras del creador?",
+      "¿Qué tipos de proyectos han realizado?",
       "¿Puedo consultar sobre formación o apoyo creativo?"
     ],
     "contactTitle": "Consulta tu proyecto con Acecore."
   },
   "portfolio": {
-    "title": "Obras de nuestro creador",
-    "intro": "Descubra obras personales y públicas de Hatt y acceda a los servicios creativos relacionados.",
-    "viewSource": "Fuente en Hatt (japonés)",
+    "title": "Proyectos creativos",
+    "intro": "Presentamos proyectos de ilustración, 3D, escritura y audio. Cada caso muestra la producción, el resultado y los servicios relacionados.",
+    "viewSource": "Ver la fuente",
     "relatedServices": "Servicios creativos relacionados",
-    "viewRelatedWork": "Ver una obra relacionada",
+    "viewRelatedWork": "Ver un caso relacionado",
     "actions": {
       "watch": "Ver la presentación",
       "read": "Leer el relato (japonés)",
@@ -79,39 +79,51 @@
     },
     "works": {
       "desert-sketch": {
-        "title": "Navegar por el desierto",
-        "description": "Una escena monocroma de una vela, dunas y una figura. La imagen permite apreciar su atmósfera e imaginar una historia.",
+        "title": "Ilustración de navegación por el desierto",
+        "description": "Creamos una ilustración monocroma de un vehículo de vela, dunas y una figura.",
         "alt": "Ilustración monocroma de una persona en un vehículo de vela por el desierto",
-        "credit": "Ilustración: Hatt"
+        "credit": "Ilustración: Hatt",
+        "deliverable": "Una ilustración monocroma que reúne el paisaje del desierto y la figura en una escena."
       },
       "centipede": {
-        "title": "Un ciempiés con un fortín",
-        "description": "Una criatura que carga torretas. El dibujo combina formas orgánicas y mecánicas con detalles minuciosos.",
+        "title": "Ilustración de una criatura ciempiés",
+        "description": "Diseñamos e ilustramos una criatura de muchas patas con torretas, combinando formas orgánicas y mecánicas.",
         "alt": "Ilustración monocroma de una criatura de muchas patas con torretas",
-        "credit": "Ilustración: Hatt"
+        "credit": "Ilustración: Hatt",
+        "deliverable": "Una ilustración de personaje con detalles en patas, armadura y torretas."
       },
       "moku": {
-        "title": "モク / Moku",
-        "description": "Un avatar de niño zorro para VRChat. El vídeo muestra expresiones, gafas y cambios de ropa.",
+        "title": "Avatar 3D Moku",
+        "description": "Creamos Moku, un avatar de niño zorro para VRChat.",
         "alt": "Imagen de presentación de Moku, avatar 3D de zorro con gafas",
-        "credit": "Creación 3D: Hatt"
+        "credit": "Creación 3D: Hatt",
+        "deliverable": "Un avatar 3D original con expresiones cambiantes, gafas y controles de ropa."
       },
       "bright-friend": {
-        "title": "あかるい友達 / Amigo luminoso",
-        "description": "Una luz para avatares con formas de mano, farol y bastón con farol. El vídeo muestra el ajuste de luz y los movimientos de respuesta.",
+        "title": "Luz para avatares Amigo luminoso",
+        "description": "Creamos Amigo luminoso, una luz para avatares de VRChat.",
         "alt": "Obra 3D Amigo luminoso con un pequeño personaje brillante y un farol",
-        "credit": "Creación 3D: Hatt"
+        "credit": "Creación 3D: Hatt",
+        "deliverable": "Formas de mano, farol y bastón con farol, con ajuste de luz y reacción a las caricias en la versión de mano."
       },
       "letter": {
-        "title": "「手紙」 / Carta",
-        "description": "Un relato breve situado en un laboratorio. El texto japonés permite explorar las palabras y la construcción narrativa de Hatt.",
-        "credit": "Texto: Hatt"
+        "title": "Carta: escritura de un relato breve",
+        "description": "Escribimos Carta, un relato breve sobre una escena en un laboratorio.",
+        "credit": "Texto: Hatt",
+        "deliverable": "Un texto de ficción breve en japonés, publicado en una plataforma de relatos."
       },
       "buying-mittens": {
-        "title": "手袋を買いに / Comprar manoplas",
-        "description": "En este vídeo público, Hatt lee un cuento de Niimi Nankichi. Permite escuchar la voz, el ritmo y las pausas de la lectura.",
-        "credit": "Obra original: Niimi Nankichi / Lectura: Hatt"
+        "title": "Comprar manoplas: lectura grabada",
+        "description": "Realizamos y grabamos la lectura del cuento Comprar manoplas de Niimi Nankichi.",
+        "credit": "Obra original: Niimi Nankichi / Lectura: Hatt",
+        "deliverable": "Un vídeo de la lectura en japonés publicado en YouTube con crédito al autor original."
       }
-    }
+    },
+    "navLabel": "Proyectos",
+    "viewWorks": "Ver nuestros proyectos",
+    "productionLabel": "Producción",
+    "deliverableLabel": "Resultado",
+    "consultThisWork": "Consultar un proyecto similar",
+    "faqAnswer": "Los casos incluyen ilustraciones, avatares y funciones interactivas 3D, ficción y lecturas grabadas. Revise la producción y el resultado, y consulte a Acecore sobre el servicio relacionado desde cada caso."
   }
 }

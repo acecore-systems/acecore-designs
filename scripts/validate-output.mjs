@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { existsSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { approvedLocales, approvedPrices } from '../tests/approved-services.mjs'
-import { htmlLangMap, ogLocaleMap } from '../src/data/locales.mjs'
+import { htmlLangMap, ogLocaleMap, inquiryUrl } from '../src/data/locales.mjs'
 import { portfolioWorks } from '../src/data/portfolio.mjs'
 
 const portfolioUrls = new Set(
@@ -154,6 +154,13 @@ for (const locale of approvedLocales) {
       ],
     )
     assert.equal(inquiry.hash, '#contact-form')
+    const caseWork = portfolioWorks
+      .filter((work) => work.services.includes(service.id))
+      .at(-1)
+    const caseLink = tags(card[2], 'a').find(
+      (link) => link['data-service-work'] === service.id,
+    )
+    assert.equal(caseLink?.href, caseWork ? `#work-${caseWork.id}` : undefined)
   }
   const workCopy = JSON.parse(
     readFileSync(
@@ -161,20 +168,61 @@ for (const locale of approvedLocales) {
       'utf8',
     ),
   ).portfolio
+  assert.equal(
+    tags(html, 'section').filter((section) => section.id === 'works').length,
+    1,
+  )
+  assert.ok(
+    tags(html, 'span').some((span) => span.id === 'creator'),
+    `${locale}: 旧アンカー互換`,
+  )
+  for (const shell of ['header', 'footer']) {
+    const content = html.match(
+      new RegExp(`<${shell}\\b[^>]*>(.*?)<\\/${shell}>`, 's'),
+    )[1]
+    assert.ok(
+      tags(content, 'a').some((link) => link.href === `${path}#works`),
+      `${locale}: ${shell} 実績導線`,
+    )
+  }
+  assert.ok(
+    [...html.matchAll(/<details\b[^>]*>(.*?)<\/details>/gs)].some(
+      (details) =>
+        decode(details[1]).includes(workCopy.faqAnswer) &&
+        tags(details[1], 'a').some((link) => link.href === '#works'),
+    ),
+    `${locale}: FAQから制作実績へ`,
+  )
   const workCards = articles.filter(
     (card) => attributes(card[1])['data-portfolio-work'],
   )
-  assert.equal(workCards.length, portfolioWorks.length, `${locale}: 公開作品数`)
+  assert.equal(workCards.length, portfolioWorks.length, `${locale}: 制作実績数`)
   for (const work of portfolioWorks) {
     const card = workCards.find(
       (card) => attributes(card[1])['data-portfolio-work'] === work.id,
     )
     assert.equal(attributes(card[1]).id, `work-${work.id}`)
     const text = workCopy.works[work.id]
-    for (const value of [text.title, text.description, text.credit]) {
+    for (const value of [
+      text.title,
+      text.description,
+      text.deliverable,
+      text.credit,
+    ]) {
       assert.ok(decode(card[2]).includes(value), `${locale}: ${work.id} の紹介`)
     }
     const workLinks = tags(card[2], 'a')
+    assert.equal(
+      workLinks.find((link) => link['data-work-inquiry'] === work.id)?.href,
+      inquiryUrl(locale, work.offering),
+      `${locale}: ${work.id} の法人相談先`,
+    )
+    for (const label of [workCopy.productionLabel, workCopy.deliverableLabel]) {
+      assert.ok(
+        decode(card[2]).includes(label),
+        `${locale}: ${work.id} の項目見出し`,
+      )
+    }
     assert.ok(workLinks.some((link) => link.href === work.sourceUrl))
     if (work.workUrl)
       assert.ok(workLinks.some((link) => link.href === work.workUrl))
@@ -296,5 +344,5 @@ assert.ok(read('robots.txt').includes(`Sitemap: ${origin}/sitemap-index.xml`))
 assert.ok(read('_headers').includes('Access-Control-Allow-Origin: *'))
 assert.ok(existsSync(new URL('uploads/og-default.png', dist)))
 console.log(
-  `出力検証OK: 13料金 × 9言語、公開作品${portfolioWorks.length}件、公開JSON、問い合わせ、内部リンク、SEO、sitemap、404 (${fileURLToPath(dist)})`,
+  `出力検証OK: 13料金 × 9言語、制作実績${portfolioWorks.length}件と法人相談、公開JSON、問い合わせ、内部リンク、SEO、sitemap、404 (${fileURLToPath(dist)})`,
 )

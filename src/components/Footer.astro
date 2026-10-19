@@ -1,11 +1,10 @@
 ---
-import { catalogs, ui, type Locale } from '../data/catalog'
+import { ui, type Locale } from '../data/catalog'
 import { corporateUrl, inquiryUrl, localePath } from '../data/locales.mjs'
 interface Props {
   locale: Locale
 }
 const { locale } = Astro.props
-const copy = catalogs[locale]
 const labels = ui[locale]
 ---
 
@@ -35,8 +34,8 @@ const labels = ui[locale]
           href="https://schools.acecore.net/learning/#creative-services"
           >Acecore Schools</a
         >
-        <a class="footer-link" href="https://hatt.acecore.net/"
-          >{copy.portfolioLabel}</a
+        <a class="footer-link" href={`${localePath(locale)}#works`}
+          >{labels.portfolio.navLabel}</a
         >
         <a class="footer-link" href={corporateUrl(locale, 'privacy/')}
           >{labels.privacy}</a

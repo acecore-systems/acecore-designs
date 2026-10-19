@@ -1,6 +1,7 @@
 ---
 import { catalogs, ui, type Locale } from '../data/catalog'
 import { portfolioWorks } from '../data/portfolio.mjs'
+import { inquiryUrl } from '../data/locales.mjs'
 import Arrow from './Arrow.astro'
 
 interface Props {
@@ -16,28 +17,22 @@ const services = new Map(
 )
 ---
 
-<section
-  id="creator"
-  class="ac-section bg-white"
-  aria-labelledby="portfolio-heading"
->
+<span id="creator" class="block" aria-hidden="true"></span>
+<section id="works" class="ac-section bg-white" aria-labelledby="works-heading">
   <div class="ac-container">
     <div class="portfolio-heading">
       <div class="max-w-3xl">
-        <p class="portfolio-eyebrow">{copy.creatorTitle} · Hatt</p>
-        <h2 id="portfolio-heading" class="ac-heading text-2xl sm:text-4xl">
+        <p class="portfolio-eyebrow">Acecore Designs</p>
+        <h2 id="works-heading" class="ac-heading text-2xl sm:text-4xl">
           {labels.title}
         </h2>
         <p class="ac-muted mt-4">{labels.intro}</p>
-        <p class="ac-muted mt-3 text-sm">{copy.creatorBody}</p>
       </div>
-      <a href="https://hatt.acecore.net/" class="text-link"
-        >{copy.portfolioLabel}<Arrow /></a
-      >
+      <a href="#catalog" class="text-link">{copy.catalogHeading}<Arrow /></a>
     </div>
     <div class="portfolio-grid">
       {
-        portfolioWorks.map((work) => {
+        portfolioWorks.map((work, index) => {
           const text = labels.works[work.id]
           return (
             <article
@@ -90,12 +85,46 @@ const services = new Map(
                 </div>
               )}
               <div class="portfolio-card-body">
-                <p class="portfolio-kind">{labels.kinds[work.kind]}</p>
+                <p class="portfolio-kind">
+                  <span aria-hidden="true">0{index + 1} / </span>
+                  {labels.kinds[work.kind]}
+                </p>
                 <h3 class="text-lg font-800 leading-snug text-brand-950">
                   {text.title}
                 </h3>
-                <p class="ac-muted mt-3 text-sm">{text.description}</p>
+                <dl class="portfolio-case-details">
+                  <div>
+                    <dt>{labels.productionLabel}</dt>
+                    <dd class="ac-muted">{text.description}</dd>
+                  </div>
+                  <div class="portfolio-deliverable">
+                    <dt>{labels.deliverableLabel}</dt>
+                    <dd class="ac-muted">{text.deliverable}</dd>
+                  </div>
+                </dl>
                 <p class="portfolio-credit">{text.credit}</p>
+                <div class="portfolio-services">
+                  <p>{labels.relatedServices}</p>
+                  <ul>
+                    {work.services.map((id) => (
+                      <li>
+                        <a href={`#${id}`} data-work-service={id}>
+                          {services.get(id)!.title}
+                          <Arrow />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <a
+                  href={inquiryUrl(locale, work.offering)}
+                  class="ac-btn-primary mt-4 gap-3"
+                  data-work-inquiry={work.id}
+                  aria-label={`${text.title} — ${labels.consultThisWork}`}
+                >
+                  {labels.consultThisWork}
+                  <Arrow />
+                </a>
                 <div class="portfolio-source-links">
                   <a
                     href={work.sourceUrl}
@@ -113,19 +142,6 @@ const services = new Map(
                       <Arrow />
                     </a>
                   )}
-                </div>
-                <div class="portfolio-services">
-                  <p>{labels.relatedServices}</p>
-                  <ul>
-                    {work.services.map((id) => (
-                      <li>
-                        <a href={`#${id}`} data-work-service={id}>
-                          {services.get(id)!.title}
-                          <Arrow />
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </article>

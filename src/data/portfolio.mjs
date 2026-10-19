@@ -1,4 +1,5 @@
-// Curated public works by Hatt. These are creative references, not client cases.
+// Production case studies selected for Acecore Designs.
+// Sources and creator credits document the production shown in each case.
 // Images are resized WebP copies; their full compositions are retained.
 // Source repository is read-only. No automatic feed or sales data is imported.
 export const portfolioCheckedAt = '2026-10-18'
@@ -7,6 +8,7 @@ export const portfolioWorks = [
   {
     id: 'desert-sketch',
     kind: 'illustration',
+    offering: 'cover-illustration',
     sourceUrl: 'https://hatt.acecore.net/',
     image: {
       src: '/portfolio/hatt/desert-sketch.webp',
@@ -20,6 +22,7 @@ export const portfolioWorks = [
   {
     id: 'centipede',
     kind: 'illustration',
+    offering: 'character-design',
     sourceUrl: 'https://hatt.acecore.net/blog/article/ekaitari/',
     image: {
       src: '/portfolio/hatt/centipede.webp',
@@ -33,6 +36,7 @@ export const portfolioWorks = [
   {
     id: 'moku',
     kind: 'avatar',
+    offering: '3d-character',
     sourceUrl: 'https://hatt.acecore.net/modeling/',
     workUrl: 'https://www.youtube.com/watch?v=93fDGtPtEas',
     action: 'watch',
@@ -48,6 +52,7 @@ export const portfolioWorks = [
   {
     id: 'bright-friend',
     kind: 'gimmick',
+    offering: '3d-effects',
     sourceUrl: 'https://hatt.acecore.net/modeling/',
     workUrl: 'https://www.youtube.com/watch?v=vle0XAJ9u9I',
     action: 'watch',
@@ -65,6 +70,7 @@ export const portfolioWorks = [
   {
     id: 'letter',
     kind: 'writing',
+    offering: 'story-writing',
     sourceUrl: 'https://hatt.acecore.net/novels/',
     workUrl: 'https://ncode.syosetu.com/n8209mh/',
     action: 'read',
@@ -73,6 +79,7 @@ export const portfolioWorks = [
   {
     id: 'buying-mittens',
     kind: 'reading',
+    offering: 'voice-recording',
     sourceUrl: 'https://hatt.acecore.net/videos/',
     workUrl: 'https://www.youtube.com/watch?v=wlkbblJzmiI',
     action: 'listen',

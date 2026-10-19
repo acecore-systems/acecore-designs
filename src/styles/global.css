@@ -392,12 +392,28 @@ article[data-service-id] h4 {
   font-size: 0.75rem;
   line-height: 1.8;
 }
+.portfolio-case-details {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+.portfolio-case-details dt {
+  margin-bottom: 0.35rem;
+  color: var(--color-brand-950);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.portfolio-deliverable {
+  padding: 0.75rem;
+  border-left: 3px solid var(--color-brand-600);
+  background: var(--color-brand-50);
+}
 .portfolio-source-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0 1rem;
-  margin-top: auto;
-  padding-top: 1rem;
+  margin-top: 0.75rem;
 }
 .portfolio-source-links a,
 .portfolio-services a,
@@ -418,7 +434,7 @@ article[data-service-id] h4 {
   flex-shrink: 0;
 }
 .portfolio-services {
-  margin-top: 1rem;
+  margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid #e2e8f0;
 }
