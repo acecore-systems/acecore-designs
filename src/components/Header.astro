@@ -7,7 +7,7 @@ import {
   locales,
   inquiryUrl,
 } from '../data/locales.mjs'
-import { routePath } from '../data/routes.mjs'
+import { groupIds, routePath } from '../data/routes.mjs'
 
 interface Props {
   locale: Locale
@@ -25,7 +25,9 @@ const links = [
 ]
 ---
 
-<header class="sticky top-0 z-40 border-b border-slate-200 bg-white">
+<header
+  class="group-header sticky top-0 z-40 border-b border-slate-200 bg-white"
+>
   <div class="ac-container flex min-h-20 items-center justify-between gap-3">
     <a
       href={home}
@@ -41,7 +43,7 @@ const links = [
       >
     </a>
     <nav
-      class="hidden flex-1 flex-wrap justify-end gap-x-5 gap-y-1 xl:flex"
+      class="group-main-nav hidden flex-1 flex-wrap justify-end gap-x-5 gap-y-1 xl:flex"
       aria-label={labels.mainNav}
     >
       {
@@ -49,7 +51,12 @@ const links = [
           <a
             href={link.href}
             aria-current={
-              link.href === routePath(locale, route) ? 'page' : undefined
+              link.href === routePath(locale, route)
+                ? 'page'
+                : groupIds.includes(route) &&
+                    link.href === routePath(locale, 'services')
+                  ? 'location'
+                  : undefined
             }
             class="inline-flex min-h-11 items-center text-sm font-700 leading-snug text-slate-600 no-underline hover:text-brand-600"
           >
@@ -146,7 +153,12 @@ const links = [
           <a
             href={link.href}
             aria-current={
-              link.href === routePath(locale, route) ? 'page' : undefined
+              link.href === routePath(locale, route)
+                ? 'page'
+                : groupIds.includes(route) &&
+                    link.href === routePath(locale, 'services')
+                  ? 'location'
+                  : undefined
             }
             class="min-h-11 rounded-md px-3 py-3 text-sm font-700 text-slate-700 no-underline hover:bg-brand-50 hover:text-brand-600"
           >
@@ -194,7 +206,7 @@ const links = [
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && !navigation.hidden) close(true)
     })
-    matchMedia('(min-width: 1280px)').addEventListener('change', () => close())
+    matchMedia('(min-width: 1400px)').addEventListener('change', () => close())
   }
   document
     .querySelectorAll<HTMLDetailsElement>('[data-language-menu]')
@@ -203,7 +215,9 @@ const links = [
         if (!menu.contains(event.target as Node)) menu.open = false
       })
       menu.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
+        if (event.key === 'Escape' && menu.open) {
+          event.preventDefault()
+          event.stopPropagation()
           menu.open = false
           menu.querySelector('summary')?.focus()
         }

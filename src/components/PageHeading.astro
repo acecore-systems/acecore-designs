@@ -19,6 +19,12 @@ const { locale, route, title, description } = Astro.props
     >
       {title}
     </h1>
-    <p class="mt-5 max-w-3xl leading-relaxed text-brand-100">{description}</p>
+    {
+      route !== 'process' && (
+        <p class="mt-5 max-w-3xl leading-relaxed text-brand-100">
+          {description}
+        </p>
+      )
+    }
   </div>
 </section>
