@@ -4,7 +4,7 @@ import sharp from 'sharp'
 
 // 既存ブランドロゴと文字だけで専用サイトの共有画像を生成する。
 const logo = readFileSync(
-  new URL('../public/favicon.svg', import.meta.url),
+  new URL('../public/logo.svg', import.meta.url),
 ).toString('base64')
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs><radialGradient id="background" cx="0" cy="0" r="1" gradientTransform="matrix(1.375 0 0 2 -0.1 0)"><stop stop-color="#f4d275"/><stop offset="22.4%" stop-color="#efa28d"/><stop offset="44%" stop-color="#d780ba"/><stop offset="56%" stop-color="#a373ce"/><stop offset="80%" stop-color="#225cd7"/><stop offset="100%" stop-color="#0656d9"/></radialGradient><radialGradient id="name" cx="0" cy="0" r="1" gradientTransform="matrix(1.1 0 0 1.6 -0.1 0)"><stop stop-color="#986000"/><stop offset="35%" stop-color="#b33e71"/><stop offset="65%" stop-color="#8146ae"/><stop offset="100%" stop-color="#0656d9"/></radialGradient></defs>
