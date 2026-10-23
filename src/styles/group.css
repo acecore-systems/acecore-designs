@@ -1,6 +1,6 @@
 /* Acecore group: shared white/ink typography with Designs' own accent. */
 :root {
-  --group-ink: #071f3e;
+  --group-ink: #20252b;
   --group-accent: #7140c4;
   --group-hover: #58309c;
   --group-wash: #f5f0fc;
@@ -308,8 +308,8 @@ main h3.ac-heading {
   color: var(--group-accent);
 }
 .group-footer {
-  background: var(--group-ink);
-  color: #d2ddea;
+  background: var(--group-hover);
+  color: white;
   border: 0;
   padding-block: 64px 32px;
 }

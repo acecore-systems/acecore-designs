@@ -34,3 +34,15 @@ node <証拠フォルダ>/group-designs-qa.mjs
 UIはJA全9家族の1440px/390px、英独露のHome/文章音声/Works/料金390px、計30画面で確認する。作品画像は各位置までスクロールしdecodeを待ち、naturalWidthで読み込みを確認する。短い390×667のmenu/言語のEscapeとfocus、全9言語への到達、desktop復帰、現在地も確認する。単なるネットワーク未描画を画像欠落と断定しない。
 
 Browser/IABは利用できず、Playwright管理Chromiumの専用contextで確認する。実機・Safari/Firefox、外部の本物の問い合わせ送信は未実施。元の画像/本文/サービス条件を変えず、外部送信は追加しない。CI/Pages Previewと今回SHAはDraft PRへ記録する。専用ブラウザとpreviewを終了し、Draftのworktree/branchを保持する。
+
+## 2026年10月23日追補: テーマ色とロゴ
+
+最新のユーザー指示に合わせ、見出し・中立本文をcharcoal `#20252b`、主張する色面・CTA・ナビ・検索/AIを各事業のテーマ濃淡へ揃えた。以前の共通navy大面積方針はこの追補で置き換える。Systems/コーポレートはblue `#0656d9` と濃色 `#0446b5`、Schoolsはgreen `#087d62` / `#065f4b`、Designsはpurple `#7140c4` / `#58309c`。コーポレート内の3事業カラーは保持した。
+
+ロゴは既存SVGの中央pathのfill1属性だけを変更し、34ノードの外形・clipPath・座標・その他fillは基点と一致。Schoolsは同形のローカルfaviconを追加し、header/About/footer/favicon（404を含む）へ使う。暗いfooterでは全白filterを廃止し、小さい白い下地で外形とテーマ色の丸を両立する。Designsのコード生成OGは、同じ文字・位置・外形のまま背景gradient/補助色と中央ロゴをpurpleへ同期した。許可差分はテーマSVG中央fill、SchoolsローカルSVG追加、DesignsのOG装飾色のみ。写真・作品・Cast原画像/登録・説明・価格は変更していない。
+
+配色QAは全52ページ種別の1440/390px、計104画面で実施。h1のcomputedは全てcharcoal、footerのcomputedは各濃色に一致。横溢れ・壊れた画像・pageerror0。大型色面のDOM色監査で他テーマの候補は0。logo、menu/language、検索結果、AI応答のopen状態をモックで確認。本文/リンク/title/id/画像src・ALTの803HTML比較は、許可したSchools Aboutのロゴsrcだけが意図差分、その他0。学校footerのelement撮影に映ったsticky header/skip linkは、通常viewport撮影で再確認し、非focus skip linkの矩形bottom<=0を確認した（コード変更なし）。
+
+白とaccentはblue6.29/green5.10/purple6.50:1、白と濃色footerは全て4.5:1以上。全サイトのWCAG適合認定を意味しない。警告/エラー/成功など意味のある状態色は保持し、図の文章・構造・画像は保ったままCSS装飾色を同期した。
+
+検証は `npm run build`、各repoで必要なcontent/企業/SEO検証、変更対象Prettier check、`git diff --check`。実機・実API回答・本番フォーム送信は未実施。Browser inventoryにIABが無く、既存Edgeの無関係タブのみだったため管理Chromiumを使用。今回の画像はvisualizations `group-theme/`、色値は `contrast.json`、比較は `*-theme-html-comparison.json`。既存機能QAを再利用し、APIはモック、Pagefindは生成済みindexを使用した。
