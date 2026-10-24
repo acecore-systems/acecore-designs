@@ -8,7 +8,11 @@ Acecore Designs の Astro 静的サイトです。
 - 問い合わせ先は Acecore 公式サイトの locale 別 contact とし、`category=service&service=acecore-design&offering=<id>#contact-form` を保持する。
 - `catalog.json` はこの正本をそのまま公開するAPI。`schemaVersion: 1` / `sourceUrl` / `locales` の契約を維持する。
 - コーポレートサイトの CMS に同じ制作カタログを重複して持たせない。新しいCMS認証を作らない。
-- UI は既存の紺・青・白、ブランドロゴ、カードのデザインを継承する。未提供の制作実績や画像を追加しない。
+- UIのロゴ・配色は下記ブランドカラーガイドに従い、カードやレイアウトは保全する。未提供の制作実績や画像を追加しない。
 - `npm run format:check`、`npm run validate:content`、`npm run build`、`git diff --check` を実行し、UI変更は可能な範囲でdesktop/mobileを確認する。
 - GitHub の PR 文章は日本語とし、検証と未実施事項を記載して draft PR まで進める。明示がなければ merge しない。
 - Cloudflare Pages は GitHub repository 連携を使い、Direct Upload を本番完了にしない。
+
+## ロゴ・カラー先行導入
+
+UI・ロゴの変更前に [ブランドカラーガイド](docs/brand-color-guidelines.md) を読む。全面刷新は後続Draftであり、このbranchでは既存構成を保持する。

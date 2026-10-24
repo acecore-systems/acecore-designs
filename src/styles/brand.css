@@ -1,0 +1,58 @@
+/* Logo and color rollout only; layout and typography remain in the existing styles. */
+:root {
+  --brand-blue: #0656d9;
+  --brand-system: #6334a4;
+  --brand-school: #176b45;
+  --brand-design: #8146ae;
+}
+.brand-word {
+  white-space: nowrap;
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
+}
+.brand-word-corporate > .brand-initial {
+  color: var(--brand-blue);
+  -webkit-text-fill-color: var(--brand-blue);
+}
+.brand-word-systems > .brand-initial {
+  color: var(--brand-system);
+  -webkit-text-fill-color: var(--brand-system);
+}
+.brand-word-schools > .brand-initial {
+  color: var(--brand-school);
+  -webkit-text-fill-color: var(--brand-school);
+}
+.brand-word-designs > .brand-initial {
+  display: inline-block;
+  background: radial-gradient(
+    ellipse 110% 160% at -10% 0%,
+    #986000 0%,
+    #b33e71 35%,
+    #8146ae 65%,
+    #0656d9 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+:root {
+  --brand-control-wash: linear-gradient(
+    115deg,
+    #fff8e8,
+    #fff0f6,
+    #f4effd,
+    #edf4ff
+  );
+}
+.ac-btn-primary,
+.ac-btn-secondary {
+  background: var(--brand-control-wash);
+  color: #8146ae;
+  box-shadow: inset 0 0 0 1px #cfbfdf;
+}
+.ac-btn-primary:hover,
+.ac-btn-secondary:hover {
+  color: #633491;
+  background: linear-gradient(115deg, #fff3dc, #ffe9f2, #ece4fa, #e6efff);
+}
