@@ -4,10 +4,12 @@
 
 質問・直近の会話を共通AIへ送る旨、個人・機密情報を入力しない旨と誤回答の可能性を送信前に表示する。会話はこのページのメモリ内で保持し、永続化しない。最大800文字、履歴8件/2400文字、25秒待機上限。回答のリンクは許可した公開originだけを表示する。
 
-同originの`/api/ai-chat`は既存`ACECORE_CHAT` Service Bindingへ接続する。ブラウザにAPIキーは渡さず、新規キーを作らない。productionは`acecore-chat-worker`、Previewは`acecore-chat-worker-preview`。bindingなしや通信失敗は利用不可となり、直接の公開APIへ切り替えない。
+同originの`/api/ai-chat`は元bodyの12KiB上限・型・9locale・800文字・履歴上限を確認した後、固定`/ai-context/{locale}.json`を自身の`ASSETS`から読み、既存`ACECORE_CHAT` Service Bindingへ内部envelopeとして渡す。ブラウザ由来context・scope・URL・内部headerは破棄する。ブラウザにAPIキーは渡さず、新規キーを作らない。productionは`acecore-chat-worker`、Previewは`acecore-chat-worker-preview`。binding/ASSETSなしや通信失敗は利用不可となり、直接の公開APIへ切り替えない。
 
 回答の根拠は正本catalog・UI・portfolioからbuild生成する`/ai-context/{locale}.json`。独立の手入力情報管理を増やさない。全13サービスの料金・条件・全6実績・選択済みハルシユと法人相談URLを保持する。既存`catalog.json`契約は不変。
 
 中央WorkerのDesigns対応PRが先行する。contextの全ID/9言語検証を中央側で行うため、サービス・作品IDを追加するときは許可一覧も同期し、実Previewの9言語context照合を公開前に行う。新しい納期・修正回数・権利保証等は作らない。
+
+公開PagesをWorkerから直接fetchする案は実環境で522となった。公開fetch拡張フラグは将来本番にも及ぶネットワーク境界の緩和として自動承認レビューに拒否され、追加しなかった。代わりに承認されたASSETS→private Service Bindingを使用し、外部fetchや秘密値の追加を避けた。
 
 ローカルUIはAPI fixtureで検証し、実送信・本番への反映・問い合わせ配送とは区別する。公開Previewでの一般質問による回答確認を行い、どちらのPRもこの作業ではDraftのままとする。

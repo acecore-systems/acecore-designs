@@ -42,12 +42,24 @@ test('9 locales derive all 13 prices, 6 works and selected hero without a second
 const request = (origin = 'https://designs.acecore.net', method = 'POST') =>
   new Request('https://designs.acecore.net/api/ai-chat', {
     method,
-    headers: { Origin: origin },
-    ...(method === 'POST' ? { body: '{}' } : {}),
+    headers: { Origin: origin, 'Content-Type': 'application/json' },
+    ...(method === 'POST'
+      ? { body: JSON.stringify({ question: '公開サービスは？', locale: 'ja' }) }
+      : {}),
   })
 test('bridge refuses cross-origin and missing binding, never falls back to a public endpoint', async () => {
   let calls = 0
   const env = {
+    ASSETS: {
+      fetch: async () =>
+        Response.json(
+          buildAiContext(
+            'ja',
+            json('../src/content/catalog/ja.json'),
+            json('../src/content/ui/ja.json'),
+          ),
+        ),
+    },
     ACECORE_CHAT: {
       fetch: async () => {
         calls++
@@ -69,4 +81,97 @@ test('bridge refuses cross-origin and missing binding, never falls back to a pub
   assert.equal(response.status, 200)
   assert.equal(response.headers.get('cache-control'), 'no-store')
   assert.equal(calls, 1)
+})
+
+test('browser context, scope, internal headers and URL cannot replace deployment ASSETS', async () => {
+  let forwarded, assetPath
+  const canonical = buildAiContext(
+    'ja',
+    json('../src/content/catalog/ja.json'),
+    json('../src/content/ui/ja.json'),
+  )
+  const env = {
+    ASSETS: {
+      fetch: async (r) => {
+        assetPath = new URL(r.url).pathname
+        return Response.json(canonical)
+      },
+    },
+    ACECORE_CHAT: {
+      fetch: async (r) => {
+        forwarded = r
+        return Response.json({ ok: true, answer: 'fixture' })
+      },
+    },
+  }
+  const req = new Request('https://designs.acecore.net/api/ai-chat', {
+    method: 'POST',
+    headers: {
+      Origin: 'https://designs.acecore.net',
+      'Content-Type': 'application/json',
+      'X-Internal-Context': 'fake',
+    },
+    body: JSON.stringify({
+      question: '料金は？',
+      locale: 'ja',
+      contextUrl: 'https://evil.example',
+      scope: 'systems',
+      designsContext: { services: [{ price: 1 }] },
+    }),
+  })
+  assert.equal((await onRequest({ request: req, env })).status, 200)
+  assert.equal(assetPath, '/ai-context/ja.json')
+  assert.equal(forwarded.headers.get('X-Internal-Context'), null)
+  const body = await forwarded.json()
+  assert.deepEqual(body.designsContext, canonical)
+  assert.equal(body.scope, undefined)
+  assert.equal(body.contextUrl, undefined)
+})
+test('invalid locale/path, oversized browser input and invalid ASSETS fail before worker', async () => {
+  let calls = 0
+  const env = {
+    ASSETS: {
+      fetch: async () => {
+        calls++
+        return Response.json({})
+      },
+    },
+    ACECORE_CHAT: {
+      fetch: async () => {
+        throw Error('must not forward')
+      },
+    },
+  }
+  for (const locale of ['../../private', 'xx', 'ja.json?path=x']) {
+    const req = new Request('https://designs.acecore.net/api/ai-chat', {
+      method: 'POST',
+      headers: {
+        Origin: 'https://designs.acecore.net',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ question: '公開情報', locale }),
+    })
+    assert.equal((await onRequest({ request: req, env })).status, 400)
+  }
+  assert.equal(calls, 0)
+  const large = new Request('https://designs.acecore.net/api/ai-chat', {
+    method: 'POST',
+    headers: {
+      Origin: 'https://designs.acecore.net',
+      'Content-Type': 'application/json',
+    },
+    body: 'x'.repeat(12289),
+  })
+  assert.equal((await onRequest({ request: large, env })).status, 413)
+  assert.equal(calls, 0)
+  assert.equal((await onRequest({ request: request(), env })).status, 503)
+  const unknown = new Request('https://evil.example/api/ai-chat', {
+    method: 'POST',
+    headers: {
+      Origin: 'https://evil.example',
+      'Content-Type': 'application/json',
+    },
+    body: '{}',
+  })
+  assert.equal((await onRequest({ request: unknown, env })).status, 403)
 })
