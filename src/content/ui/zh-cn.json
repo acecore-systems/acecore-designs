@@ -159,5 +159,32 @@
       "alt": "Hatt制作的3D模型「Harushiyu」介绍图",
       "credit": "3D模型制作：Hatt"
     }
+  },
+  "aiChat": {
+    "eyebrow": "Designs AI 导览",
+    "title": "寻找创作服务",
+    "lead": "了解 Designs 公开的服务、起价和制作案例。",
+    "openLabel": "Designs AI 导览",
+    "closeLabel": "关闭 Designs AI 导览",
+    "greeting": "您好，请告诉我您想制作什么，例如插画、3D、文字或音频。",
+    "quickPrompts": [
+      "哪项创作服务适合我？",
+      "想了解起价和报价",
+      "查看制作案例"
+    ],
+    "inputLabel": "问题",
+    "placeholder": "例如：想咨询角色插画",
+    "characterLimit": "最多 800 个字符",
+    "send": "发送",
+    "sending": "正在准备回答…",
+    "emptyError": "请输入问题。",
+    "tooLongError": "问题请控制在 800 个字符以内。",
+    "timeoutError": "回答所需时间较长。请稍候后重试。",
+    "genericError": "目前无法使用 AI 指南。请通过联系表单咨询。",
+    "disclosure": "您的问题和最近的对话会发送给 Acecore 共用 AI。请勿输入个人信息或机密信息。回答可能不准确。",
+    "contact": "联系我们",
+    "privacy": "个人信息处理",
+    "assistantLabel": "Designs AI 导览",
+    "visitorLabel": "您"
   }
 }

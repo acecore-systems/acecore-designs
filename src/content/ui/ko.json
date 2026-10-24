@@ -163,5 +163,32 @@
       "alt": "Hatt가 제작한 3D 모델 ‘Harushiyu’ 소개 이미지",
       "credit": "3D 모델 제작: Hatt"
     }
+  },
+  "aiChat": {
+    "eyebrow": "Designs AI 안내",
+    "title": "창작 서비스를 찾아보세요",
+    "lead": "Designs의 공개 서비스, 시작 가격과 제작 사례를 안내합니다.",
+    "openLabel": "Designs AI 안내",
+    "closeLabel": "Designs AI 안내 닫기",
+    "greeting": "안녕하세요. 일러스트, 3D, 글·음성 등 만들고 싶은 것을 알려 주세요.",
+    "quickPrompts": [
+      "어떤 제작 서비스가 맞나요?",
+      "시작 가격과 견적을 알고 싶어요",
+      "제작 사례를 보고 싶어요"
+    ],
+    "inputLabel": "질문",
+    "placeholder": "예: 캐릭터 일러스트를 상담하고 싶어요",
+    "characterLimit": "800자 이내",
+    "send": "보내기",
+    "sending": "답변 준비 중…",
+    "emptyError": "질문을 입력해 주세요.",
+    "tooLongError": "질문은 800자 이내로 입력해 주세요.",
+    "timeoutError": "답변에 예상보다 시간이 걸리고 있습니다. 잠시 후 다시 시도해 주세요.",
+    "genericError": "현재 AI 안내를 이용할 수 없습니다. 문의 양식을 이용해 주세요.",
+    "disclosure": "질문과 최근 대화가 Acecore 공용 AI로 전송됩니다. 개인정보나 기밀정보를 입력하지 마세요. 답변이 정확하지 않을 수 있습니다.",
+    "contact": "문의",
+    "privacy": "개인정보 처리",
+    "assistantLabel": "Designs AI 안내",
+    "visitorLabel": "사용자"
   }
 }

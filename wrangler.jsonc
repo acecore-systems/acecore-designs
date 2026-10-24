@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "acecore-designs",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-08-02",
+  "services": [{ "binding": "ACECORE_CHAT", "service": "acecore-chat-worker" }],
+  "env": {
+    "preview": {
+      "services": [
+        { "binding": "ACECORE_CHAT", "service": "acecore-chat-worker-preview" },
+      ],
+    },
+  },
+}

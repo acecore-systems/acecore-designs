@@ -168,5 +168,32 @@
       "alt": "Image de présentation du modèle 3D Harushiyu créé par Hatt",
       "credit": "Modèle 3D : Hatt"
     }
+  },
+  "aiChat": {
+    "eyebrow": "Guide IA Designs",
+    "title": "Trouvez un accompagnement créatif",
+    "lead": "Découvrez les services, tarifs de départ et réalisations publiés de Designs.",
+    "openLabel": "Guide IA Designs",
+    "closeLabel": "Fermer le guide IA Designs",
+    "greeting": "Bonjour. Que souhaitez-vous créer : illustration, 3D, texte ou audio ?",
+    "quickPrompts": [
+      "Quel service créatif convient ?",
+      "Comment fonctionnent les tarifs de départ et les devis ?",
+      "Voir les réalisations"
+    ],
+    "inputLabel": "Question",
+    "placeholder": "Exemple : Je souhaite une illustration de personnage",
+    "characterLimit": "800 caractères maximum",
+    "send": "Envoyer",
+    "sending": "Préparation de la réponse…",
+    "emptyError": "Saisissez une question.",
+    "tooLongError": "La question doit contenir au maximum 800 caractères.",
+    "timeoutError": "La réponse prend plus de temps que prévu. Patientez un instant puis réessayez.",
+    "genericError": "Le guide IA est actuellement indisponible. Utilisez le formulaire de contact.",
+    "disclosure": "Votre question et la conversation récente sont envoyées à l’IA partagée d’Acecore. Ne saisissez aucune information personnelle ou confidentielle. Les réponses peuvent être inexactes.",
+    "contact": "Contact",
+    "privacy": "Confidentialité",
+    "assistantLabel": "Guide IA Designs",
+    "visitorLabel": "Vous"
   }
 }
