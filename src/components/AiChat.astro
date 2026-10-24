@@ -1,0 +1,158 @@
+---
+import { ui, type Locale } from '../data/catalog'
+import { corporateUrl, inquiryUrl } from '../data/locales.mjs'
+
+import { AI_GUIDE_API_URL } from '../scripts/ai-guide-chat'
+
+import ChatIcon from './ChatIcon.astro'
+import '../styles/shared-chat.css'
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const text = ui[locale].aiChat
+const contactUrl = inquiryUrl(locale)
+const privacyUrl = corporateUrl(locale, 'privacy/')
+---
+
+<aside
+  id="designs-ai-guide-chat"
+  class="ai-guide ac-chat"
+  data-ai-guide
+  data-api-url={AI_GUIDE_API_URL}
+  data-locale={locale}
+  data-assistant-label={text.assistantLabel}
+  data-visitor-label={text.visitorLabel}
+  data-empty-error={text.emptyError}
+  data-too-long-error={text.tooLongError}
+  data-timeout-error={text.timeoutError}
+  data-generic-error={text.genericError}
+  data-sending={text.sending}
+>
+  <section
+    id="designs-ai-guide-panel"
+    class="ai-guide__panel ac-chat__panel"
+    role="dialog"
+    aria-modal="false"
+    aria-labelledby="designs-ai-guide-title"
+    aria-describedby="designs-ai-guide-lead designs-ai-guide-disclosure"
+    tabindex="-1"
+    hidden
+    data-ai-guide-panel
+  >
+    <header class="ai-guide__header ac-chat__header">
+      <span class="ac-chat__mark">
+        <ChatIcon name="bot" />
+      </span>
+      <div class="ac-chat__heading">
+        <p class="ai-guide__eyebrow">{text.eyebrow}</p>
+        <h2 id="designs-ai-guide-title">{text.title}</h2>
+        <p id="designs-ai-guide-lead" class="ai-guide__lead">
+          {text.lead}
+        </p>
+      </div>
+      <button
+        class="ai-guide__close ac-chat__close"
+        type="button"
+        aria-label={text.closeLabel}
+        data-ai-guide-close
+      >
+        <ChatIcon name="close" />
+      </button>
+    </header>
+
+    <div
+      class="ai-guide__messages ac-chat__messages"
+      role="log"
+      aria-live="polite"
+      aria-relevant="additions text"
+      data-ai-guide-messages
+    >
+      <article
+        class="ai-guide__message ai-guide__message--assistant ac-chat__message"
+        data-role="assistant"
+      >
+        <p class="ai-guide__message-label">{text.assistantLabel}</p>
+        <div class="ai-guide__message-body ac-chat__bubble">
+          <p>{text.greeting}</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="ai-guide__prompts ac-chat__prompts" aria-label={text.title}>
+      {
+        text.quickPrompts.map((prompt) => (
+          <button
+            type="button"
+            data-ai-guide-prompt={prompt}
+            aria-label={prompt}
+          >
+            {prompt}
+          </button>
+        ))
+      }
+    </div>
+
+    <form class="ai-guide__form ac-chat__form" data-ai-guide-form>
+      <label for="designs-ai-guide-input" class="ac-chat__input-meta">
+        <span>{text.inputLabel}</span>
+        <span id="designs-ai-guide-character-limit">{text.characterLimit}</span>
+      </label>
+      <div class="ai-guide__composer ac-chat__input-row">
+        <textarea
+          id="designs-ai-guide-input"
+          name="question"
+          rows="2"
+          maxlength="800"
+          required
+          autocomplete="off"
+          enterkeyhint="send"
+          placeholder={text.placeholder}
+          aria-describedby="designs-ai-guide-character-limit designs-ai-guide-disclosure"
+          data-ai-guide-input></textarea>
+        <button
+          type="submit"
+          class="ac-chat__send"
+          aria-label={text.send}
+          data-ai-guide-submit
+        >
+          <ChatIcon name="send" />
+        </button>
+      </div>
+      <p
+        class="visually-hidden"
+        role="status"
+        aria-live="polite"
+        data-ai-guide-status
+      >
+      </p>
+    </form>
+
+    <div class="ai-guide__footer ac-chat__footer">
+      <p id="designs-ai-guide-disclosure">{text.disclosure}</p>
+      <nav aria-label={text.eyebrow}>
+        <a href={contactUrl}>{text.contact}</a>
+        <a href={privacyUrl}>{text.privacy}</a>
+      </nav>
+    </div>
+  </section>
+
+  <button
+    class="ai-guide__toggle ac-chat__toggle"
+    type="button"
+    aria-haspopup="dialog"
+    aria-controls="designs-ai-guide-panel"
+    aria-expanded="false"
+    aria-label={text.openLabel}
+    data-ai-guide-toggle
+  >
+    <ChatIcon name="bot" />
+    <span aria-hidden="true">AI</span>
+  </button>
+</aside>
+
+<script>
+  import '../scripts/ai-guide-chat.ts'
+  import '../scripts/shared-chat-viewport'
+</script>

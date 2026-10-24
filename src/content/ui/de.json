@@ -174,5 +174,32 @@
       "alt": "Vorstellungsbild des von Hatt erstellten 3D-Modells Harushiyu",
       "credit": "3D-Modell: Hatt"
     }
+  },
+  "aiChat": {
+    "eyebrow": "Designs KI-Hilfe",
+    "title": "Kreative Unterstützung finden",
+    "lead": "Entdecken Sie die veröffentlichten Leistungen, Einstiegspreise und Arbeiten von Designs.",
+    "openLabel": "Designs KI-Hilfe",
+    "closeLabel": "Designs KI-Hilfe schließen",
+    "greeting": "Hallo. Was möchten Sie gestalten: Illustrationen, 3D, Texte oder Audio?",
+    "quickPrompts": [
+      "Welche kreative Leistung passt?",
+      "Wie funktionieren Einstiegspreise und Angebote?",
+      "Produktionsarbeiten ansehen"
+    ],
+    "inputLabel": "Frage",
+    "placeholder": "Beispiel: Ich möchte eine Charakterillustration anfragen",
+    "characterLimit": "Bis zu 800 Zeichen",
+    "send": "Senden",
+    "sending": "Antwort wird vorbereitet…",
+    "emptyError": "Bitte geben Sie eine Frage ein.",
+    "tooLongError": "Die Frage darf höchstens 800 Zeichen lang sein.",
+    "timeoutError": "Die Antwort dauert länger als erwartet. Bitte warten Sie kurz und versuchen Sie es erneut.",
+    "genericError": "Die KI-Hilfe ist derzeit nicht verfügbar. Bitte nutzen Sie das Kontaktformular.",
+    "disclosure": "Ihre Frage und der letzte Gesprächsverlauf werden an die gemeinsame KI von Acecore gesendet. Geben Sie keine persönlichen oder vertraulichen Informationen ein. Antworten können fehlerhaft sein.",
+    "contact": "Kontakt",
+    "privacy": "Datenschutz",
+    "assistantLabel": "Designs KI-Hilfe",
+    "visitorLabel": "Sie"
   }
 }

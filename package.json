@@ -10,7 +10,7 @@
     "dev": "astro dev",
     "build": "node scripts/generate-og.mjs && astro build && npm run validate:output",
     "preview": "astro preview",
-    "test": "node --test tests/catalog.test.mjs",
+    "test": "node --experimental-strip-types --test tests/catalog.test.mjs tests/ai-chat.test.mjs",
     "validate:content": "npm test",
     "validate:output": "node scripts/validate-output.mjs",
     "format:check": "prettier . --check",

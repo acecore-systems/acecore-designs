@@ -168,5 +168,32 @@
       "alt": "Promotional image of the Harushiyu 3D model created by Hatt",
       "credit": "3D model: Hatt"
     }
+  },
+  "aiChat": {
+    "eyebrow": "Designs AI guide",
+    "title": "Find creative production support",
+    "lead": "Explore Designs’ published services, starting prices and production work.",
+    "openLabel": "Designs AI guide",
+    "closeLabel": "Close the Designs AI guide",
+    "greeting": "Hello. Tell me what you want to create: illustrations, 3D, writing or audio.",
+    "quickPrompts": [
+      "Which creative service fits?",
+      "How do starting prices and estimates work?",
+      "Show me production work"
+    ],
+    "inputLabel": "Question",
+    "placeholder": "Example: I would like a character illustration",
+    "characterLimit": "Up to 800 characters",
+    "send": "Send",
+    "sending": "Preparing an answer…",
+    "emptyError": "Please enter a question.",
+    "tooLongError": "Please keep the question within 800 characters.",
+    "timeoutError": "The answer is taking longer than expected. Please wait a moment and try again.",
+    "genericError": "The AI guide is currently unavailable. Please use the contact form.",
+    "disclosure": "Your question and recent conversation are sent to Acecore’s shared AI. Do not enter personal or confidential information. Answers may be inaccurate.",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "assistantLabel": "Designs AI guide",
+    "visitorLabel": "You"
   }
 }

@@ -163,5 +163,32 @@
       "alt": "Hatt制作の3Dモデル「ハルシユ」の紹介画像",
       "credit": "3Dモデル制作：Hatt"
     }
+  },
+  "aiChat": {
+    "eyebrow": "Designs AI案内",
+    "title": "つくりたいものを相談する",
+    "lead": "Designsの公開サービス・開始料金・制作実績をご案内します。",
+    "openLabel": "Designs AI案内",
+    "closeLabel": "Designs AI案内を閉じる",
+    "greeting": "こんにちは。イラスト、3D、文章・音声など、つくりたいものを教えてください。",
+    "quickPrompts": [
+      "どの制作サービスが合いますか？",
+      "開始料金と見積もりについて知りたい",
+      "制作実績を見たい"
+    ],
+    "inputLabel": "質問",
+    "placeholder": "例：キャラクターのイラストを相談したい",
+    "characterLimit": "800文字以内",
+    "send": "送信",
+    "sending": "回答を準備中…",
+    "emptyError": "質問を入力してください。",
+    "tooLongError": "質問は800文字以内で入力してください。",
+    "timeoutError": "回答に時間がかかっています。少し待ってから、もう一度お試しください。",
+    "genericError": "現在AI案内を利用できません。お問い合わせフォームからご相談ください。",
+    "disclosure": "質問と直近の会話をAcecore共通AIへ送信します。個人情報や機密情報は入力しないでください。回答は誤る場合があります。",
+    "contact": "お問い合わせ",
+    "privacy": "個人情報の取り扱い",
+    "assistantLabel": "Designs AI案内",
+    "visitorLabel": "あなた"
   }
 }
