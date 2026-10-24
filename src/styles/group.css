@@ -305,8 +305,7 @@ main h3.ac-heading {
 .group-contact {
   background: var(--wash);
   color: var(--brand-neutral);
-  border-block: 5px solid transparent;
-  border-image: var(--paint-edge) 1;
+  border: 0;
 }
 .group-contact :is(h2, p) {
   color: var(--brand-neutral);
@@ -319,10 +318,9 @@ main h3.ac-heading {
   color: var(--group-accent);
 }
 .group-footer {
-  background:
-    linear-gradient(white, white) padding-box,
-    var(--paint) border-box;
-  border-block: 8px solid transparent;
+  position: relative;
+  background: white;
+  border: 0;
   color: var(--brand-neutral);
   padding-block: 64px 32px;
 }
@@ -458,4 +456,13 @@ main h3.ac-heading {
 [data-service-price],
 [data-service-price] :is(strong, span) {
   color: var(--brand-neutral);
+}
+
+.group-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: var(--paint-edge);
+  pointer-events: none;
 }

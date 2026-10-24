@@ -16,7 +16,9 @@
     var(--paint) border-box;
 }
 .brand-corporate-name {
-  color: var(--brand);
+  color: #0656d9;
+  -webkit-text-fill-color: #0656d9;
+  background: none;
 }
 .brand-service-name {
   color: var(--ink-accent);
@@ -47,6 +49,7 @@
     #0656d9 100%
   );
   --logo-on-theme: #ffffff;
+  --logo-center: #0656d9;
   --logo-theme-background: radial-gradient(
     ellipse 120% 135% at 0% 0%,
     #e6b847 0%,
@@ -59,14 +62,21 @@
   --wash: #f7f2fa;
 }
 .brand-service-name {
+  display: inline-block;
+  line-height: 1.4;
+  padding-block: 0.08em;
+  vertical-align: baseline;
   background: var(--brand-text-paint);
+  background-repeat: no-repeat;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 @media (forced-colors: active) {
   .brand-service-name {
     background: none;
     color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
   }
 }
