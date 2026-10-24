@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { runInNewContext } from 'node:vm'
 import { approvedLocales, approvedPrices } from '../tests/approved-services.mjs'
 import { htmlLangMap, ogLocaleMap, inquiryUrl } from '../src/data/locales.mjs'
-import { portfolioWorks } from '../src/data/portfolio.mjs'
+import { homeHeroWork, portfolioWorks } from '../src/data/portfolio.mjs'
 import {
   routeKeys,
   groupIds,
@@ -80,9 +80,10 @@ const portfolioUrls = new Set(
     [work.sourceUrl, work.workUrl].filter(Boolean),
   ),
 )
-const images = new Set(
-  portfolioWorks.filter((work) => work.image).map((work) => work.image.src),
-)
+const images = new Set([
+  ...portfolioWorks.filter((work) => work.image).map((work) => work.image.src),
+  homeHeroWork.image.src,
+])
 const expectedUrls = approvedLocales.flatMap((locale) =>
   routeKeys.map((route) => absolute(routePath(locale, route))),
 )
@@ -524,7 +525,8 @@ for (const locale of approvedLocales) {
     if (route === 'home') {
       validateLegacy(html, locale, catalog)
       const hero = tags(html, 'img').find((image) => image.loading === 'eager')
-      assert.equal(hero.src, '/portfolio/hatt/centipede.webp')
+      assert.equal(hero.src, homeHeroWork.image.src)
+      assert.equal(hero.alt, ui.site.heroWork.alt)
       assert.equal(hero.fetchpriority, 'high')
     }
     if (route === 'home' || route === 'process')

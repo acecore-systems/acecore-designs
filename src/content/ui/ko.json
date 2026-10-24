@@ -157,6 +157,11 @@
         "production": "이야기·대본 집필／제공 원고 읽기 및 녹음",
         "output": "이야기·대본 원고／내레이션·낭독 음성 데이터"
       }
+    },
+    "heroWork": {
+      "title": "오리지널 3D 모델 ‘Harushiyu’",
+      "alt": "Hatt가 제작한 3D 모델 ‘Harushiyu’ 소개 이미지",
+      "credit": "3D 모델 제작: Hatt"
     }
   }
 }

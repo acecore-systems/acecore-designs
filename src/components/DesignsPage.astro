@@ -3,7 +3,7 @@ import SiteLayout from '../layouts/SiteLayout.astro'
 import { catalogs, ui, type Locale } from '../data/catalog'
 import { inquiryUrl } from '../data/locales.mjs'
 import { routePath } from '../data/routes.mjs'
-import { portfolioWorks } from '../data/portfolio.mjs'
+import { homeHeroWork, portfolioWorks } from '../data/portfolio.mjs'
 import Arrow from './Arrow.astro'
 import PageHeading from './PageHeading.astro'
 import ServiceEntries from './ServiceEntries.astro'
@@ -40,8 +40,8 @@ const description = group
 const absolute = (path: string) =>
   new URL(path, 'https://designs.acecore.net').href
 const pageUrl = absolute(routePath(locale, route))
-const heroWork = portfolioWorks.find((work) => work.id === 'centipede')!
-const heroText = labels.portfolio.works[heroWork.id]
+const heroWork = homeHeroWork
+const heroText = site.heroWork
 const offerCatalog = {
   '@type': 'OfferCatalog',
   name: title,
@@ -154,7 +154,7 @@ const schema =
             </div>
             <figure class="hero-work ac-card">
               <a
-                href={`${routePath(locale, 'works')}#work-${heroWork.id}`}
+                href={heroWork.sourceUrl}
                 aria-label={`${heroText.title} — ${site.viewDetails}`}
               >
                 <img

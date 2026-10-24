@@ -153,6 +153,11 @@
         "production": "故事与台本创作／提供文稿的朗读与录制",
         "output": "故事或台本文稿／旁白与朗读音频数据"
       }
+    },
+    "heroWork": {
+      "title": "原创3D模型「Harushiyu」",
+      "alt": "Hatt制作的3D模型「Harushiyu」介绍图",
+      "credit": "3D模型制作：Hatt"
     }
   }
 }
