@@ -1,17 +1,17 @@
 @import 'tailwindcss/index.css' source('../');
 
 @theme {
-  --color-brand-50: #eef6ff;
-  --color-brand-100: #d8eaff;
-  --color-brand-200: #acd3ff;
-  --color-brand-300: #73b2f8;
-  --color-brand-400: #3287e6;
-  --color-brand-500: #0b5fd3;
-  --color-brand-600: #063d91;
-  --color-brand-700: #053373;
-  --color-brand-800: #062c5f;
-  --color-brand-900: #08254d;
-  --color-brand-950: #00022b;
+  --color-brand-50: #faf6ff;
+  --color-brand-100: #eee1fa;
+  --color-brand-200: #d9bfed;
+  --color-brand-300: #b28bd4;
+  --color-brand-400: #8950c5;
+  --color-brand-500: #8950c5;
+  --color-brand-600: #8146ae;
+  --color-brand-700: #633491;
+  --color-brand-800: #4d2773;
+  --color-brand-900: #3d2058;
+  --color-brand-950: #20252b;
   --font-sans:
     'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
     'Yu Gothic UI', 'Yu Gothic', Meiryo, system-ui, sans-serif;
