@@ -84,12 +84,12 @@
       "reading": "Lesung"
     },
     "works": {
-      "centipede": {
-        "title": "Illustration eines Hundertfüßer-Wesens",
-        "description": "Wir haben ein vielbeiniges Wesen mit Geschütztürmen entworfen und gezeichnet und organische mit mechanischen Formen verbunden.",
-        "alt": "Monochrome Illustration eines vielbeinigen Wesens mit Geschütztürmen",
-        "credit": "Illustration: Hatt",
-        "deliverable": "Eine Charakterillustration mit ausgearbeiteten Beinen, Panzerung und Geschütztürmen."
+      "harushiyu-avatar": {
+        "title": "Original-3D-Modell „Harushiyu“",
+        "alt": "Vorstellungsbild des von Hatt erstellten 3D-Modells Harushiyu",
+        "credit": "3D-Modell: Hatt",
+        "description": "Harushiyu ist ein von einer Gottesanbeterin inspiriertes Alien-3D-Modell für die Nutzung in VRChat.",
+        "deliverable": "3D-Modell mit Sicheln mit einem zusätzlichen Gelenk sowie Ohrringen aus getrocknetem Tintenfisch."
       },
       "moku": {
         "title": "3D-Avatar Moku",

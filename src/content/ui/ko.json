@@ -73,12 +73,12 @@
       "reading": "낭독"
     },
     "works": {
-      "centipede": {
-        "title": "지네 괴물 캐릭터 일러스트",
-        "description": "포탑을 등에 진 다족 괴물을 디자인하고 생물과 기계의 형태를 결합해 그렸습니다.",
-        "alt": "포탑을 등에 진 다리가 많은 괴물의 흑백 일러스트",
-        "credit": "일러스트: Hatt",
-        "deliverable": "다리와 장갑, 포탑의 세부를 묘사한 캐릭터 일러스트 한 점입니다."
+      "harushiyu-avatar": {
+        "title": "오리지널 3D 모델 ‘Harushiyu’",
+        "alt": "Hatt가 제작한 3D 모델 ‘Harushiyu’ 소개 이미지",
+        "credit": "3D 모델 제작: Hatt",
+        "description": "사마귀 외계인을 모티브로 VRChat 사용을 상정한 3D 모델 Harushiyu를 제작했습니다.",
+        "deliverable": "관절이 하나 더 있는 낫을 가진 3D 모델로, 마른오징어 귀걸이가 포함됩니다."
       },
       "moku": {
         "title": "모쿠 3D 아바타 제작",

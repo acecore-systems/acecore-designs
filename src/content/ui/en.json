@@ -78,12 +78,12 @@
       "reading": "Reading aloud"
     },
     "works": {
-      "centipede": {
-        "title": "Centipede creature illustration",
-        "description": "Designed and illustrated a many-legged creature carrying gun turrets, combining organic and mechanical forms.",
-        "alt": "Monochrome illustration of a many-legged creature carrying gun turrets",
-        "credit": "Illustration: Hatt",
-        "deliverable": "One character illustration with detailed legs, armour and gun turrets."
+      "harushiyu-avatar": {
+        "title": "Harushiyu — Original 3D Model",
+        "alt": "Promotional image of the Harushiyu 3D model created by Hatt",
+        "credit": "3D model: Hatt",
+        "description": "Created Harushiyu, a mantis-alien 3D model intended for use in VRChat.",
+        "deliverable": "A 3D model with scythes featuring an extra joint, plus dried-squid earrings."
       },
       "moku": {
         "title": "Moku 3D avatar",

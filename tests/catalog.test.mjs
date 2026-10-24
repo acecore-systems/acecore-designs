@@ -59,13 +59,7 @@ test('制作実績は出典・実画像・承認済みサービスの相談先�
     new Set(portfolioWorks.map((work) => work.id)).size,
     portfolioWorks.length,
   )
-  for (const kind of [
-    'illustration',
-    'avatar',
-    'gimmick',
-    'writing',
-    'reading',
-  ]) {
+  for (const kind of ['avatar', 'gimmick', 'writing', 'reading']) {
     assert.ok(
       portfolioWorks.some((work) => work.kind === kind),
       kind,
@@ -104,7 +98,11 @@ test('制作実績は出典・実画像・承認済みサービスの相談先�
       assert.ok(work.image.src.startsWith('/portfolio/hatt/'))
       const path = new URL(`../public${work.image.src}`, import.meta.url)
       assert.ok(existsSync(path), work.id)
-      assert.ok(statSync(path).size < 100_000, `${work.id}: 画像サイズ`)
+      assert.ok(
+        statSync(path).size <
+          (work.id === 'harushiyu-avatar' ? 200_000 : 100_000),
+        `${work.id}: 画像サイズ`,
+      )
       assert.ok(work.image.width > 0 && work.image.height > 0)
     }
   }

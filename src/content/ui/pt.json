@@ -78,12 +78,12 @@
       "reading": "Leitura em voz alta"
     },
     "works": {
-      "centipede": {
-        "title": "Ilustração de uma criatura centopeia",
-        "description": "Desenhamos e ilustramos uma criatura de muitas patas com torres de artilharia, combinando formas orgânicas e mecânicas.",
-        "alt": "Ilustração monocromática de uma criatura de muitas patas com torres de artilharia",
-        "credit": "Ilustração: Hatt",
-        "deliverable": "Uma ilustração de personagem com detalhes nas pernas, armadura e torres de artilharia."
+      "harushiyu-avatar": {
+        "title": "Modelo 3D original “Harushiyu”",
+        "alt": "Imagem de apresentação do modelo 3D Harushiyu criado por Hatt",
+        "credit": "Modelo 3D: Hatt",
+        "description": "Criamos Harushiyu, um modelo 3D de alienígena louva-a-deus destinado ao uso no VRChat.",
+        "deliverable": "Modelo 3D com foices que têm uma articulação extra e brincos de lula seca."
       },
       "moku": {
         "title": "Avatar 3D Moku",

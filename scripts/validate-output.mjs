@@ -447,7 +447,7 @@ for (const locale of approvedLocales) {
         ? portfolioWorks
         : route === 'home'
           ? portfolioWorks.filter((work) =>
-              ['moku', 'bright-friend'].includes(work.id),
+              ['harushiyu-avatar', 'moku', 'bright-friend'].includes(work.id),
             )
           : group
             ? portfolioWorks.filter((work) =>
@@ -589,19 +589,19 @@ assert.deepEqual(sitemapUrls.sort(), [...expectedUrls].sort())
 assert.ok(read('robots.txt').includes(`Sitemap: ${origin}/sitemap-index.xml`))
 assert.ok(read('_headers').includes('Access-Control-Allow-Origin: *'))
 assert.ok(existsSync(new URL('uploads/og-default.png', dist)))
-const withdrawn = JSON.parse(
-  readFileSync(
-    new URL(
-      '../archive/withdrawn/desert-sketch/metadata.json',
-      import.meta.url,
+const withdrawn = ['desert-sketch', 'centipede'].map((id) =>
+  JSON.parse(
+    readFileSync(
+      new URL(`../archive/withdrawn/${id}/metadata.json`, import.meta.url),
+      'utf8',
     ),
-    'utf8',
   ),
 )
-assert.equal(
-  existsSync(new URL('portfolio/hatt/desert-sketch.webp', dist)),
-  false,
-)
+for (const item of withdrawn)
+  assert.equal(
+    existsSync(new URL(`portfolio/hatt/${item.work.id}.webp`, dist)),
+    false,
+  )
 assert.equal(existsSync(new URL('archive/', dist)), false)
 for (const locale of approvedLocales) {
   const context = JSON.parse(read(`ai-context/${locale}.json`))
@@ -610,17 +610,21 @@ for (const locale of approvedLocales) {
     context.works.map((work) => work.id),
     portfolioWorks.map((work) => work.id),
   )
+  assert.equal(context.featuredWork, undefined)
+  assert.equal(context.works[0].id, 'harushiyu-avatar')
 }
 for (const file of readdirSync(dist, { recursive: true }).filter((file) =>
   /\.(html|json)$/.test(file),
 )) {
   const html = read(String(file).replaceAll('\\', '/'))
   assert.equal(
-    html.includes('/portfolio/hatt/desert-sketch.webp'),
+    withdrawn.some((item) => html.includes(item.work.image.src)),
     false,
     `${file}: withdrawn image`,
   )
-  for (const copy of Object.values(withdrawn.translations)) {
+  for (const copy of withdrawn.flatMap((item) =>
+    Object.values(item.translations),
+  )) {
     assert.equal(html.includes(copy.title), false, `${file}: withdrawn title`)
   }
 }

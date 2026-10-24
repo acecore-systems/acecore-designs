@@ -1,0 +1,84 @@
+{
+  "withdrawnAt": "2026-10-24",
+  "scope": "Acecore Designs publication only; original Hatt source is unchanged",
+  "work": {
+    "id": "centipede",
+    "kind": "illustration",
+    "offering": "character-design",
+    "sourceUrl": "https://hatt.acecore.net/blog/article/ekaitari/",
+    "image": {
+      "src": "/portfolio/hatt/centipede.webp",
+      "width": 800,
+      "height": 800,
+      "originalUrl": "https://hatt.acecore.net/uploads/hatt/article-ekaitari.jpg",
+      "sourceFile": "homepage-hatt/public/uploads/hatt/article-ekaitari.jpg"
+    },
+    "services": ["character-design", "character-illustration"]
+  },
+  "translations": {
+    "ja": {
+      "title": "百足の怪物のキャラクターイラスト",
+      "description": "砲台を背負う多脚の怪物をデザインし、生物と機械の要素を組み合わせて描きました。",
+      "alt": "砲台を背負った多脚の怪物のモノクロイラスト",
+      "credit": "イラスト：Hatt",
+      "deliverable": "キャラクターイラスト1点。脚や装甲、砲台の細部まで描き込んだ造形です。"
+    },
+    "en": {
+      "title": "Centipede creature illustration",
+      "description": "Designed and illustrated a many-legged creature carrying gun turrets, combining organic and mechanical forms.",
+      "alt": "Monochrome illustration of a many-legged creature carrying gun turrets",
+      "credit": "Illustration: Hatt",
+      "deliverable": "One character illustration with detailed legs, armour and gun turrets."
+    },
+    "zh-cn": {
+      "title": "蜈蚣怪物角色插画",
+      "description": "设计并绘制了背负炮塔的多足怪物，结合生物与机械造型。",
+      "alt": "背负炮塔的多足怪物黑白插画",
+      "credit": "插画：Hatt",
+      "deliverable": "一幅角色插画，细致描绘腿部、装甲与炮塔。"
+    },
+    "es": {
+      "title": "Ilustración de una criatura ciempiés",
+      "description": "Diseñamos e ilustramos una criatura de muchas patas con torretas, combinando formas orgánicas y mecánicas.",
+      "alt": "Ilustración monocroma de una criatura de muchas patas con torretas",
+      "credit": "Ilustración: Hatt",
+      "deliverable": "Una ilustración de personaje con detalles en patas, armadura y torretas."
+    },
+    "pt": {
+      "title": "Ilustração de uma criatura centopeia",
+      "description": "Desenhamos e ilustramos uma criatura de muitas patas com torres de artilharia, combinando formas orgânicas e mecânicas.",
+      "alt": "Ilustração monocromática de uma criatura de muitas patas com torres de artilharia",
+      "credit": "Ilustração: Hatt",
+      "deliverable": "Uma ilustração de personagem com detalhes nas pernas, armadura e torres de artilharia."
+    },
+    "fr": {
+      "title": "Illustration d’une créature mille-pattes",
+      "description": "Nous avons conçu et illustré une créature aux nombreuses pattes portant des tourelles, associant formes organiques et mécaniques.",
+      "alt": "Illustration monochrome d’une créature aux nombreuses pattes portant des tourelles",
+      "credit": "Illustration : Hatt",
+      "deliverable": "Une illustration de personnage avec des détails sur les pattes, le blindage et les tourelles."
+    },
+    "ko": {
+      "title": "지네 괴물 캐릭터 일러스트",
+      "description": "포탑을 등에 진 다족 괴물을 디자인하고 생물과 기계의 형태를 결합해 그렸습니다.",
+      "alt": "포탑을 등에 진 다리가 많은 괴물의 흑백 일러스트",
+      "credit": "일러스트: Hatt",
+      "deliverable": "다리와 장갑, 포탑의 세부를 묘사한 캐릭터 일러스트 한 점입니다."
+    },
+    "de": {
+      "title": "Illustration eines Hundertfüßer-Wesens",
+      "description": "Wir haben ein vielbeiniges Wesen mit Geschütztürmen entworfen und gezeichnet und organische mit mechanischen Formen verbunden.",
+      "alt": "Monochrome Illustration eines vielbeinigen Wesens mit Geschütztürmen",
+      "credit": "Illustration: Hatt",
+      "deliverable": "Eine Charakterillustration mit ausgearbeiteten Beinen, Panzerung und Geschütztürmen."
+    },
+    "ru": {
+      "title": "Иллюстрация существа-сороконожки",
+      "description": "Разработано и нарисовано многоногое существо с орудийными башнями, сочетающее органические и механические формы.",
+      "alt": "Монохромная иллюстрация многоногого существа с орудийными башнями",
+      "credit": "Иллюстрация: Hatt",
+      "deliverable": "Одна иллюстрация персонажа с детальной проработкой ног, брони и орудийных башен."
+    }
+  },
+  "imageSha256": "c56a72197d30def8b44b1a3bf549a340dc833510217fb73e64a2116e947c645f"
+}
