@@ -243,11 +243,17 @@ const schema =
               </div>
             </section>
             <ServiceCatalog locale={locale} groupId={group.id} />
-            <PortfolioSection
-              locale={locale}
-              variant="summary"
-              groupId={group.id}
-            />
+            {portfolioWorks.some((work) =>
+              work.services.some((id) =>
+                group.services.some((service) => service.id === id),
+              ),
+            ) && (
+              <PortfolioSection
+                locale={locale}
+                variant="summary"
+                groupId={group.id}
+              />
+            )}
             <section class="ac-section bg-brand-50">
               <div class="ac-container route-links">
                 <a href={routePath(locale, 'pricing')} class="ac-btn-outline">

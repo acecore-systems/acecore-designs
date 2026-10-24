@@ -28,14 +28,21 @@ export function buildAiContext(locale, catalog, copy) {
       deliverable: copy.portfolio.works[work.id].deliverable,
       credit: copy.portfolio.works[work.id].credit,
       services: work.services,
+      ...(work.id === homeHeroWork.id
+        ? { sourceUrl: homeHeroWork.sourceUrl }
+        : {}),
       url: absolute(`${routePath(locale, 'works')}#work-${work.id}`),
     })),
-    featuredWork: {
-      id: homeHeroWork.id,
-      title: copy.site.heroWork.title,
-      credit: copy.site.heroWork.credit,
-      url: homeHeroWork.sourceUrl,
-    },
+    ...(!portfolioWorks.some((work) => work.id === homeHeroWork.id)
+      ? {
+          featuredWork: {
+            id: homeHeroWork.id,
+            title: copy.site.heroWork.title,
+            credit: copy.site.heroWork.credit,
+            url: homeHeroWork.sourceUrl,
+          },
+        }
+      : {}),
     navigation: Object.fromEntries(
       ['home', 'services', 'pricing', 'process', 'works'].map((route) => [
         route,

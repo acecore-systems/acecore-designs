@@ -52,6 +52,7 @@ export const legacyTargets = (locale, catalog) => {
   }
   // A withdrawn work's old home fragment leads to the current work list.
   targets['work-desert-sketch'] = routePath(locale, 'works')
+  targets['work-centipede'] = routePath(locale, 'works')
   for (const work of portfolioWorks)
     targets[`work-${work.id}`] = `${routePath(locale, 'works')}#work-${work.id}`
   return targets

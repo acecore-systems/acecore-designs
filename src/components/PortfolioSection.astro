@@ -28,7 +28,9 @@ const services = new Map(
 )
 const group = copy.groups.find((group) => group.id === groupId)
 const works = featured
-  ? portfolioWorks.filter((work) => ['moku', 'bright-friend'].includes(work.id))
+  ? portfolioWorks.filter((work) =>
+      ['harushiyu-avatar', 'moku', 'bright-friend'].includes(work.id),
+    )
   : group
     ? portfolioWorks.filter((work) =>
         work.services.some((id) =>

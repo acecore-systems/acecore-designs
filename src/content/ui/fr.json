@@ -78,12 +78,12 @@
       "reading": "Lecture à voix haute"
     },
     "works": {
-      "centipede": {
-        "title": "Illustration d’une créature mille-pattes",
-        "description": "Nous avons conçu et illustré une créature aux nombreuses pattes portant des tourelles, associant formes organiques et mécaniques.",
-        "alt": "Illustration monochrome d’une créature aux nombreuses pattes portant des tourelles",
-        "credit": "Illustration : Hatt",
-        "deliverable": "Une illustration de personnage avec des détails sur les pattes, le blindage et les tourelles."
+      "harushiyu-avatar": {
+        "title": "Modèle 3D original « Harushiyu »",
+        "alt": "Image de présentation du modèle 3D Harushiyu créé par Hatt",
+        "credit": "Modèle 3D : Hatt",
+        "description": "Création de Harushiyu, un modèle 3D d’extraterrestre mante destiné à être utilisé dans VRChat.",
+        "deliverable": "Modèle 3D doté de faux avec une articulation supplémentaire, accompagné de boucles d’oreilles en calamar séché."
       },
       "moku": {
         "title": "Avatar 3D Moku",

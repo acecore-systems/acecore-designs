@@ -69,12 +69,12 @@
       "reading": "朗读"
     },
     "works": {
-      "centipede": {
-        "title": "蜈蚣怪物角色插画",
-        "description": "设计并绘制了背负炮塔的多足怪物，结合生物与机械造型。",
-        "alt": "背负炮塔的多足怪物黑白插画",
-        "credit": "插画：Hatt",
-        "deliverable": "一幅角色插画，细致描绘腿部、装甲与炮塔。"
+      "harushiyu-avatar": {
+        "title": "原创3D模型「Harushiyu」",
+        "alt": "Hatt制作的3D模型「Harushiyu」介绍图",
+        "credit": "3D模型制作：Hatt",
+        "description": "制作了以螳螂外星人为原型、面向 VRChat 使用的 3D 模型 Harushiyu。",
+        "deliverable": "带有多一个关节的镰刀的 3D 模型，并附带鱿鱼干耳饰。"
       },
       "moku": {
         "title": "Moku 3D角色制作",

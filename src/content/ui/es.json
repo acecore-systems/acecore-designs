@@ -78,12 +78,12 @@
       "reading": "Lectura en voz alta"
     },
     "works": {
-      "centipede": {
-        "title": "Ilustración de una criatura ciempiés",
-        "description": "Diseñamos e ilustramos una criatura de muchas patas con torretas, combinando formas orgánicas y mecánicas.",
-        "alt": "Ilustración monocroma de una criatura de muchas patas con torretas",
-        "credit": "Ilustración: Hatt",
-        "deliverable": "Una ilustración de personaje con detalles en patas, armadura y torretas."
+      "harushiyu-avatar": {
+        "title": "Modelo 3D original «Harushiyu»",
+        "alt": "Imagen de presentación del modelo 3D Harushiyu creado por Hatt",
+        "credit": "Modelo 3D: Hatt",
+        "description": "Creamos Harushiyu, un modelo 3D de un alienígena mantis pensado para su uso en VRChat.",
+        "deliverable": "Modelo 3D con guadañas que tienen una articulación adicional y pendientes de calamar seco."
       },
       "moku": {
         "title": "Avatar 3D Moku",
