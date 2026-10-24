@@ -318,9 +318,366 @@ article[data-service-id]:target {
 article[data-service-id] h4 {
   text-wrap: pretty;
 }
+.portfolio-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.portfolio-eyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--color-brand-600);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.portfolio-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.portfolio-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+}
+.portfolio-image,
+.portfolio-text-preview {
+  aspect-ratio: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.portfolio-text-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--color-brand-50);
+  color: var(--color-brand-950);
+  text-align: center;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 700;
+}
+.portfolio-text-preview--reading {
+  background: var(--color-brand-950);
+  color: #fff;
+}
+.portfolio-text-preview .portfolio-preview-credit {
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+.portfolio-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+.portfolio-kind {
+  margin-bottom: 0.5rem;
+  color: var(--color-brand-600);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.portfolio-credit {
+  margin-top: 0.75rem;
+  color: #475569;
+  font-size: 0.75rem;
+  line-height: 1.8;
+}
+.portfolio-case-details {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+.portfolio-case-details dt {
+  margin-bottom: 0.35rem;
+  color: var(--color-brand-950);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.portfolio-deliverable {
+  padding: 0.75rem;
+  border-left: 3px solid var(--color-brand-600);
+  background: var(--color-brand-50);
+}
+.portfolio-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  margin-top: 0.75rem;
+}
+.portfolio-source-links a,
+.portfolio-services a,
+.work-reference {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-brand-600);
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.portfolio-source-links svg,
+.portfolio-services svg,
+.work-reference svg {
+  flex-shrink: 0;
+}
+.portfolio-services {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+.portfolio-services > p {
+  margin-bottom: 0.25rem;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.work-reference {
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+article[data-portfolio-work]:target {
+  outline: 3px solid var(--color-brand-400);
+  outline-offset: 5px;
+}
 @media (min-width: 640px) {
   .flow-grid {
+    grid-template-columns: 1fr;
+  }
+  .portfolio-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.hero-work {
+  width: 100%;
+  max-width: 27rem;
+  overflow: hidden;
+  justify-self: center;
+}
+.hero-work img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.hero-work figcaption {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1rem 1.25rem;
+  color: var(--color-brand-950);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.hero-work figcaption span:last-child {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+.hero-work-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  color: #fff;
+  text-underline-offset: 0.25rem;
+}
+.page-heading {
+  padding-block: 2.5rem 3.5rem;
+}
+.page-heading h1 {
+  text-wrap: balance;
+}
+.breadcrumbs {
+  font-size: 0.8rem;
+}
+.breadcrumbs ol,
+.breadcrumbs li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.breadcrumbs a {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  color: var(--color-brand-200);
+  text-underline-offset: 0.25rem;
+}
+.breadcrumbs li {
+  overflow-wrap: anywhere;
+}
+.service-entries {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.service-entry {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.service-entry :is(h2, h3) a {
+  color: inherit;
+  text-decoration: none;
+}
+.service-entry :is(h2, h3) a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+.service-entry .text-link {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+.route-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.route-links a {
+  gap: 1rem;
+}
+.production-diagram ol {
+  display: grid;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+.production-diagram li {
+  position: relative;
+  padding: 1.5rem;
+  border: 1px solid var(--color-brand-200);
+  border-radius: 0.5rem;
+  background: var(--color-brand-50);
+}
+.production-diagram li:last-child {
+  border-left: 3px solid var(--color-brand-600);
+}
+.diagram-number {
+  color: var(--color-brand-600);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.production-diagram h3 {
+  margin-block: 0.75rem;
+  color: var(--color-brand-950);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.production-diagram li p {
+  color: #475569;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.diagram-arrow,
+.flow-arrow {
+  position: absolute;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+  color: var(--color-brand-600);
+}
+.flow-grid li {
+  position: relative;
+}
+.flow-grid {
+  gap: 3rem;
+}
+.pricing-table {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  overflow: hidden;
+  text-align: left;
+}
+.pricing-table th,
+.pricing-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.pricing-table th:first-child {
+  width: 68%;
+}
+.pricing-table thead {
+  background: var(--color-brand-50);
+  color: var(--color-brand-950);
+  font-size: 0.8rem;
+}
+.pricing-table tbody th {
+  font-weight: 700;
+}
+.pricing-table td {
+  color: var(--color-brand-600);
+  font-weight: 800;
+  line-height: 1.8;
+}
+.pricing-table tr:last-child > * {
+  border-bottom: 0;
+}
+@media (width < 640px) {
+  .pricing-table th:first-child {
+    width: 55%;
+  }
+  .pricing-table th,
+  .pricing-table td {
+    padding: 0.75rem;
+  }
+  .pricing-table td {
+    font-size: 0.875rem;
+  }
+}
+.legacy-service-links {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.legacy-service-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: var(--color-brand-600);
+  text-underline-offset: 0.25rem;
+}
+@media (min-width: 768px) {
+  .production-diagram ol {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .diagram-arrow {
+    top: 50%;
+    right: -2.5rem;
+    bottom: auto;
+    left: auto;
+    transform: translateY(-50%);
+  }
+}
+@media (min-width: 1024px) {
+  .service-entries {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .flow-arrow {
+    top: 45%;
+    right: -2.25rem;
+    bottom: auto;
+    left: auto;
+    transform: translateY(-50%);
+  }
+  .hero-work {
+    justify-self: end;
   }
 }
 @media (min-width: 1024px) {
@@ -338,6 +695,9 @@ article[data-service-id] h4 {
   }
   .flow-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .brief-layout,
   .faq-layout {

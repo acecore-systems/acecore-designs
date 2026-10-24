@@ -54,9 +54,114 @@
     "questions": [
       "Is the displayed price the final cost?",
       "How does production proceed?",
-      "Can I see the creator’s work?",
+      "What kinds of work have you produced?",
       "Can I discuss training or creative support?"
     ],
     "contactTitle": "Discuss your project with Acecore."
+  },
+  "portfolio": {
+    "title": "Creative work",
+    "intro": "Explore illustration, 3D, writing and audio projects. Each case explains the production, the finished work and related creative services.",
+    "viewSource": "View source",
+    "relatedServices": "Related creative services",
+    "viewRelatedWork": "See a related case",
+    "actions": {
+      "watch": "Watch the introduction",
+      "read": "Read the story (Japanese)",
+      "listen": "Listen to the reading (Japanese)"
+    },
+    "kinds": {
+      "illustration": "Illustration",
+      "avatar": "3D avatar",
+      "gimmick": "3D interactive feature",
+      "writing": "Fiction",
+      "reading": "Reading aloud"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "Desert sailing illustration",
+        "description": "Created a monochrome illustration of a sailing vehicle, dunes and a figure.",
+        "alt": "Monochrome illustration of a figure in a sailing vehicle crossing the desert",
+        "credit": "Illustration: Hatt",
+        "deliverable": "One monochrome illustration bringing a desert landscape and a figure together in a single scene."
+      },
+      "centipede": {
+        "title": "Centipede creature illustration",
+        "description": "Designed and illustrated a many-legged creature carrying gun turrets, combining organic and mechanical forms.",
+        "alt": "Monochrome illustration of a many-legged creature carrying gun turrets",
+        "credit": "Illustration: Hatt",
+        "deliverable": "One character illustration with detailed legs, armour and gun turrets."
+      },
+      "moku": {
+        "title": "Moku 3D avatar",
+        "description": "Created Moku, a fox-boy avatar for VRChat.",
+        "alt": "Introduction image of Moku, a 3D fox avatar wearing glasses",
+        "credit": "3D work: Hatt",
+        "deliverable": "An original 3D avatar with changing expressions, glasses and clothing controls."
+      },
+      "bright-friend": {
+        "title": "Bright Friend avatar light",
+        "description": "Created Bright Friend, an avatar light for VRChat.",
+        "alt": "Bright Friend 3D work showing a small glowing character and a lantern",
+        "credit": "3D work: Hatt",
+        "deliverable": "Handheld, lantern and staff-lantern forms, with light adjustment and a petting response in the handheld version."
+      },
+      "letter": {
+        "title": "Letter: short-story writing",
+        "description": "Wrote Letter, a short story about a scene in a laboratory.",
+        "credit": "Written by Hatt",
+        "deliverable": "A Japanese short-story text published on a fiction platform."
+      },
+      "buying-mittens": {
+        "title": "Buying Mittens: recorded reading",
+        "description": "Read and recorded Niimi Nankichi’s story Buying Mittens.",
+        "credit": "Original story: Niimi Nankichi / Reading: Hatt",
+        "deliverable": "A video of the Japanese reading published on YouTube with credit to the original author."
+      }
+    },
+    "navLabel": "Work",
+    "viewWorks": "Explore our work",
+    "productionLabel": "Production",
+    "deliverableLabel": "Finished work",
+    "consultThisWork": "Discuss a project like this",
+    "faqAnswer": "Our cases cover illustration, 3D avatars and interactive features, fiction and recorded readings. Review the production and finished work, then contact Acecore about the related service from each case."
+  },
+  "site": {
+    "nav": {
+      "services": "Services",
+      "works": "Work",
+      "pricing": "Pricing",
+      "process": "Process"
+    },
+    "breadcrumbs": "Breadcrumbs",
+    "homeServicesTitle": "Choose what you want to create.",
+    "viewDetails": "Explore the details",
+    "serviceCount": "{count} services",
+    "priceLabel": "Starting price, tax included",
+    "servicesIntro": "Choose from three fields: design and illustration, 3D, and writing and audio.",
+    "pricingIntro": "Explore tax-included starting prices for 13 creative services. We prepare an individual quote after confirming your use and scope.",
+    "diagramTitle": "From your brief to the finished work.",
+    "diagramStages": ["Your brief", "Production", "Finished work"],
+    "diagramNote": "The path depends on the selected service. We confirm scope and delivery format when preparing your quote.",
+    "groups": {
+      "illustration": {
+        "intro": "Six services covering character design, additional illustrations, character sheets, covers, editorial illustrations and reaction images.",
+        "input": "Purpose, desired look, existing characters and reference materials",
+        "production": "Character design / illustration and character-sheet production",
+        "output": "Characters, cover illustrations, editorial images and character sheets"
+      },
+      "3d": {
+        "intro": "Four services for character and object models, adjustments to existing models, and interactive features and effects.",
+        "input": "Purpose, target environment, existing models and references",
+        "production": "Modelling / adjustments to existing models / interactive features and effects",
+        "output": "3D characters, objects, display switching, lighting effects and other functions"
+      },
+      "writing-audio": {
+        "intro": "Three services for stories, video and audio scripts, and narration or reading of supplied text.",
+        "input": "Themes, settings and plans / supplied text for recording",
+        "production": "Story and script writing / reading and recording supplied text",
+        "output": "Story or script text / narration and reading audio data"
+      }
+    }
   }
 }

@@ -1,6 +1,6 @@
 ---
 import BrandName from './BrandName.astro'
-import { catalogs, ui, type Locale } from '../data/catalog'
+import { ui, type Locale } from '../data/catalog'
 import {
   htmlLangMap,
   localeLabels,
@@ -8,18 +8,20 @@ import {
   locales,
   inquiryUrl,
 } from '../data/locales.mjs'
+import { routePath } from '../data/routes.mjs'
 
 interface Props {
   locale: Locale
+  route?: string
 }
-const { locale } = Astro.props
-const copy = catalogs[locale]
+const { locale, route = 'home' } = Astro.props
 const labels = ui[locale]
 const home = localePath(locale)
 const links = [
-  { href: `${home}#catalog`, label: copy.catalogHeading },
-  { href: `${home}#flow`, label: copy.flowTitle },
-  { href: `${home}#creator`, label: copy.creatorTitle },
+  ...['services', 'works', 'pricing', 'process'].map((key) => ({
+    href: routePath(locale, key),
+    label: labels.site.nav[key],
+  })),
   { href: inquiryUrl(locale), label: labels.contact },
 ]
 ---
@@ -33,11 +35,7 @@ const links = [
     >
       <img src="/logo.svg" alt="" width="32" height="32" class="h-8 w-8" />
       <span class="font-800 tracking-tight text-brand-950 text-base sm:text-lg"
-        ><BrandName name="Acecore" />{' '}
-        <span class="mx-0.5 font-normal text-slate-400" aria-hidden="true"
-          >/</span
-        >
-        {' '}<BrandName name="Designs" /></span
+        ><BrandName name="Acecore" />{' '}<BrandName name="Designs" /></span
       >
     </a>
     <nav
@@ -48,6 +46,9 @@ const links = [
         links.map((link) => (
           <a
             href={link.href}
+            aria-current={
+              link.href === routePath(locale, route) ? 'page' : undefined
+            }
             class="inline-flex min-h-11 items-center text-sm font-700 leading-snug text-slate-600 no-underline hover:text-brand-600"
           >
             {link.label}
@@ -91,7 +92,7 @@ const links = [
             locales.map((language) => (
               <li>
                 <a
-                  href={localePath(language)}
+                  href={routePath(language, route)}
                   lang={htmlLangMap[language]}
                   hreflang={htmlLangMap[language]}
                   aria-current={language === locale ? 'page' : undefined}
@@ -142,6 +143,9 @@ const links = [
         links.map((link) => (
           <a
             href={link.href}
+            aria-current={
+              link.href === routePath(locale, route) ? 'page' : undefined
+            }
             class="min-h-11 rounded-md px-3 py-3 text-sm font-700 text-slate-700 no-underline hover:bg-brand-50 hover:text-brand-600"
           >
             {link.label}

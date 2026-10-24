@@ -54,9 +54,114 @@
     "questions": [
       "¿El precio indicado es el coste final?",
       "¿Cómo se desarrolla la producción?",
-      "¿Puedo ver obras del creador?",
+      "¿Qué tipos de proyectos han realizado?",
       "¿Puedo consultar sobre formación o apoyo creativo?"
     ],
     "contactTitle": "Consulta tu proyecto con Acecore."
+  },
+  "portfolio": {
+    "title": "Proyectos creativos",
+    "intro": "Presentamos proyectos de ilustración, 3D, escritura y audio. Cada caso muestra la producción, el resultado y los servicios relacionados.",
+    "viewSource": "Ver la fuente",
+    "relatedServices": "Servicios creativos relacionados",
+    "viewRelatedWork": "Ver un caso relacionado",
+    "actions": {
+      "watch": "Ver la presentación",
+      "read": "Leer el relato (japonés)",
+      "listen": "Escuchar la lectura (japonés)"
+    },
+    "kinds": {
+      "illustration": "Ilustración",
+      "avatar": "Avatar 3D",
+      "gimmick": "Función interactiva 3D",
+      "writing": "Ficción",
+      "reading": "Lectura en voz alta"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "Ilustración de navegación por el desierto",
+        "description": "Creamos una ilustración monocroma de un vehículo de vela, dunas y una figura.",
+        "alt": "Ilustración monocroma de una persona en un vehículo de vela por el desierto",
+        "credit": "Ilustración: Hatt",
+        "deliverable": "Una ilustración monocroma que reúne el paisaje del desierto y la figura en una escena."
+      },
+      "centipede": {
+        "title": "Ilustración de una criatura ciempiés",
+        "description": "Diseñamos e ilustramos una criatura de muchas patas con torretas, combinando formas orgánicas y mecánicas.",
+        "alt": "Ilustración monocroma de una criatura de muchas patas con torretas",
+        "credit": "Ilustración: Hatt",
+        "deliverable": "Una ilustración de personaje con detalles en patas, armadura y torretas."
+      },
+      "moku": {
+        "title": "Avatar 3D Moku",
+        "description": "Creamos Moku, un avatar de niño zorro para VRChat.",
+        "alt": "Imagen de presentación de Moku, avatar 3D de zorro con gafas",
+        "credit": "Creación 3D: Hatt",
+        "deliverable": "Un avatar 3D original con expresiones cambiantes, gafas y controles de ropa."
+      },
+      "bright-friend": {
+        "title": "Luz para avatares Amigo luminoso",
+        "description": "Creamos Amigo luminoso, una luz para avatares de VRChat.",
+        "alt": "Obra 3D Amigo luminoso con un pequeño personaje brillante y un farol",
+        "credit": "Creación 3D: Hatt",
+        "deliverable": "Formas de mano, farol y bastón con farol, con ajuste de luz y reacción a las caricias en la versión de mano."
+      },
+      "letter": {
+        "title": "Carta: escritura de un relato breve",
+        "description": "Escribimos Carta, un relato breve sobre una escena en un laboratorio.",
+        "credit": "Texto: Hatt",
+        "deliverable": "Un texto de ficción breve en japonés, publicado en una plataforma de relatos."
+      },
+      "buying-mittens": {
+        "title": "Comprar manoplas: lectura grabada",
+        "description": "Realizamos y grabamos la lectura del cuento Comprar manoplas de Niimi Nankichi.",
+        "credit": "Obra original: Niimi Nankichi / Lectura: Hatt",
+        "deliverable": "Un vídeo de la lectura en japonés publicado en YouTube con crédito al autor original."
+      }
+    },
+    "navLabel": "Proyectos",
+    "viewWorks": "Ver nuestros proyectos",
+    "productionLabel": "Producción",
+    "deliverableLabel": "Resultado",
+    "consultThisWork": "Consultar un proyecto similar",
+    "faqAnswer": "Los casos incluyen ilustraciones, avatares y funciones interactivas 3D, ficción y lecturas grabadas. Revise la producción y el resultado, y consulte a Acecore sobre el servicio relacionado desde cada caso."
+  },
+  "site": {
+    "nav": {
+      "services": "Servicios",
+      "works": "Proyectos",
+      "pricing": "Precios",
+      "process": "Proceso"
+    },
+    "breadcrumbs": "Ruta de navegación",
+    "homeServicesTitle": "Elija qué quiere crear.",
+    "viewDetails": "Ver los detalles",
+    "serviceCount": "{count} servicios",
+    "priceLabel": "Precio inicial con impuestos",
+    "servicesIntro": "Elija entre diseño e ilustración, 3D, y escritura y audio.",
+    "pricingIntro": "Precios iniciales con impuestos para 13 servicios creativos. Preparamos un presupuesto individual tras confirmar el uso y el alcance.",
+    "diagramTitle": "De su propuesta al trabajo terminado.",
+    "diagramStages": ["Información inicial", "Producción", "Trabajo terminado"],
+    "diagramNote": "El recorrido depende del servicio elegido. El alcance y el formato de entrega se confirman al preparar el presupuesto.",
+    "groups": {
+      "illustration": {
+        "intro": "Seis servicios de diseño de personajes, ilustraciones adicionales, hojas de personaje, portadas, ilustraciones editoriales e imágenes de reacción.",
+        "input": "Uso, estilo deseado, personajes existentes y referencias",
+        "production": "Diseño de personajes / ilustraciones y hojas de personaje",
+        "output": "Personajes, portadas, ilustraciones editoriales y hojas de personaje"
+      },
+      "3d": {
+        "intro": "Cuatro servicios de modelos de personajes y objetos, ajustes de modelos existentes y funciones interactivas y efectos.",
+        "input": "Uso, entorno de destino, modelos existentes y referencias",
+        "production": "Modelado / ajustes de modelos existentes / funciones interactivas y efectos",
+        "output": "Personajes y objetos 3D, cambios de visualización y efectos de luz"
+      },
+      "writing-audio": {
+        "intro": "Tres servicios de relatos, guiones de vídeo y audio, y narración o lectura de textos proporcionados.",
+        "input": "Temas, ambientación y planes / texto proporcionado para grabar",
+        "production": "Escritura de relatos y guiones / lectura y grabación de texto proporcionado",
+        "output": "Texto de relato o guion / datos de audio de narración y lectura"
+      }
+    }
   }
 }

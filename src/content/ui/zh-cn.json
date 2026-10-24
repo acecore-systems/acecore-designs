@@ -45,9 +45,114 @@
     "questions": [
       "显示的价格就是最终费用吗？",
       "制作如何推进？",
-      "可以查看制作者的作品吗？",
+      "有哪些制作案例？",
       "可以咨询培训或创作支持吗？"
     ],
     "contactTitle": "制作咨询，请联系Acecore。"
+  },
+  "portfolio": {
+    "title": "制作案例",
+    "intro": "介绍插画、3D、文字和音频制作案例。各案例展示制作内容、成品及相关制作服务。",
+    "viewSource": "查看来源",
+    "relatedServices": "相关制作服务",
+    "viewRelatedWork": "查看相关制作案例",
+    "actions": {
+      "watch": "观看介绍视频",
+      "read": "阅读小说（日语）",
+      "listen": "收听朗读（日语）"
+    },
+    "kinds": {
+      "illustration": "插画",
+      "avatar": "3D角色",
+      "gimmick": "3D交互效果",
+      "writing": "小说",
+      "reading": "朗读"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "沙漠扬帆场景插画",
+        "description": "制作了以帆车、沙丘和人物为内容的黑白插画。",
+        "alt": "人物乘坐帆车穿越沙漠的黑白插画",
+        "credit": "插画：Hatt",
+        "deliverable": "一幅黑白插画，将沙漠风景与人物组合为同一场景。"
+      },
+      "centipede": {
+        "title": "蜈蚣怪物角色插画",
+        "description": "设计并绘制了背负炮塔的多足怪物，结合生物与机械造型。",
+        "alt": "背负炮塔的多足怪物黑白插画",
+        "credit": "插画：Hatt",
+        "deliverable": "一幅角色插画，细致描绘腿部、装甲与炮塔。"
+      },
+      "moku": {
+        "title": "Moku 3D角色制作",
+        "description": "制作了用于VRChat的狐狸男孩角色Moku。",
+        "alt": "戴眼镜的狐狸3D角色Moku介绍图",
+        "credit": "3D制作：Hatt",
+        "deliverable": "原创3D角色，具备表情变化、眼镜及服装穿脱控制。"
+      },
+      "bright-friend": {
+        "title": "“明亮的朋友”角色灯光制作",
+        "description": "制作了用于VRChat的角色灯光“明亮的朋友”。",
+        "alt": "小型发光角色与提灯的3D作品“明亮的朋友”",
+        "credit": "3D制作：Hatt",
+        "deliverable": "掌上、提灯和手杖提灯三种形态，具备亮度调节，掌上形态可对抚摸作出反应。"
+      },
+      "letter": {
+        "title": "短篇小说《信》的创作",
+        "description": "创作了描写研究室中一幕的短篇小说《信》。",
+        "credit": "作者：Hatt",
+        "deliverable": "日语短篇小说正文，已在小说投稿平台公开。"
+      },
+      "buying-mittens": {
+        "title": "《买手套》朗读录制",
+        "description": "朗读并录制了新美南吉的童话《买手套》。",
+        "credit": "原作：新美南吉 ／ 朗读：Hatt",
+        "deliverable": "收录日语朗读的视频，在YouTube公开并注明原作者。"
+      }
+    },
+    "navLabel": "制作案例",
+    "viewWorks": "查看制作案例",
+    "productionLabel": "制作内容",
+    "deliverableLabel": "成品",
+    "consultThisWork": "咨询类似项目",
+    "faqAnswer": "案例涵盖插画、3D角色及交互效果、小说与朗读录制。了解制作内容和成品后，可从各案例向Acecore咨询相关服务。"
+  },
+  "site": {
+    "nav": {
+      "services": "制作服务",
+      "works": "制作案例",
+      "pricing": "价格",
+      "process": "委托流程"
+    },
+    "breadcrumbs": "面包屑导航",
+    "homeServicesTitle": "从想制作的领域开始选择。",
+    "viewDetails": "了解制作内容",
+    "serviceCount": "{count}项服务",
+    "priceLabel": "含税起价",
+    "servicesIntro": "从设计与插画、3D、文字与音频三个领域中选择所需的制作内容。",
+    "pricingIntro": "介绍13项制作服务的含税起价。确认用途与制作范围后，提供个别报价。",
+    "diagramTitle": "从需求资料到成品。",
+    "diagramStages": ["需求资料", "制作内容", "成品"],
+    "diagramNote": "流程因所选服务而异。制作范围与交付格式将在报价时确认。",
+    "groups": {
+      "illustration": {
+        "intro": "提供角色设计、追加插画、设定图与三视图、封面、说明插图及表情图片六项服务。",
+        "input": "用途、期望形象、已有角色与参考资料",
+        "production": "角色设计／插画与设定图制作",
+        "output": "角色、封面、说明插图和设定资料等"
+      },
+      "3d": {
+        "intro": "提供角色及小物的3D模型制作、已有模型调整、交互功能与效果四项服务。",
+        "input": "用途、使用环境、已有模型与参考资料",
+        "production": "模型制作／已有模型调整／交互功能与效果制作",
+        "output": "3D角色、小物、显示切换与发光等功能"
+      },
+      "writing-audio": {
+        "intro": "提供故事、视频与音频台本、提供文稿的旁白与朗读三项服务。",
+        "input": "主题、设定与企划／用于录音的提供文稿",
+        "production": "故事与台本创作／提供文稿的朗读与录制",
+        "output": "故事或台本文稿／旁白与朗读音频数据"
+      }
+    }
   }
 }

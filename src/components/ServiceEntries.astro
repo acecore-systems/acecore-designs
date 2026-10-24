@@ -1,0 +1,37 @@
+---
+import { catalogs, ui, type Locale } from '../data/catalog'
+import { routePath } from '../data/routes.mjs'
+import Arrow from './Arrow.astro'
+interface Props {
+  locale: Locale
+  headingLevel?: 2 | 3
+}
+const { locale, headingLevel = 3 } = Astro.props
+const Heading = headingLevel === 2 ? 'h2' : 'h3'
+const copy = catalogs[locale]
+const labels = ui[locale].site
+---
+
+<div class="service-entries">
+  {
+    copy.groups.map((group, index) => (
+      <article class="ac-card service-entry">
+        <p class="portfolio-kind">
+          <span aria-hidden="true">0{index + 1} / </span>
+          {labels.serviceCount.replace(
+            '{count}',
+            String(group.services.length),
+          )}
+        </p>
+        <Heading class="ac-heading text-xl">
+          <a href={routePath(locale, group.id)}>{group.title}</a>
+        </Heading>
+        <p class="ac-muted mt-4 text-sm">{labels.groups[group.id].intro}</p>
+        <a class="text-link mt-5" href={routePath(locale, group.id)}>
+          {labels.viewDetails}
+          <Arrow />
+        </a>
+      </article>
+    ))
+  }
+</div>

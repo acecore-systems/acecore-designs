@@ -1,0 +1,158 @@
+---
+import { catalogs, ui, type Locale } from '../data/catalog'
+import { routePath } from '../data/routes.mjs'
+import Arrow from './Arrow.astro'
+interface Props {
+  locale: Locale
+  compact?: boolean
+}
+const { locale, compact = false } = Astro.props
+const copy = catalogs[locale]
+const guidance = ui[locale].guidance
+const portfolio = ui[locale].portfolio
+const answers = [
+  copy.conditionsBody,
+  copy.flowBody,
+  portfolio.faqAnswer,
+  copy.schoolsBody,
+]
+---
+
+<section id="flow" class="ac-section bg-white" aria-labelledby="flow-heading">
+  <div class="ac-container">
+    <h2 id="flow-heading" class="ac-heading text-2xl sm:text-3xl">
+      {copy.flowTitle}
+    </h2>
+    <p class="ac-muted mt-4 max-w-3xl">{copy.flowBody}</p>
+    <ol class="flow-grid">
+      {
+        guidance.steps.map((step, index) => (
+          <li data-flow-step={index}>
+            <span class="step-number" aria-hidden="true">
+              0{index + 1}
+            </span>
+            <>
+              <h3>{step}</h3>
+              <p class="ac-muted mt-3 text-sm">
+                {guidance.stepDescriptions[index]}
+              </p>
+            </>
+            {index < guidance.steps.length - 1 && (
+              <svg
+                class="flow-arrow"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                aria-hidden="true"
+              >
+                <path d="M4 12h15m-6-6 6 6-6 6" />
+              </svg>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+    {
+      compact && (
+        <a href={routePath(locale, 'process')} class="text-link mt-7">
+          {ui[locale].site.nav.process}
+          <Arrow />
+        </a>
+      )
+    }
+  </div>
+</section>
+{
+  !compact && (
+    <>
+      <section class="ac-section bg-brand-50" aria-labelledby="brief-heading">
+        <div class="ac-container brief-layout">
+          <div>
+            <>
+              <h2 id="brief-heading" class="ac-heading text-2xl sm:text-3xl">
+                {guidance.briefTitle}
+              </h2>
+              <p class="ac-muted mt-4">{copy.conditionsBody}</p>
+            </>
+          </div>
+          <ul class="brief-list">
+            {guidance.briefItems.map((item) => (
+              <li>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  aria-hidden="true"
+                >
+                  <path d="m5 12 4 4L19 6" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <section
+        id="faq"
+        class="ac-section bg-white"
+        aria-labelledby="faq-heading"
+      >
+        <div class="ac-container faq-layout">
+          <h2 id="faq-heading" class="ac-heading text-2xl sm:text-3xl">
+            {guidance.faqTitle}
+          </h2>
+          <div class="faq-list">
+            {guidance.questions.map((question, index) => (
+              <details data-faq={index}>
+                <summary>
+                  <span>{question}</span>
+                  <Arrow />
+                </summary>
+                <div class="faq-answer">
+                  <p class="ac-muted">{answers[index]}</p>
+                  {index === 2 && (
+                    <a class="text-link" href={routePath(locale, 'works')}>
+                      {portfolio.viewWorks}
+                      <Arrow />
+                    </a>
+                  )}
+                  {index === 3 && (
+                    <a
+                      class="text-link"
+                      href="https://schools.acecore.net/learning/#creative-services"
+                    >
+                      {copy.schoolsLabel}
+                      <Arrow />
+                    </a>
+                  )}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section class="ac-section bg-brand-50" aria-labelledby="schools-heading">
+        <div class="ac-container">
+          <>
+            <h2 id="schools-heading" class="ac-heading text-2xl">
+              {copy.schoolsTitle}
+            </h2>
+            <p class="ac-muted mt-4 max-w-3xl">{copy.schoolsBody}</p>
+            <a
+              href="https://schools.acecore.net/learning/#creative-services"
+              class="ac-btn-primary mt-6"
+            >
+              {copy.schoolsLabel}
+            </a>
+          </>
+        </div>
+      </section>
+    </>
+  )
+}

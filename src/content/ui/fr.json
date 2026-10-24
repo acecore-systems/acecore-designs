@@ -54,9 +54,114 @@
     "questions": [
       "Le prix affiché est-il le coût final ?",
       "Comment se déroule la création ?",
-      "Puis-je voir les œuvres du créateur ?",
+      "Quels types de projets avez-vous réalisés ?",
       "Puis-je demander une formation ou un accompagnement créatif ?"
     ],
     "contactTitle": "Parlez de votre projet à Acecore."
+  },
+  "portfolio": {
+    "title": "Réalisations créatives",
+    "intro": "Découvrez des projets d’illustration, de 3D, d’écriture et d’audio. Chaque cas présente la réalisation, le résultat et les services associés.",
+    "viewSource": "Voir la source",
+    "relatedServices": "Services créatifs associés",
+    "viewRelatedWork": "Voir un cas associé",
+    "actions": {
+      "watch": "Voir la présentation",
+      "read": "Lire le récit (japonais)",
+      "listen": "Écouter la lecture (japonais)"
+    },
+    "kinds": {
+      "illustration": "Illustration",
+      "avatar": "Avatar 3D",
+      "gimmick": "Fonction interactive 3D",
+      "writing": "Fiction",
+      "reading": "Lecture à voix haute"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "Illustration de navigation dans le désert",
+        "description": "Nous avons réalisé une illustration monochrome d’un véhicule à voile, de dunes et d’un personnage.",
+        "alt": "Illustration monochrome d’un personnage sur un véhicule à voile dans le désert",
+        "credit": "Illustration : Hatt",
+        "deliverable": "Une illustration monochrome réunissant le paysage désertique et le personnage dans une même scène."
+      },
+      "centipede": {
+        "title": "Illustration d’une créature mille-pattes",
+        "description": "Nous avons conçu et illustré une créature aux nombreuses pattes portant des tourelles, associant formes organiques et mécaniques.",
+        "alt": "Illustration monochrome d’une créature aux nombreuses pattes portant des tourelles",
+        "credit": "Illustration : Hatt",
+        "deliverable": "Une illustration de personnage avec des détails sur les pattes, le blindage et les tourelles."
+      },
+      "moku": {
+        "title": "Avatar 3D Moku",
+        "description": "Nous avons créé Moku, un avatar de garçon-renard pour VRChat.",
+        "alt": "Image de présentation de Moku, avatar 3D de renard avec des lunettes",
+        "credit": "Création 3D : Hatt",
+        "deliverable": "Un avatar 3D original avec expressions variables, lunettes et commandes de tenue."
+      },
+      "bright-friend": {
+        "title": "Lumière pour avatar Ami lumineux",
+        "description": "Nous avons créé Ami lumineux, une lumière pour avatar VRChat.",
+        "alt": "Création 3D Ami lumineux avec un petit personnage lumineux et une lanterne",
+        "credit": "Création 3D : Hatt",
+        "deliverable": "Versions à tenir en main, en lanterne et en lanterne sur bâton, avec réglage lumineux et réaction aux caresses pour la version de main."
+      },
+      "letter": {
+        "title": "Lettre : écriture d’un récit court",
+        "description": "Nous avons écrit Lettre, un récit court situé dans un laboratoire.",
+        "credit": "Texte : Hatt",
+        "deliverable": "Un récit court en japonais publié sur une plateforme de fiction."
+      },
+      "buying-mittens": {
+        "title": "Acheter des moufles : lecture enregistrée",
+        "description": "Nous avons lu et enregistré le conte Acheter des moufles de Niimi Nankichi.",
+        "credit": "Œuvre originale : Niimi Nankichi / Lecture : Hatt",
+        "deliverable": "Une vidéo de la lecture en japonais publiée sur YouTube avec mention de l’auteur original."
+      }
+    },
+    "navLabel": "Réalisations",
+    "viewWorks": "Voir nos réalisations",
+    "productionLabel": "Réalisation",
+    "deliverableLabel": "Résultat",
+    "consultThisWork": "Parler d’un projet similaire",
+    "faqAnswer": "Les cas couvrent l’illustration, les avatars et fonctions interactives 3D, la fiction et les lectures enregistrées. Consultez la réalisation et le résultat, puis contactez Acecore pour le service associé depuis chaque cas."
+  },
+  "site": {
+    "nav": {
+      "services": "Services",
+      "works": "Réalisations",
+      "pricing": "Tarifs",
+      "process": "Déroulement"
+    },
+    "breadcrumbs": "Fil d’Ariane",
+    "homeServicesTitle": "Choisissez ce que vous souhaitez créer.",
+    "viewDetails": "Voir les détails",
+    "serviceCount": "{count} services",
+    "priceLabel": "Tarif de départ TTC",
+    "servicesIntro": "Choisissez entre design et illustration, 3D, et écriture et audio.",
+    "pricingIntro": "Tarifs de départ TTC pour 13 services créatifs. Un devis individuel est établi après confirmation de l’usage et du périmètre.",
+    "diagramTitle": "De vos éléments au résultat final.",
+    "diagramStages": ["Éléments de départ", "Réalisation", "Résultat final"],
+    "diagramNote": "Le parcours dépend du service choisi. Le périmètre et le format de livraison sont confirmés lors du devis.",
+    "groups": {
+      "illustration": {
+        "intro": "Six services de conception de personnages, illustrations complémentaires, fiches de personnage, couvertures, illustrations éditoriales et images de réaction.",
+        "input": "Usage, style souhaité, personnages existants et références",
+        "production": "Conception de personnages / illustrations et fiches de personnage",
+        "output": "Personnages, couvertures, illustrations éditoriales et fiches de personnage"
+      },
+      "3d": {
+        "intro": "Quatre services de modèles de personnages et d’objets, d’ajustement de modèles existants, de fonctions interactives et d’effets.",
+        "input": "Usage, environnement cible, modèles existants et références",
+        "production": "Modélisation / ajustement de modèles existants / fonctions interactives et effets",
+        "output": "Personnages et objets 3D, changements d’affichage et effets lumineux"
+      },
+      "writing-audio": {
+        "intro": "Trois services de récits, de scripts vidéo et audio, et de narration ou lecture de textes fournis.",
+        "input": "Thèmes, univers et projets / texte fourni pour l’enregistrement",
+        "production": "Écriture de récits et scripts / lecture et enregistrement du texte fourni",
+        "output": "Texte de récit ou de script / données audio de narration et de lecture"
+      }
+    }
   }
 }

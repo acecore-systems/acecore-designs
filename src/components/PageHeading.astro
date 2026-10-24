@@ -1,0 +1,24 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro'
+import type { Locale } from '../data/catalog'
+interface Props {
+  locale: Locale
+  route: string
+  title: string
+  description: string
+}
+const { locale, route, title, description } = Astro.props
+---
+
+<section class="page-heading bg-brand-950 text-white">
+  <div class="ac-container">
+    <Breadcrumbs locale={locale} route={route} title={title} />
+    <h1
+      id="page-heading"
+      class="mt-6 max-w-4xl text-3xl font-800 leading-tight sm:text-5xl"
+    >
+      {title}
+    </h1>
+    <p class="mt-5 max-w-3xl leading-relaxed text-brand-100">{description}</p>
+  </div>
+</section>

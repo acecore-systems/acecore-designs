@@ -1,0 +1,24 @@
+---
+import { ui, type Locale } from '../data/catalog'
+import { inquiryUrl } from '../data/locales.mjs'
+import Arrow from './Arrow.astro'
+interface Props {
+  locale: Locale
+}
+const { locale } = Astro.props
+const labels = ui[locale].guidance
+---
+
+<section
+  class="ac-section bg-brand-950 text-white"
+  aria-labelledby="contact-heading"
+>
+  <div class="ac-container contact-layout">
+    <h2 id="contact-heading" class="text-2xl font-800 leading-snug sm:text-4xl">
+      {labels.contactTitle}
+    </h2>
+    <a href={inquiryUrl(locale)} class="ac-btn contact-button"
+      >{labels.consultProject}<Arrow /></a
+    >
+  </div>
+</section>

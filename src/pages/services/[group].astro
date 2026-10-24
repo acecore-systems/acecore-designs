@@ -1,0 +1,9 @@
+---
+import DesignsPage from '../../components/DesignsPage.astro'
+import { groupIds } from '../../data/routes.mjs'
+export const getStaticPaths = () =>
+  groupIds.map((group) => ({ params: { group } }))
+const group = Astro.params.group!
+---
+
+<DesignsPage locale="ja" route={group} />

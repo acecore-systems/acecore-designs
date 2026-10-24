@@ -1,0 +1,53 @@
+---
+import { catalogs, type Locale } from '../data/catalog'
+import { legacyTargets, servicePath } from '../data/routes.mjs'
+interface Props {
+  locale: Locale
+}
+const { locale } = Astro.props
+const copy = catalogs[locale]
+const targets = legacyTargets(locale, copy)
+---
+
+<noscript>
+  <section
+    id="catalog"
+    class="ac-section bg-slate-50"
+    aria-label={copy.catalogHeading}
+  >
+    <div class="ac-container">
+      <h2 class="ac-heading text-2xl">{copy.catalogHeading}</h2><ul
+        class="legacy-service-links"
+      >
+        {
+          copy.groups
+            .flatMap((group) => group.services)
+            .map((service) => (
+              <li>
+                <a id={service.id} href={servicePath(locale, copy, service.id)}>
+                  {service.title}
+                </a>
+              </li>
+            ))
+        }
+      </ul>
+    </div>
+  </section>
+</noscript>
+<script define:vars={{ targets }}>
+  const followLegacyLink = () => {
+    let key = location.hash.slice(1)
+    try {
+      key = decodeURIComponent(key)
+    } catch {
+      /* Keep malformed fragments on this page. */
+    }
+    const target = Object.hasOwn(targets, key) ? targets[key] : undefined
+    if (!target) return
+    const next = new URL(target, location.href)
+    next.search = location.search
+    location.replace(next.pathname + next.search + next.hash)
+  }
+  followLegacyLink()
+  addEventListener('hashchange', followLegacyLink)
+</script>

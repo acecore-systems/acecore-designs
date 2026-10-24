@@ -60,9 +60,114 @@
     "questions": [
       "Ist der angezeigte Preis der Endpreis?",
       "Wie läuft die Produktion ab?",
-      "Kann ich Arbeiten des Kreativen ansehen?",
+      "Welche Projekte wurden umgesetzt?",
       "Kann ich Schulungen oder kreative Unterstützung anfragen?"
     ],
     "contactTitle": "Besprechen Sie Ihr Projekt mit Acecore."
+  },
+  "portfolio": {
+    "title": "Kreative Projekte",
+    "intro": "Entdecken Sie Projekte aus Illustration, 3D, Text und Audio. Jeder Fall zeigt die Umsetzung, das Ergebnis und passende Leistungen.",
+    "viewSource": "Quelle ansehen",
+    "relatedServices": "Passende kreative Leistungen",
+    "viewRelatedWork": "Passendes Projekt ansehen",
+    "actions": {
+      "watch": "Vorstellung ansehen",
+      "read": "Geschichte lesen (Japanisch)",
+      "listen": "Lesung anhören (Japanisch)"
+    },
+    "kinds": {
+      "illustration": "Illustration",
+      "avatar": "3D-Avatar",
+      "gimmick": "Interaktive 3D-Funktion",
+      "writing": "Erzählung",
+      "reading": "Lesung"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "Illustration einer Wüstensegelfahrt",
+        "description": "Wir haben ein Segelfahrzeug, Dünen und eine Figur als monochrome Illustration gestaltet.",
+        "alt": "Monochrome Illustration einer Figur auf einem Segelfahrzeug in der Wüste",
+        "credit": "Illustration: Hatt",
+        "deliverable": "Eine monochrome Illustration, die Wüstenlandschaft und Figur in einer Szene zusammenführt."
+      },
+      "centipede": {
+        "title": "Illustration eines Hundertfüßer-Wesens",
+        "description": "Wir haben ein vielbeiniges Wesen mit Geschütztürmen entworfen und gezeichnet und organische mit mechanischen Formen verbunden.",
+        "alt": "Monochrome Illustration eines vielbeinigen Wesens mit Geschütztürmen",
+        "credit": "Illustration: Hatt",
+        "deliverable": "Eine Charakterillustration mit ausgearbeiteten Beinen, Panzerung und Geschütztürmen."
+      },
+      "moku": {
+        "title": "3D-Avatar Moku",
+        "description": "Wir haben Moku, einen Fuchsjungen-Avatar für VRChat, erstellt.",
+        "alt": "Vorstellungsbild von Moku, einem 3D-Fuchsavatar mit Brille",
+        "credit": "3D-Arbeit: Hatt",
+        "deliverable": "Ein eigener 3D-Avatar mit wechselnder Mimik, Brille und Steuerung der Kleidung."
+      },
+      "bright-friend": {
+        "title": "Avatar-Licht Heller Freund",
+        "description": "Wir haben Heller Freund als Avatar-Licht für VRChat erstellt.",
+        "alt": "3D-Arbeit Heller Freund mit einer kleinen leuchtenden Figur und einer Laterne",
+        "credit": "3D-Arbeit: Hatt",
+        "deliverable": "Handfigur, Laterne und Stablaterne mit Lichtregelung und einer Streichelreaktion bei der Handfigur."
+      },
+      "letter": {
+        "title": "Brief: Verfassen einer Kurzgeschichte",
+        "description": "Wir haben Brief, eine Kurzgeschichte über eine Szene in einem Labor, verfasst.",
+        "credit": "Text: Hatt",
+        "deliverable": "Ein japanischer Kurzgeschichtentext, veröffentlicht auf einer Literaturplattform."
+      },
+      "buying-mittens": {
+        "title": "Handschuhe kaufen: aufgezeichnete Lesung",
+        "description": "Wir haben Niimi Nankichis Geschichte Handschuhe kaufen vorgelesen und aufgenommen.",
+        "credit": "Originalgeschichte: Niimi Nankichi / Lesung: Hatt",
+        "deliverable": "Ein Video der japanischen Lesung auf YouTube mit Nennung des Originalautors."
+      }
+    },
+    "navLabel": "Referenzen",
+    "viewWorks": "Projekte ansehen",
+    "productionLabel": "Umsetzung",
+    "deliverableLabel": "Ergebnis",
+    "consultThisWork": "Ähnliches Projekt besprechen",
+    "faqAnswer": "Die Beispiele umfassen Illustrationen, 3D-Avatare und interaktive Funktionen, Erzählungen und aufgezeichnete Lesungen. Sehen Sie sich Umsetzung und Ergebnis an und fragen Sie Acecore direkt zum passenden Angebot."
+  },
+  "site": {
+    "nav": {
+      "services": "Leistungen",
+      "works": "Projekte",
+      "pricing": "Preise",
+      "process": "Ablauf"
+    },
+    "breadcrumbs": "Brotkrumennavigation",
+    "homeServicesTitle": "Wählen Sie, was Sie gestalten möchten.",
+    "viewDetails": "Details ansehen",
+    "serviceCount": "{count} Leistungen",
+    "priceLabel": "Startpreis inklusive Steuern",
+    "servicesIntro": "Wählen Sie zwischen Design und Illustration, 3D sowie Text und Audio.",
+    "pricingIntro": "Startpreise inklusive Steuern für 13 kreative Leistungen. Nach Klärung von Nutzung und Umfang erstellen wir ein individuelles Angebot.",
+    "diagramTitle": "Von Ihren Unterlagen zum Ergebnis.",
+    "diagramStages": ["Ihre Unterlagen", "Umsetzung", "Ergebnis"],
+    "diagramNote": "Der Ablauf hängt von der gewählten Leistung ab. Umfang und Lieferformat werden beim Angebot geklärt.",
+    "groups": {
+      "illustration": {
+        "intro": "Sechs Leistungen für Charakterdesign, ergänzende Illustrationen, Charakterblätter, Titelbilder, redaktionelle Illustrationen und Reaktionsbilder.",
+        "input": "Verwendung, gewünschter Stil, bestehende Figuren und Referenzen",
+        "production": "Charakterdesign / Illustrationen und Charakterblätter",
+        "output": "Figuren, Titelbilder, redaktionelle Illustrationen und Charakterblätter"
+      },
+      "3d": {
+        "intro": "Vier Leistungen für Figuren- und Objektmodelle, Anpassungen bestehender Modelle sowie interaktive Funktionen und Effekte.",
+        "input": "Verwendung, Zielumgebung, bestehende Modelle und Referenzen",
+        "production": "Modellierung / Anpassung bestehender Modelle / interaktive Funktionen und Effekte",
+        "output": "3D-Figuren, Objekte, Anzeigewechsel und Lichteffekte"
+      },
+      "writing-audio": {
+        "intro": "Drei Leistungen für Geschichten, Video- und Audioskripte sowie das Einsprechen bereitgestellter Texte.",
+        "input": "Themen, Szenarien und Pläne / bereitgestellter Aufnahmetext",
+        "production": "Geschichten und Skripte schreiben / bereitgestellte Texte lesen und aufnehmen",
+        "output": "Geschichten- oder Skripttext / Audiodaten für Sprecheraufnahmen und Lesungen"
+      }
+    }
   }
 }

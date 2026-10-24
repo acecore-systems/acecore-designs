@@ -1,0 +1,33 @@
+---
+import { ui, type Locale } from '../data/catalog'
+import { groupIds, routePath } from '../data/routes.mjs'
+interface Props {
+  locale: Locale
+  route: string
+  title: string
+}
+const { locale, route, title } = Astro.props
+const labels = ui[locale].site
+const parents = [{ href: routePath(locale), title: ui[locale].home }]
+if (groupIds.includes(route))
+  parents.push({
+    href: routePath(locale, 'services'),
+    title: labels.nav.services,
+  })
+---
+
+<nav class="breadcrumbs" aria-label={labels.breadcrumbs}>
+  <ol>
+    {
+      parents.map((parent) => (
+        <li>
+          <>
+            <a href={parent.href}>{parent.title}</a>
+            <span aria-hidden="true">/</span>
+          </>
+        </li>
+      ))
+    }
+    <li aria-current="page">{title}</li>
+  </ol>
+</nav>

@@ -1,0 +1,84 @@
+---
+import { catalogs, ui, type Locale } from '../data/catalog'
+import { inquiryUrl } from '../data/locales.mjs'
+import { servicePath } from '../data/routes.mjs'
+interface Props {
+  locale: Locale
+}
+const { locale } = Astro.props
+const copy = catalogs[locale]
+const labels = ui[locale].site
+---
+
+<section
+  id="catalog"
+  class="ac-section bg-slate-50"
+  aria-label={copy.catalogHeading}
+>
+  <div class="ac-container">
+    <div class="ac-card mb-10 p-6">
+      <h2 class="ac-heading text-xl">{copy.conditionsTitle}</h2><p
+        class="ac-muted mt-3 max-w-4xl"
+      >
+        {copy.conditionsBody}
+      </p>
+    </div>
+    <div class="space-y-10">
+      {
+        copy.groups.map((group) => (
+          <section aria-labelledby={`price-${group.id}`}>
+            <h2 id={`price-${group.id}`} class="ac-heading mb-5 text-2xl">
+              {group.title}
+            </h2>
+            <table class="pricing-table ac-card">
+              <caption class="sr-only">
+                {group.title} — {labels.priceLabel}
+              </caption>
+              <thead>
+                <tr>
+                  <>
+                    <th scope="col">{labels.nav.services}</th>
+                    <th scope="col">{labels.priceLabel}</th>
+                  </>
+                </tr>
+              </thead>
+              <tbody>
+                {group.services.map((service) => (
+                  <tr
+                    id={`price-${service.id}`}
+                    data-price-service={service.id}
+                  >
+                    <th scope="row">
+                      <a
+                        href={servicePath(locale, copy, service.id)}
+                        class="text-brand-600 underline underline-offset-4"
+                      >
+                        {service.title}
+                      </a>
+                      <p class="ac-muted mt-2 text-sm font-normal">
+                        {service.description}
+                      </p>
+                      <a
+                        href={inquiryUrl(locale, service.id)}
+                        class="text-link text-sm"
+                        aria-label={`${service.title} — ${copy.consultLabel}`}
+                      >
+                        {copy.consultLabel}
+                      </a>
+                    </th>
+                    <td data-service-price={service.price}>
+                      {copy.priceLabel.replace(
+                        '{price}',
+                        service.price.toLocaleString('ja-JP'),
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</section>

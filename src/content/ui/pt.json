@@ -54,9 +54,114 @@
     "questions": [
       "O preço exibido é o custo final?",
       "Como a produção é realizada?",
-      "Posso ver trabalhos do criador?",
+      "Que tipos de projetos foram realizados?",
       "Posso consultar sobre formação ou apoio criativo?"
     ],
     "contactTitle": "Converse com a Acecore sobre seu projeto."
+  },
+  "portfolio": {
+    "title": "Projetos criativos",
+    "intro": "Apresentamos projetos de ilustração, 3D, escrita e áudio. Cada caso mostra a produção, o resultado e os serviços relacionados.",
+    "viewSource": "Ver a fonte",
+    "relatedServices": "Serviços criativos relacionados",
+    "viewRelatedWork": "Ver um caso relacionado",
+    "actions": {
+      "watch": "Assistir à apresentação",
+      "read": "Ler o conto (japonês)",
+      "listen": "Ouvir a leitura (japonês)"
+    },
+    "kinds": {
+      "illustration": "Ilustração",
+      "avatar": "Avatar 3D",
+      "gimmick": "Recurso interativo 3D",
+      "writing": "Ficção",
+      "reading": "Leitura em voz alta"
+    },
+    "works": {
+      "desert-sketch": {
+        "title": "Ilustração de navegação pelo deserto",
+        "description": "Criamos uma ilustração monocromática de um veículo à vela, dunas e uma pessoa.",
+        "alt": "Ilustração monocromática de uma pessoa em um veículo à vela no deserto",
+        "credit": "Ilustração: Hatt",
+        "deliverable": "Uma ilustração monocromática que reúne a paisagem do deserto e a pessoa em uma cena."
+      },
+      "centipede": {
+        "title": "Ilustração de uma criatura centopeia",
+        "description": "Desenhamos e ilustramos uma criatura de muitas patas com torres de artilharia, combinando formas orgânicas e mecânicas.",
+        "alt": "Ilustração monocromática de uma criatura de muitas patas com torres de artilharia",
+        "credit": "Ilustração: Hatt",
+        "deliverable": "Uma ilustração de personagem com detalhes nas pernas, armadura e torres de artilharia."
+      },
+      "moku": {
+        "title": "Avatar 3D Moku",
+        "description": "Criamos Moku, um avatar de menino raposa para VRChat.",
+        "alt": "Imagem de apresentação de Moku, avatar 3D de raposa com óculos",
+        "credit": "Criação 3D: Hatt",
+        "deliverable": "Um avatar 3D original com expressões variáveis, óculos e controles de roupa."
+      },
+      "bright-friend": {
+        "title": "Luz para avatares Amigo luminoso",
+        "description": "Criamos Amigo luminoso, uma luz para avatares de VRChat.",
+        "alt": "Obra 3D Amigo luminoso com um pequeno personagem brilhante e uma lanterna",
+        "credit": "Criação 3D: Hatt",
+        "deliverable": "Formas de mão, lanterna e cajado com lanterna, com ajuste de luz e reação a carinho na versão de mão."
+      },
+      "letter": {
+        "title": "Carta: escrita de um conto",
+        "description": "Escrevemos Carta, um conto sobre uma cena em um laboratório.",
+        "credit": "Texto: Hatt",
+        "deliverable": "Um conto em japonês, publicado em uma plataforma de ficção."
+      },
+      "buying-mittens": {
+        "title": "Comprar luvas: leitura gravada",
+        "description": "Lemos e gravamos o conto Comprar luvas, de Niimi Nankichi.",
+        "credit": "Obra original: Niimi Nankichi / Leitura: Hatt",
+        "deliverable": "Um vídeo da leitura em japonês publicado no YouTube com crédito ao autor original."
+      }
+    },
+    "navLabel": "Projetos",
+    "viewWorks": "Ver nossos projetos",
+    "productionLabel": "Produção",
+    "deliverableLabel": "Resultado",
+    "consultThisWork": "Consultar um projeto semelhante",
+    "faqAnswer": "Os casos incluem ilustrações, avatares e recursos interativos 3D, ficção e leituras gravadas. Veja a produção e o resultado e consulte a Acecore sobre o serviço relacionado a partir de cada caso."
+  },
+  "site": {
+    "nav": {
+      "services": "Serviços",
+      "works": "Projetos",
+      "pricing": "Preços",
+      "process": "Processo"
+    },
+    "breadcrumbs": "Navegação estrutural",
+    "homeServicesTitle": "Escolha o que deseja criar.",
+    "viewDetails": "Ver os detalhes",
+    "serviceCount": "{count} serviços",
+    "priceLabel": "Preço inicial com impostos",
+    "servicesIntro": "Escolha entre design e ilustração, 3D, e escrita e áudio.",
+    "pricingIntro": "Preços iniciais com impostos para 13 serviços criativos. Preparamos um orçamento individual após confirmar o uso e o escopo.",
+    "diagramTitle": "Das referências ao trabalho concluído.",
+    "diagramStages": ["Informações iniciais", "Produção", "Trabalho concluído"],
+    "diagramNote": "O caminho depende do serviço escolhido. O escopo e o formato de entrega são confirmados no orçamento.",
+    "groups": {
+      "illustration": {
+        "intro": "Seis serviços de design de personagens, ilustrações adicionais, fichas de personagem, capas, ilustrações editoriais e imagens de reação.",
+        "input": "Uso, aparência desejada, personagens existentes e referências",
+        "production": "Design de personagens / ilustrações e fichas de personagem",
+        "output": "Personagens, capas, ilustrações editoriais e fichas de personagem"
+      },
+      "3d": {
+        "intro": "Quatro serviços de modelos de personagens e objetos, ajustes em modelos existentes e recursos interativos e efeitos.",
+        "input": "Uso, ambiente de destino, modelos existentes e referências",
+        "production": "Modelagem / ajustes em modelos existentes / recursos interativos e efeitos",
+        "output": "Personagens e objetos 3D, alternância de exibição e efeitos de luz"
+      },
+      "writing-audio": {
+        "intro": "Três serviços de histórias, roteiros de vídeo e áudio, e narração ou leitura de textos fornecidos.",
+        "input": "Temas, cenários e planos / texto fornecido para gravação",
+        "production": "Escrita de histórias e roteiros / leitura e gravação do texto fornecido",
+        "output": "Texto de história ou roteiro / dados de áudio de narração e leitura"
+      }
+    }
   }
 }
