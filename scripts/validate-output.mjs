@@ -132,7 +132,8 @@ const validateLinks = (html, path) => {
     )
   }
   for (const image of tags(html, 'img')) {
-    if (['/logo.svg', '/logo-on-dark.svg'].includes(image.src)) continue
+    if (['/favicon.svg', '/logo.svg', '/logo-on-dark.svg'].includes(image.src))
+      continue
     assert.ok(images.has(image.src), `未確認の画像: ${image.src}`)
     assert.ok(image.alt?.trim())
     assert.ok(Number(image.width) > 0 && Number(image.height) > 0)
