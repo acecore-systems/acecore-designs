@@ -12,4 +12,4 @@
 
 公開PagesをWorkerから直接fetchする案は実環境で522となった。公開fetch拡張フラグは将来本番にも及ぶネットワーク境界の緩和として自動承認レビューに拒否され、追加しなかった。代わりに承認されたASSETS→private Service Bindingを使用し、外部fetchや秘密値の追加を避けた。
 
-ローカルUIはAPI fixtureで検証し、実送信・本番への反映・問い合わせ配送とは区別する。公開Previewでの一般質問による回答確認を行い、どちらのPRもこの作業ではDraftのままとする。
+2026-10-24の初回実装ではAPI fixtureと公開Previewの一般質問で確認し、サイトPR7・中央Worker PR6をDraftとして提示した。その後のユーザー承認に基づく本番公開は、中央Workerを先にmerge・production deployし、次にサイトをmergeしてGitHub連携Pagesで公開する。実送信・本番への反映・問い合わせ配送は区別して記録し、公開後に日本語・英語の一般質問、根拠URL、既存3サイトの回帰を確認する。
