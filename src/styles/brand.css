@@ -15,13 +15,20 @@
     linear-gradient(var(--wash), var(--wash)) padding-box,
     var(--paint) border-box;
 }
-.brand-corporate-name {
+.brand-corporate-name,
+.brand-service-name {
+  color: var(--brand-neutral);
+  -webkit-text-fill-color: var(--brand-neutral);
+  background: none;
+  white-space: nowrap;
+}
+.brand-corporate-name > .brand-letter {
   color: #0656d9;
   -webkit-text-fill-color: #0656d9;
-  background: none;
 }
-.brand-service-name {
+.brand-service-name > .brand-letter {
   color: var(--ink-accent);
+  -webkit-text-fill-color: var(--ink-accent);
 }
 :root {
   --paint:
@@ -61,7 +68,7 @@
   --ink-accent: #8146ae;
   --wash: #f7f2fa;
 }
-.brand-service-name {
+.brand-service-name > .brand-letter {
   display: inline-block;
   line-height: 1.4;
   padding-block: 0.08em;
@@ -74,7 +81,7 @@
   -webkit-text-fill-color: transparent;
 }
 @media (forced-colors: active) {
-  .brand-service-name {
+  .brand-service-name > .brand-letter {
     background: none;
     color: CanvasText;
     -webkit-text-fill-color: CanvasText;
