@@ -28,9 +28,7 @@ const services = new Map(
 )
 const group = copy.groups.find((group) => group.id === groupId)
 const works = featured
-  ? portfolioWorks.filter((work) =>
-      ['desert-sketch', 'moku', 'bright-friend'].includes(work.id),
-    )
+  ? portfolioWorks.filter((work) => ['moku', 'bright-friend'].includes(work.id))
   : group
     ? portfolioWorks.filter((work) =>
         work.services.some((id) =>
@@ -66,7 +64,12 @@ const sectionId = variant === 'full' ? 'works' : 'related-works'
         </div>
       )
     }
-    <div class="portfolio-grid">
+    <div
+      class:list={[
+        'portfolio-grid',
+        { 'portfolio-grid--featured-pair': featured && works.length === 2 },
+      ]}
+    >
       {
         works.map((work, index) => {
           const text = labels.works[work.id]
@@ -209,3 +212,11 @@ const sectionId = variant === 'full' ? 'works' : 'related-works'
     </div>
   </div>
 </section>
+
+<style>
+  @media (min-width: 640px) {
+    .portfolio-grid--featured-pair {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
