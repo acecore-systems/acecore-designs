@@ -1,4 +1,5 @@
 ---
+import BrandName from './BrandName.astro'
 import BrandWord from './BrandWord.astro'
 import { ui, type Locale } from '../data/catalog'
 import { corporateUrl, inquiryUrl, localePath } from '../data/locales.mjs'
@@ -44,7 +45,7 @@ const labels = ui[locale]
         <a
           class="footer-link"
           href="https://schools.acecore.net/learning/#creative-services"
-          >Acecore Schools</a
+          ><BrandName name="Acecore Schools" /></a
         >
         <a class="footer-link" href={corporateUrl(locale, 'privacy/')}
           >{labels.privacy}</a

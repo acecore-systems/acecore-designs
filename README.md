@@ -9,7 +9,7 @@ Astro の静的出力で、日本語と8翻訳に対応します。
 
 ## 開発・検証
 
-Node.js は `.node-version` の 24.18.0 を使用します。
+Node.js は `.node-version` の 24.22.1 を使用します。
 
 ```sh
 npm ci
@@ -98,7 +98,7 @@ npm run preview -- --host 127.0.0.1 --port 4324
 | Build command          | `npm run build`                   |
 | Build output directory | `dist`                            |
 | Root directory         | リポジトリルート                  |
-| Node.js                | `24.18.0`（`.node-version`）      |
+| Node.js                | `24.22.1`（`.node-version`）      |
 | Custom domain          | `designs.acecore.net`             |
 
 本番完了時は Git Provider: Yes、source repository、`github:push` による production deploy 成功、custom domain の active をそれぞれ確認します。
