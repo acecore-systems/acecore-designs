@@ -10,9 +10,6 @@ body {
   color: var(--group-ink);
   background: #fff;
 }
-:where(a, button, summary):focus-visible {
-  outline-color: var(--group-accent);
-}
 .ac-container {
   max-width: 1440px;
   padding-inline: clamp(24px, 5vw, 72px);
@@ -51,14 +48,12 @@ body {
   min-height: 52px;
   padding: 15px 24px;
 }
-.ac-btn-primary,
-.ac-btn-secondary {
+.ac-btn-primary {
   background: var(--brand-control);
   border: 3px solid transparent;
   color: var(--ink-accent);
 }
-.ac-btn-primary:hover,
-.ac-btn-secondary:hover {
+.ac-btn-primary:hover {
   background:
     linear-gradient(white, white) padding-box,
     var(--paint) border-box;
@@ -136,14 +131,6 @@ body {
   color: #425469;
   font-size: 18px;
   line-height: 1.95;
-}
-.hero-consult {
-  color: var(--group-accent);
-  border-color: var(--group-accent);
-}
-.hero-consult:hover {
-  color: white;
-  background: var(--group-hover);
 }
 .hero-work {
   max-width: 30rem;
@@ -465,4 +452,27 @@ main h3.ac-heading {
   height: 4px;
   background: var(--paint-edge);
   pointer-events: none;
+}
+
+/* Primary actions use the brand frame; secondary choices remain quiet. */
+.ac-btn-secondary,
+.ac-btn-outline {
+  background: white;
+  border: 1px solid #8996a4;
+  color: #20252b;
+}
+.ac-btn-secondary:hover,
+.ac-btn-outline:hover {
+  background: #f3f5f7;
+  border-color: #20252b;
+  color: #20252b;
+}
+
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--ink-accent);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+main [id] {
+  scroll-margin-top: 112px;
 }

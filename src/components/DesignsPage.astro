@@ -138,11 +138,17 @@ const schema =
                 {copy.heroLead}
               </p>
               <div class="hero-actions">
-                <a href={routePath(locale, 'services')} class="ac-btn-primary">
+                <a
+                  href={routePath(locale, 'services')}
+                  class="ac-btn-secondary"
+                >
                   {site.nav.services}
                   <Arrow />
                 </a>
-                <a href={inquiryUrl(locale)} class="ac-btn hero-consult">
+                <a
+                  href={inquiryUrl(locale)}
+                  class="ac-btn-primary hero-consult"
+                >
                   {labels.guidance.consultProject}
                   <Arrow />
                 </a>
