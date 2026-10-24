@@ -1,0 +1,84 @@
+{
+  "withdrawnAt": "2026-10-24",
+  "scope": "Acecore Designs publication only; original Hatt source is unchanged",
+  "work": {
+    "id": "desert-sketch",
+    "kind": "illustration",
+    "offering": "cover-illustration",
+    "sourceUrl": "https://hatt.acecore.net/",
+    "image": {
+      "src": "/portfolio/hatt/desert-sketch.webp",
+      "width": 800,
+      "height": 800,
+      "originalUrl": "https://hatt.acecore.net/uploads/hatt/novel-desert-boy.png",
+      "sourceFile": "homepage-hatt/public/uploads/hatt/novel-desert-boy.png"
+    },
+    "services": ["cover-illustration", "editorial-cuts"]
+  },
+  "translations": {
+    "ja": {
+      "title": "砂漠を帆走する人物のイラスト",
+      "description": "帆走車、砂丘、人物をモノクロで描くイラストを制作しました。",
+      "alt": "砂漠の帆走車と人物を描いたモノクロイラスト",
+      "credit": "イラスト：Hatt",
+      "deliverable": "モノクロイラスト1点。砂漠の風景と人物がいる場面を一枚にまとめました。"
+    },
+    "en": {
+      "title": "Desert sailing illustration",
+      "description": "Created a monochrome illustration of a sailing vehicle, dunes and a figure.",
+      "alt": "Monochrome illustration of a figure in a sailing vehicle crossing the desert",
+      "credit": "Illustration: Hatt",
+      "deliverable": "One monochrome illustration bringing a desert landscape and a figure together in a single scene."
+    },
+    "zh-cn": {
+      "title": "沙漠扬帆场景插画",
+      "description": "制作了以帆车、沙丘和人物为内容的黑白插画。",
+      "alt": "人物乘坐帆车穿越沙漠的黑白插画",
+      "credit": "插画：Hatt",
+      "deliverable": "一幅黑白插画，将沙漠风景与人物组合为同一场景。"
+    },
+    "es": {
+      "title": "Ilustración de navegación por el desierto",
+      "description": "Creamos una ilustración monocroma de un vehículo de vela, dunas y una figura.",
+      "alt": "Ilustración monocroma de una persona en un vehículo de vela por el desierto",
+      "credit": "Ilustración: Hatt",
+      "deliverable": "Una ilustración monocroma que reúne el paisaje del desierto y la figura en una escena."
+    },
+    "pt": {
+      "title": "Ilustração de navegação pelo deserto",
+      "description": "Criamos uma ilustração monocromática de um veículo à vela, dunas e uma pessoa.",
+      "alt": "Ilustração monocromática de uma pessoa em um veículo à vela no deserto",
+      "credit": "Ilustração: Hatt",
+      "deliverable": "Uma ilustração monocromática que reúne a paisagem do deserto e a pessoa em uma cena."
+    },
+    "fr": {
+      "title": "Illustration de navigation dans le désert",
+      "description": "Nous avons réalisé une illustration monochrome d’un véhicule à voile, de dunes et d’un personnage.",
+      "alt": "Illustration monochrome d’un personnage sur un véhicule à voile dans le désert",
+      "credit": "Illustration : Hatt",
+      "deliverable": "Une illustration monochrome réunissant le paysage désertique et le personnage dans une même scène."
+    },
+    "ko": {
+      "title": "사막 항해 장면 일러스트",
+      "description": "돛을 단 탈것과 모래언덕, 인물을 흑백 일러스트로 제작했습니다.",
+      "alt": "돛을 단 탈것으로 사막을 건너는 인물의 흑백 일러스트",
+      "credit": "일러스트: Hatt",
+      "deliverable": "사막의 풍경과 인물을 한 장면으로 담은 흑백 일러스트 한 점입니다."
+    },
+    "de": {
+      "title": "Illustration einer Wüstensegelfahrt",
+      "description": "Wir haben ein Segelfahrzeug, Dünen und eine Figur als monochrome Illustration gestaltet.",
+      "alt": "Monochrome Illustration einer Figur auf einem Segelfahrzeug in der Wüste",
+      "credit": "Illustration: Hatt",
+      "deliverable": "Eine monochrome Illustration, die Wüstenlandschaft und Figur in einer Szene zusammenführt."
+    },
+    "ru": {
+      "title": "Иллюстрация парусного путешествия по пустыне",
+      "description": "Создана монохромная иллюстрация парусного транспорта, дюн и человека.",
+      "alt": "Монохромная иллюстрация человека на парусном транспорте в пустыне",
+      "credit": "Иллюстрация: Hatt",
+      "deliverable": "Одна монохромная иллюстрация, объединяющая пустынный пейзаж и человека в одной сцене."
+    }
+  },
+  "imageSha256": "fe23d490e5efde0c75f48909c964127a612de56d01793b3c00359cb3366ee86b"
+}

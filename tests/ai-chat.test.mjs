@@ -8,7 +8,7 @@ import { onRequest } from '../functions/api/ai-chat.ts'
 const json = (p) =>
   JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'))
 
-test('9 locales derive all 13 prices, 6 works and selected hero without a second content store', () => {
+test('9 locales derive all 13 prices, 5 works and selected hero without a second content store', () => {
   for (const locale of locales) {
     const catalog = json(`../src/content/catalog/${locale}.json`)
     const copy = json(`../src/content/ui/${locale}.json`)
@@ -24,7 +24,7 @@ test('9 locales derive all 13 prices, 6 works and selected hero without a second
       catalog.groups.flatMap((g) => g.services),
     )
     assert.equal(context.services.length, 13)
-    assert.equal(context.works.length, 6)
+    assert.equal(context.works.length, 5)
     assert.equal(context.conditions, catalog.conditionsBody)
     assert.equal(context.featuredWork.url, homeHeroWork.sourceUrl)
     for (const service of context.services)

@@ -5,7 +5,7 @@
 export const portfolioCheckedAt = '2026-10-18'
 
 // Home hero selected by the owner. Keep the original Hatt product image intact;
-// this does not change the six existing portfolio case studies below.
+// this does not change the published portfolio case studies below.
 export const homeHeroWork = {
   id: 'harushiyu-avatar',
   sourceUrl: 'https://hatt.acecore.net/shop/harushiyu-avatar/',
@@ -19,21 +19,9 @@ export const homeHeroWork = {
   },
 }
 
+// Owner withdrew desert-sketch on 2026-10-24. Its bytes and translations are
+// retained only in archive/withdrawn, outside Astro's public build.
 export const portfolioWorks = [
-  {
-    id: 'desert-sketch',
-    kind: 'illustration',
-    offering: 'cover-illustration',
-    sourceUrl: 'https://hatt.acecore.net/',
-    image: {
-      src: '/portfolio/hatt/desert-sketch.webp',
-      width: 800,
-      height: 800,
-      originalUrl: 'https://hatt.acecore.net/uploads/hatt/novel-desert-boy.png',
-      sourceFile: 'homepage-hatt/public/uploads/hatt/novel-desert-boy.png',
-    },
-    services: ['cover-illustration', 'editorial-cuts'],
-  },
   {
     id: 'centipede',
     kind: 'illustration',

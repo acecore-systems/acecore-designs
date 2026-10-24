@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { runInNewContext } from 'node:vm'
 import { approvedLocales, approvedPrices } from '../tests/approved-services.mjs'
 import { htmlLangMap, ogLocaleMap, inquiryUrl } from '../src/data/locales.mjs'
@@ -447,7 +447,7 @@ for (const locale of approvedLocales) {
         ? portfolioWorks
         : route === 'home'
           ? portfolioWorks.filter((work) =>
-              ['desert-sketch', 'moku', 'bright-friend'].includes(work.id),
+              ['moku', 'bright-friend'].includes(work.id),
             )
           : group
             ? portfolioWorks.filter((work) =>
@@ -506,7 +506,7 @@ for (const locale of approvedLocales) {
       const cases = graph.find(
         (entry) => entry['@type'] === 'ItemList',
       )?.itemListElement
-      assert.equal(cases.length, 6)
+      assert.equal(cases.length, 5)
       assert.deepEqual(
         cases.map((entry) => entry.item.url),
         portfolioWorks.map((work) => `${absolute(path)}#work-${work.id}`),
@@ -589,6 +589,41 @@ assert.deepEqual(sitemapUrls.sort(), [...expectedUrls].sort())
 assert.ok(read('robots.txt').includes(`Sitemap: ${origin}/sitemap-index.xml`))
 assert.ok(read('_headers').includes('Access-Control-Allow-Origin: *'))
 assert.ok(existsSync(new URL('uploads/og-default.png', dist)))
+const withdrawn = JSON.parse(
+  readFileSync(
+    new URL(
+      '../archive/withdrawn/desert-sketch/metadata.json',
+      import.meta.url,
+    ),
+    'utf8',
+  ),
+)
+assert.equal(
+  existsSync(new URL('portfolio/hatt/desert-sketch.webp', dist)),
+  false,
+)
+assert.equal(existsSync(new URL('archive/', dist)), false)
+for (const locale of approvedLocales) {
+  const context = JSON.parse(read(`ai-context/${locale}.json`))
+  assert.equal(context.works.length, 5)
+  assert.deepEqual(
+    context.works.map((work) => work.id),
+    portfolioWorks.map((work) => work.id),
+  )
+}
+for (const file of readdirSync(dist, { recursive: true }).filter((file) =>
+  /\.(html|json)$/.test(file),
+)) {
+  const html = read(String(file).replaceAll('\\', '/'))
+  assert.equal(
+    html.includes('/portfolio/hatt/desert-sketch.webp'),
+    false,
+    `${file}: withdrawn image`,
+  )
+  for (const copy of Object.values(withdrawn.translations)) {
+    assert.equal(html.includes(copy.title), false, `${file}: withdrawn title`)
+  }
+}
 console.log(
-  `出力検証OK: 72ページ・9言語、13サービスと料金、6制作実績、図解、法人相談、正本API、全内部リンク、SEO/sitemap、404、旧hash ${legacyChecks}件とno-JS一覧`,
+  `出力検証OK: 72ページ・9言語、13サービスと料金、5制作実績、図解、法人相談、正本API、全内部リンク、SEO/sitemap、404、旧hash ${legacyChecks}件とno-JS一覧`,
 )
