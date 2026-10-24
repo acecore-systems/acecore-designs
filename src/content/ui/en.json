@@ -162,6 +162,11 @@
         "production": "Story and script writing / reading and recording supplied text",
         "output": "Story or script text / narration and reading audio data"
       }
+    },
+    "heroWork": {
+      "title": "Harushiyu — Original 3D Model",
+      "alt": "Promotional image of the Harushiyu 3D model created by Hatt",
+      "credit": "3D model: Hatt"
     }
   }
 }

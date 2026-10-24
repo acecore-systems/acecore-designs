@@ -1,5 +1,6 @@
 ---
 import BrandName from './BrandName.astro'
+import BrandWord from './BrandWord.astro'
 import { ui, type Locale } from '../data/catalog'
 import { corporateUrl, inquiryUrl, localePath } from '../data/locales.mjs'
 import { routePath } from '../data/routes.mjs'
@@ -11,7 +12,7 @@ const labels = ui[locale]
 ---
 
 <footer
-  class="border-t border-slate-200 bg-slate-50 py-10 text-sm text-slate-600"
+  class="group-footer border-t border-slate-200 bg-slate-50 py-10 text-sm text-slate-600"
 >
   <div class="ac-container">
     <div class="flex flex-col justify-between gap-7 lg:flex-row">
@@ -19,7 +20,10 @@ const labels = ui[locale]
         <a
           href={localePath(locale)}
           class="text-base font-800 text-brand-950 no-underline"
-          ><BrandName name="Acecore Designs" /></a
+          ><BrandWord word="Acecore" kind="corporate" />{' '}<BrandWord
+            word="Designs"
+            kind="service"
+          /></a
         >
         <p class="mt-3">{labels.company}</p>
       </div>

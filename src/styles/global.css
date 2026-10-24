@@ -1,16 +1,17 @@
 @import 'tailwindcss/index.css' source('../');
+@import './brand.css';
 
 @theme {
-  --color-brand-50: #faf6ff;
-  --color-brand-100: #eee1fa;
-  --color-brand-200: #d9bfed;
-  --color-brand-300: #b28bd4;
-  --color-brand-400: #8950c5;
-  --color-brand-500: #8950c5;
-  --color-brand-600: #8146ae;
-  --color-brand-700: #633491;
-  --color-brand-800: #4d2773;
-  --color-brand-900: #3d2058;
+  --color-brand-50: var(--wash);
+  --color-brand-100: color-mix(in srgb, var(--wash) 85%, var(--ink-accent));
+  --color-brand-200: color-mix(in srgb, var(--wash) 70%, var(--ink-accent));
+  --color-brand-300: color-mix(in srgb, var(--wash) 45%, var(--ink-accent));
+  --color-brand-400: #a373ce;
+  --color-brand-500: var(--ink-accent);
+  --color-brand-600: var(--ink-accent);
+  --color-brand-700: color-mix(in srgb, var(--ink-accent) 80%, #00022b);
+  --color-brand-800: color-mix(in srgb, var(--ink-accent) 60%, #00022b);
+  --color-brand-900: color-mix(in srgb, var(--ink-accent) 60%, #00022b);
   --color-brand-950: #20252b;
   --font-sans:
     'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',

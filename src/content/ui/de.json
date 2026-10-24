@@ -168,6 +168,11 @@
         "production": "Geschichten und Skripte schreiben / bereitgestellte Texte lesen und aufnehmen",
         "output": "Geschichten- oder Skripttext / Audiodaten für Sprecheraufnahmen und Lesungen"
       }
+    },
+    "heroWork": {
+      "title": "Original-3D-Modell „Harushiyu“",
+      "alt": "Vorstellungsbild des von Hatt erstellten 3D-Modells Harushiyu",
+      "credit": "3D-Modell: Hatt"
     }
   }
 }

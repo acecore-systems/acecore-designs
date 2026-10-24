@@ -4,6 +4,21 @@
 // Source repository is read-only. No automatic feed or sales data is imported.
 export const portfolioCheckedAt = '2026-10-18'
 
+// Home hero selected by the owner. Keep the original Hatt product image intact;
+// this does not change the six existing portfolio case studies below.
+export const homeHeroWork = {
+  id: 'harushiyu-avatar',
+  sourceUrl: 'https://hatt.acecore.net/shop/harushiyu-avatar/',
+  image: {
+    src: '/portfolio/hatt/harushiyu-avatar.jpg',
+    width: 1024,
+    height: 1024,
+    originalUrl:
+      'https://hatt.acecore.net/uploads/hatt/shop/harushiyu-avatar.jpg',
+    sourceFile: 'homepage-hatt/public/uploads/hatt/shop/harushiyu-avatar.jpg',
+  },
+}
+
 export const portfolioWorks = [
   {
     id: 'desert-sketch',
