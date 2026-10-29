@@ -3,6 +3,8 @@
 デザイン・3D・文章・音声制作を案内する Acecore の専用サイトです。
 Astro の静的出力で、日本語と8翻訳に対応します。
 
+サービス内容・ブランド・公開時の作業と検証の方針は [AGENTS.md](AGENTS.md) を確認してください。
+
 - 公開URL: <https://designs.acecore.net/>
 - 運営: 株式会社Acecore — <https://acecore.net/>
 - リポジトリ: `acecore-systems/acecore-designs`
