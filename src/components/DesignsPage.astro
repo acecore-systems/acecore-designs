@@ -123,158 +123,150 @@ const schema =
   description={description}
   jsonLd={schema}
 >
-  {
-    route === 'home' ? (
-      <>
-        <section class="designs-hero bg-brand-950 text-white">
-          <div class="ac-container hero-layout">
-            <div>
-              <h1 class="hero-title">
-                {locale === 'ja'
-                  ? copy.heroTitle.replace('、', '、\n')
-                  : copy.heroTitle}
-              </h1>
-              <p class="mt-6 max-w-3xl text-base leading-relaxed text-brand-100 sm:text-lg">
-                {copy.heroLead}
-              </p>
-              <div class="hero-actions">
-                <a
-                  href={routePath(locale, 'services')}
-                  class="ac-btn-secondary"
-                >
-                  {site.nav.services}
-                  <Arrow />
-                </a>
-                <a
-                  href={inquiryUrl(locale)}
-                  class="ac-btn-primary hero-consult"
-                >
-                  {labels.guidance.consultProject}
-                  <Arrow />
-                </a>
-              </div>
-              <a class="hero-work-link" href={routePath(locale, 'works')}>
-                {labels.portfolio.viewWorks}
+  {route === 'home' ? (
+    <>
+      <section class="designs-hero bg-brand-950 text-white">
+        <div class="ac-container hero-layout">
+          <div>
+            <h1 class="hero-title">
+              {locale === 'ja'
+                ? copy.heroTitle.replace('、', '、\n')
+                : copy.heroTitle}
+            </h1>
+            <p class="mt-6 max-w-3xl text-base leading-relaxed text-brand-100 sm:text-lg">
+              {copy.heroLead}
+            </p>
+            <div class="hero-actions">
+              <a href={routePath(locale, 'services')} class="ac-btn-secondary">
+                {site.nav.services}
+                <Arrow />
+              </a>
+              <a href={inquiryUrl(locale)} class="ac-btn-primary hero-consult">
+                {labels.guidance.consultProject}
                 <Arrow />
               </a>
             </div>
-            <figure class="hero-work ac-card">
-              <a
-                href={heroWork.sourceUrl}
-                aria-label={`${heroText.title} — ${site.viewDetails}`}
-              >
-                <img
-                  src={heroWork.image!.src}
-                  width={heroWork.image!.width}
-                  height={heroWork.image!.height}
-                  alt={heroText.alt}
-                  loading="eager"
-                  fetchpriority="high"
-                  decoding="async"
-                />
-              </a>
-              <figcaption>
-                <>
-                  <span>{heroText.title}</span>
-                  <span>{heroText.credit}</span>
-                </>
-              </figcaption>
-            </figure>
+            <a class="hero-work-link" href={routePath(locale, 'works')}>
+              {labels.portfolio.viewWorks}
+              <Arrow />
+            </a>
           </div>
-        </section>
-        <section class="ac-section bg-white" aria-labelledby="services-heading">
-          <div class="ac-container">
-            <>
-              <h2 id="services-heading" class="ac-heading text-2xl sm:text-4xl">
-                {site.homeServicesTitle}
-              </h2>
-              <ServiceEntries locale={locale} />
-            </>
-          </div>
-        </section>
-        <PortfolioSection locale={locale} variant="summary" featured />
-        <section class="ac-section bg-brand-50">
-          <div class="ac-container brief-layout">
-            <>
-              <div>
-                <>
-                  <h2 class="ac-heading text-2xl">{site.nav.pricing}</h2>
-                  <p class="ac-muted mt-4">{copy.conditionsBody}</p>
-                </>
-              </div>
-              <div class="flex items-center">
-                <a
-                  class="ac-btn-outline gap-3"
-                  href={routePath(locale, 'pricing')}
-                >
-                  {site.nav.pricing}
-                  <Arrow />
-                </a>
-              </div>
-            </>
-          </div>
-        </section>
-        <ProcessSections locale={locale} compact />
-        <LegacyHomeLinks locale={locale} />
-      </>
-    ) : (
-      <>
-        <PageHeading
-          locale={locale}
-          route={route}
-          title={title}
-          description={description}
-        />
-        {route === 'services' && (
-          <>
-            <section class="ac-section bg-white">
-              <div class="ac-container">
-                <ServiceEntries locale={locale} headingLevel={2} />
-              </div>
-            </section>
-            <PurposeNavigation locale={locale} />
-          </>
-        )}
-        {group && (
-          <>
-            <section class="ac-section bg-white">
-              <div class="ac-container">
-                <ProductionDiagram locale={locale} groupId={group.id} />
-              </div>
-            </section>
-            <ServiceCatalog locale={locale} groupId={group.id} />
-            {portfolioWorks.some((work) =>
-              work.services.some((id) =>
-                group.services.some((service) => service.id === id),
-              ),
-            ) && (
-              <PortfolioSection
-                locale={locale}
-                variant="summary"
-                groupId={group.id}
+          <figure class="hero-work ac-card">
+            <a
+              href={heroWork.sourceUrl}
+              aria-label={`${heroText.title} — ${site.viewDetails}`}
+            >
+              <img
+                src={heroWork.image!.src}
+                width={heroWork.image!.width}
+                height={heroWork.image!.height}
+                alt={heroText.alt}
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
               />
-            )}
-            <section class="ac-section bg-brand-50">
-              <div class="ac-container route-links">
-                <a href={routePath(locale, 'pricing')} class="ac-btn-outline">
-                  {site.nav.pricing}
-                  <Arrow />
-                </a>
-                <a href={routePath(locale, 'process')} class="ac-btn-outline">
-                  {site.nav.process}
-                  <Arrow />
-                </a>
-              </div>
-            </section>
+            </a>
+            <figcaption>
+              <>
+                <span>{heroText.title}</span>
+                <span>{heroText.credit}</span>
+              </>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="ac-section bg-white" aria-labelledby="services-heading">
+        <div class="ac-container">
+          <>
+            <h2 id="services-heading" class="ac-heading text-2xl sm:text-4xl">
+              {site.homeServicesTitle}
+            </h2>
+            <ServiceEntries locale={locale} />
           </>
-        )}
-        {route === 'works' && (
-          <PortfolioSection locale={locale} showHeading={false} />
-        )}
-        {route === 'pricing' && <PricingTable locale={locale} />}
-        {route === 'process' && <ProcessSections locale={locale} />}
-      </>
-    )
-  }
+        </div>
+      </section>
+      <PortfolioSection locale={locale} variant="summary" featured />
+      <section class="ac-section bg-brand-50">
+        <div class="ac-container brief-layout">
+          <>
+            <div>
+              <>
+                <h2 class="ac-heading text-2xl">{site.nav.pricing}</h2>
+                <p class="ac-muted mt-4">{copy.conditionsBody}</p>
+              </>
+            </div>
+            <div class="flex items-center">
+              <a
+                class="ac-btn-outline gap-3"
+                href={routePath(locale, 'pricing')}
+              >
+                {site.nav.pricing}
+                <Arrow />
+              </a>
+            </div>
+          </>
+        </div>
+      </section>
+      <ProcessSections locale={locale} compact />
+      <LegacyHomeLinks locale={locale} />
+    </>
+  ) : (
+    <>
+      <PageHeading
+        locale={locale}
+        route={route}
+        title={title}
+        description={description}
+      />
+      {route === 'services' && (
+        <>
+          <section class="ac-section bg-white">
+            <div class="ac-container">
+              <ServiceEntries locale={locale} headingLevel={2} />
+            </div>
+          </section>
+          <PurposeNavigation locale={locale} />
+        </>
+      )}
+      {group && (
+        <>
+          <section class="ac-section bg-white">
+            <div class="ac-container">
+              <ProductionDiagram locale={locale} groupId={group.id} />
+            </div>
+          </section>
+          <ServiceCatalog locale={locale} groupId={group.id} />
+          {portfolioWorks.some((work) =>
+            work.services.some((id) =>
+              group.services.some((service) => service.id === id),
+            ),
+          ) && (
+            <PortfolioSection
+              locale={locale}
+              variant="summary"
+              groupId={group.id}
+            />
+          )}
+          <section class="ac-section bg-brand-50">
+            <div class="ac-container route-links">
+              <a href={routePath(locale, 'pricing')} class="ac-btn-outline">
+                {site.nav.pricing}
+                <Arrow />
+              </a>
+              <a href={routePath(locale, 'process')} class="ac-btn-outline">
+                {site.nav.process}
+                <Arrow />
+              </a>
+            </div>
+          </section>
+        </>
+      )}
+      {route === 'works' && (
+        <PortfolioSection locale={locale} showHeading={false} />
+      )}
+      {route === 'pricing' && <PricingTable locale={locale} />}
+      {route === 'process' && <ProcessSections locale={locale} />}
+    </>
+  )}
   <ContactBand locale={locale} />
 </SiteLayout>

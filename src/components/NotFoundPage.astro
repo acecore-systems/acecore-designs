@@ -20,7 +20,9 @@ const copy = ui[locale].notFound
       <p class="text-sm font-800 text-brand-600">404</p>
       <h1 class="ac-heading mt-3 text-3xl sm:text-4xl">{copy.heading}</h1>
       <p class="ac-muted mt-5">{copy.body}</p>
-      <a href={localePath(locale)} class="ac-btn-primary mt-7">{copy.goHome}</a>
+      <a href={localePath(locale)} class="ac-btn-primary mt-7">
+        {copy.goHome}
+      </a>
     </div>
   </section>
 </SiteLayout>

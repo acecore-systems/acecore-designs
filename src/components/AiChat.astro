@@ -81,17 +81,11 @@ const privacyUrl = corporateUrl(locale, 'privacy/')
     </div>
 
     <div class="ai-guide__prompts ac-chat__prompts" aria-label={text.title}>
-      {
-        text.quickPrompts.map((prompt) => (
-          <button
-            type="button"
-            data-ai-guide-prompt={prompt}
-            aria-label={prompt}
-          >
-            {prompt}
-          </button>
-        ))
-      }
+      {text.quickPrompts.map((prompt) => (
+        <button type="button" data-ai-guide-prompt={prompt} aria-label={prompt}>
+          {prompt}
+        </button>
+      ))}
     </div>
 
     <form class="ai-guide__form ac-chat__form" data-ai-guide-form>
@@ -110,7 +104,8 @@ const privacyUrl = corporateUrl(locale, 'privacy/')
           enterkeyhint="send"
           placeholder={text.placeholder}
           aria-describedby="designs-ai-guide-character-limit designs-ai-guide-disclosure"
-          data-ai-guide-input></textarea>
+          data-ai-guide-input
+        ></textarea>
         <button
           type="submit"
           class="ac-chat__send"
@@ -125,8 +120,7 @@ const privacyUrl = corporateUrl(locale, 'privacy/')
         role="status"
         aria-live="polite"
         data-ai-guide-status
-      >
-      </p>
+      ></p>
     </form>
 
     <div class="ai-guide__footer ac-chat__footer">

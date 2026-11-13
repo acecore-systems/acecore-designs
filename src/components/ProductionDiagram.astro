@@ -16,31 +16,29 @@ const stages = [diagram.input, diagram.production, diagram.output]
   </figcaption>
   <p class="ac-muted mt-3 max-w-3xl text-sm">{labels.diagramNote}</p>
   <ol>
-    {
-      stages.map((description, index) => (
-        <li data-diagram-stage={index}>
-          <span class="diagram-number" aria-hidden="true">
-            0{index + 1}
-          </span>
-          <h3>{labels.diagramStages[index]}</h3>
-          <p>{description}</p>
-          {index < 2 && (
-            <svg
-              class="diagram-arrow"
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.6"
-              aria-hidden="true"
-            >
-              <path d="M4 12h15m-6-6 6 6-6 6" />
-            </svg>
-          )}
-        </li>
-      ))
-    }
+    {stages.map((description, index) => (
+      <li data-diagram-stage={index}>
+        <span class="diagram-number" aria-hidden="true">
+          0{index + 1}
+        </span>
+        <h3>{labels.diagramStages[index]}</h3>
+        <p>{description}</p>
+        {index < 2 && (
+          <svg
+            class="diagram-arrow"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            aria-hidden="true"
+          >
+            <path d="M4 12h15m-6-6 6 6-6 6" />
+          </svg>
+        )}
+      </li>
+    ))}
   </ol>
   <p class="ac-muted mt-5 text-sm">{catalogs[locale].conditionsBody}</p>
 </figure>
