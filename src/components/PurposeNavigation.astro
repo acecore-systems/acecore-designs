@@ -22,28 +22,26 @@ const services = new Map(
       {labels.purposeTitle}
     </h2>
     <div class="purpose-grid">
-      {
-        purposeServices.map((ids, index) => (
-          <div class="purpose-column">
-            <h3 class="text-lg font-800 text-brand-950">
-              {labels.purposes[index]}
-            </h3>
-            <ul>
-              {ids.map((id) => (
-                <li>
-                  <a
-                    href={servicePath(locale, copy, id)}
-                    data-purpose-service={id}
-                  >
-                    <span>{services.get(id)!.title}</span>
-                    <Arrow />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
+      {purposeServices.map((ids, index) => (
+        <div class="purpose-column">
+          <h3 class="text-lg font-800 text-brand-950">
+            {labels.purposes[index]}
+          </h3>
+          <ul>
+            {ids.map((id) => (
+              <li>
+                <a
+                  href={servicePath(locale, copy, id)}
+                  data-purpose-service={id}
+                >
+                  <span>{services.get(id)!.title}</span>
+                  <Arrow />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   </div>
 </section>

@@ -18,16 +18,14 @@ if (groupIds.includes(route))
 
 <nav class="breadcrumbs" aria-label={labels.breadcrumbs}>
   <ol>
-    {
-      parents.map((parent) => (
-        <li>
-          <>
-            <a href={parent.href}>{parent.title}</a>
-            <span aria-hidden="true">/</span>
-          </>
-        </li>
-      ))
-    }
+    {parents.map((parent) => (
+      <li>
+        <>
+          <a href={parent.href}>{parent.title}</a>
+          <span aria-hidden="true">/</span>
+        </>
+      </li>
+    ))}
     <li aria-current="page">{title}</li>
   </ol>
 </nav>

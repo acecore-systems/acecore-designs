@@ -26,9 +26,7 @@ const links = [
 ]
 ---
 
-<header
-  class="group-header sticky top-0 z-40 border-b border-slate-200 bg-white"
->
+<header class="group-header sticky top-0 z-40 border-b border-slate-200 bg-white">
   <div class="ac-container flex min-h-20 items-center justify-between gap-3">
     <a
       href={home}
@@ -36,33 +34,31 @@ const links = [
       aria-label="Acecore Designs"
     >
       <img src="/logo.svg" alt="" width="32" height="32" class="h-8 w-8" />
-      <span class="font-800 tracking-tight text-brand-950 text-base sm:text-lg"
-        ><BrandWord word="Acecore" kind="corporate" />{' '}
-        <BrandWord word="Designs" kind="service" /></span
-      >
+      <span class="font-800 tracking-tight text-brand-950 text-base sm:text-lg">
+        <BrandWord word="Acecore" kind="corporate" />{' '}
+        <BrandWord word="Designs" kind="service" />
+      </span>
     </a>
     <nav
       class="group-main-nav hidden flex-1 flex-wrap justify-end gap-x-5 gap-y-1 xl:flex"
       aria-label={labels.mainNav}
     >
-      {
-        links.map((link) => (
-          <a
-            href={link.href}
-            aria-current={
-              link.href === routePath(locale, route)
-                ? 'page'
-                : groupIds.includes(route) &&
-                    link.href === routePath(locale, 'services')
-                  ? 'location'
-                  : undefined
-            }
-            class="inline-flex min-h-11 items-center text-sm font-700 leading-snug text-slate-600 no-underline hover:text-brand-600"
-          >
-            {link.label}
-          </a>
-        ))
-      }
+      {links.map((link) => (
+        <a
+          href={link.href}
+          aria-current={
+            link.href === routePath(locale, route)
+              ? 'page'
+              : groupIds.includes(route) &&
+                  link.href === routePath(locale, 'services')
+                ? 'location'
+                : undefined
+          }
+          class="inline-flex min-h-11 items-center text-sm font-700 leading-snug text-slate-600 no-underline hover:text-brand-600"
+        >
+          {link.label}
+        </a>
+      ))}
     </nav>
     <div class="flex shrink-0 items-center gap-1">
       <details class="relative" data-language-menu>
@@ -78,9 +74,10 @@ const links = [
             stroke="currentColor"
             stroke-width="1.7"
             aria-hidden="true"
-            ><circle cx="12" cy="12" r="9"></circle><path
-              d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"></path></svg
           >
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"></path>
+          </svg>
           <span class="hidden sm:inline">{localeLabels[locale]}</span>
           <svg
             class="hidden sm:block"
@@ -90,32 +87,30 @@ const links = [
             fill="none"
             stroke="currentColor"
             stroke-width="2"
-            aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg
+            aria-hidden="true"
           >
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
         </summary>
-        <ul
-          class="absolute right-0 z-50 mt-2 max-h-[65vh] w-44 overflow-y-auto rounded-lg border border-slate-200 bg-white py-1 shadow-lg"
-        >
-          {
-            locales.map((language) => (
-              <li>
-                <a
-                  href={routePath(language, route)}
-                  lang={htmlLangMap[language]}
-                  hreflang={htmlLangMap[language]}
-                  aria-current={language === locale ? 'page' : undefined}
-                  class:list={[
-                    'block min-h-11 px-4 py-2.5 text-sm no-underline hover:bg-brand-50',
-                    language === locale
-                      ? 'bg-brand-50 font-700 text-brand-600'
-                      : 'text-slate-700',
-                  ]}
-                >
-                  {localeLabels[language]}
-                </a>
-              </li>
-            ))
-          }
+        <ul class="absolute right-0 z-50 mt-2 max-h-[65vh] w-44 overflow-y-auto rounded-lg border border-slate-200 bg-white py-1 shadow-lg">
+          {locales.map((language) => (
+            <li>
+              <a
+                href={routePath(language, route)}
+                lang={htmlLangMap[language]}
+                hreflang={htmlLangMap[language]}
+                aria-current={language === locale ? 'page' : undefined}
+                class:list={[
+                  'block min-h-11 px-4 py-2.5 text-sm no-underline hover:bg-brand-50',
+                  language === locale
+                    ? 'bg-brand-50 font-700 text-brand-600'
+                    : 'text-slate-700',
+                ]}
+              >
+                {localeLabels[language]}
+              </a>
+            </li>
+          ))}
         </ul>
       </details>
       <button
@@ -136,8 +131,10 @@ const links = [
           fill="none"
           stroke="currentColor"
           stroke-width="1.8"
-          aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg
+          aria-hidden="true"
         >
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
       </button>
     </div>
   </div>
@@ -147,24 +144,22 @@ const links = [
     aria-label={labels.mobileNav}
   >
     <div class="ac-container grid gap-1 py-3">
-      {
-        links.map((link) => (
-          <a
-            href={link.href}
-            aria-current={
-              link.href === routePath(locale, route)
-                ? 'page'
-                : groupIds.includes(route) &&
-                    link.href === routePath(locale, 'services')
-                  ? 'location'
-                  : undefined
-            }
-            class="min-h-11 rounded-md px-3 py-3 text-sm font-700 text-slate-700 no-underline hover:bg-brand-50 hover:text-brand-600"
-          >
-            {link.label}
-          </a>
-        ))
-      }
+      {links.map((link) => (
+        <a
+          href={link.href}
+          aria-current={
+            link.href === routePath(locale, route)
+              ? 'page'
+              : groupIds.includes(route) &&
+                  link.href === routePath(locale, 'services')
+                ? 'location'
+                : undefined
+          }
+          class="min-h-11 rounded-md px-3 py-3 text-sm font-700 text-slate-700 no-underline hover:bg-brand-50 hover:text-brand-600"
+        >
+          {link.label}
+        </a>
+      ))}
     </div>
   </nav>
 </header>

@@ -70,25 +70,21 @@ const organization = {
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     {!isErrorPage && <link rel="canonical" href={canonical} />}
-    {
-      !isErrorPage &&
-        locales.map((language) => (
-          <link
-            rel="alternate"
-            hreflang={htmlLangMap[language]}
-            href={new URL(routePath(language, route), Astro.site).href}
-          />
-        ))
-    }
-    {
-      !isErrorPage && (
+    {!isErrorPage &&
+      locales.map((language) => (
         <link
           rel="alternate"
-          hreflang="x-default"
-          href={new URL(routePath('ja', route), Astro.site).href}
+          hreflang={htmlLangMap[language]}
+          href={new URL(routePath(language, route), Astro.site).href}
         />
-      )
-    }
+      ))}
+    {!isErrorPage && (
+      <link
+        rel="alternate"
+        hreflang="x-default"
+        href={new URL(routePath('ja', route), Astro.site).href}
+      />
+    )}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Acecore Designs" />
     <meta property="og:title" content={pageTitle} />
@@ -104,54 +100,56 @@ const organization = {
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={image} />
     <meta name="twitter:image:alt" content="Acecore" />
-    {
-      !isErrorPage && (
-        <script
-          type="application/ld+json"
-          set:html={serializeJsonForHtml({
-            '@context': 'https://schema.org',
-            '@graph': [
-              organization,
-              {
-                '@type': 'WebSite',
-                '@id': 'https://designs.acecore.net/#website',
-                name: 'Acecore Designs',
-                url: 'https://designs.acecore.net/',
-                publisher: { '@id': organization['@id'] },
-                inLanguage: htmlLangMap[locale],
-              },
-              {
-                '@type': 'WebPage',
-                '@id': `${canonical}#webpage`,
-                url: canonical,
-                name: pageTitle,
-                description: pageDescription,
-                inLanguage: htmlLangMap[locale],
-                isPartOf: { '@id': 'https://designs.acecore.net/#website' },
-              },
-              ...(route !== 'home'
-                ? [
-                    {
-                      '@type': 'BreadcrumbList',
-                      itemListElement: crumbs.map((crumb, index) => ({
-                        '@type': 'ListItem',
-                        position: index + 1,
-                        ...crumb,
-                      })),
-                    },
-                  ]
-                : []),
-              ...(jsonLd ? [jsonLd] : []),
-            ],
-          })}
-        />
-      )
-    }
+    {!isErrorPage && (
+      <script
+        type="application/ld+json"
+        set:html={serializeJsonForHtml({
+          '@context': 'https://schema.org',
+          '@graph': [
+            organization,
+            {
+              '@type': 'WebSite',
+              '@id': 'https://designs.acecore.net/#website',
+              name: 'Acecore Designs',
+              url: 'https://designs.acecore.net/',
+              publisher: { '@id': organization['@id'] },
+              inLanguage: htmlLangMap[locale],
+            },
+            {
+              '@type': 'WebPage',
+              '@id': `${canonical}#webpage`,
+              url: canonical,
+              name: pageTitle,
+              description: pageDescription,
+              inLanguage: htmlLangMap[locale],
+              isPartOf: { '@id': 'https://designs.acecore.net/#website' },
+            },
+            ...(route !== 'home'
+              ? [
+                  {
+                    '@type': 'BreadcrumbList',
+                    itemListElement: crumbs.map((crumb, index) => ({
+                      '@type': 'ListItem',
+                      position: index + 1,
+                      ...crumb,
+                    })),
+                  },
+                ]
+              : []),
+            ...(jsonLd ? [jsonLd] : []),
+          ],
+        })}
+      />
+    )}
   </head>
   <body class="flex min-h-screen flex-col bg-white font-sans text-slate-800">
-    <a href="#main" class="skip-link">{ui[locale].skipToContent}</a>
+    <a href="#main" class="skip-link">
+      {ui[locale].skipToContent}
+    </a>
     <Header locale={locale} route={route} />
-    <main id="main" tabindex="-1" class="flex-1"><slot /></main>
+    <main id="main" tabindex="-1" class="flex-1">
+      <slot />
+    </main>
     <Footer locale={locale} />
     <AiChat locale={locale} />
   </body>

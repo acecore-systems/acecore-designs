@@ -27,54 +27,49 @@ const serviceWork = Object.fromEntries(
       {group.title}
     </h2>
     <div class="ac-card my-7 p-6">
-      <h3 class="font-800 text-slate-950">{copy.conditionsTitle}</h3><p
-        class="ac-muted mt-2 text-sm"
-      >
-        {copy.conditionsBody}
-      </p>
+      <h3 class="font-800 text-slate-950">{copy.conditionsTitle}</h3>
+      <p class="ac-muted mt-2 text-sm">{copy.conditionsBody}</p>
     </div>
     <div class="catalog-service-rows grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-      {
-        group.services.map((service) => (
-          <article
-            id={service.id}
-            class="ac-card flex flex-col p-6"
-            data-service-id={service.id}
+      {group.services.map((service) => (
+        <article
+          id={service.id}
+          class="ac-card flex flex-col p-6"
+          data-service-id={service.id}
+        >
+          <h3 class="text-lg font-800 leading-snug text-slate-950">
+            {service.title}
+          </h3>
+          <p class="ac-muted mt-3 flex-1 text-sm">{service.description}</p>
+          <p
+            class="mt-5 text-xl font-800 text-brand-600"
+            data-service-price={service.price}
           >
-            <h3 class="text-lg font-800 leading-snug text-slate-950">
-              {service.title}
-            </h3>
-            <p class="ac-muted mt-3 flex-1 text-sm">{service.description}</p>
-            <p
-              class="mt-5 text-xl font-800 text-brand-600"
-              data-service-price={service.price}
-            >
-              <span class="sr-only">{service.title} — </span>
-              {copy.priceLabel.replace(
-                '{price}',
-                service.price.toLocaleString('ja-JP'),
-              )}
-            </p>
-            <a
-              href={inquiryUrl(locale, service.id)}
-              class="ac-btn-secondary mt-5"
-              aria-label={`${service.title} — ${copy.consultLabel}`}
-            >
-              {copy.consultLabel}
-            </a>
-            {serviceWork[service.id] && (
-              <a
-                href={`${routePath(locale, 'works')}#work-${serviceWork[service.id]}`}
-                class="work-reference"
-                data-service-work={service.id}
-              >
-                {labels.viewRelatedWork}
-                <Arrow />
-              </a>
+            <span class="sr-only">{service.title} — </span>
+            {copy.priceLabel.replace(
+              '{price}',
+              service.price.toLocaleString('ja-JP'),
             )}
-          </article>
-        ))
-      }
+          </p>
+          <a
+            href={inquiryUrl(locale, service.id)}
+            class="ac-btn-secondary mt-5"
+            aria-label={`${service.title} — ${copy.consultLabel}`}
+          >
+            {copy.consultLabel}
+          </a>
+          {serviceWork[service.id] && (
+            <a
+              href={`${routePath(locale, 'works')}#work-${serviceWork[service.id]}`}
+              class="work-reference"
+              data-service-work={service.id}
+            >
+              {labels.viewRelatedWork}
+              <Arrow />
+            </a>
+          )}
+        </article>
+      ))}
     </div>
   </div>
 </section>

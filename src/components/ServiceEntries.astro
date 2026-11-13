@@ -13,25 +13,20 @@ const labels = ui[locale].site
 ---
 
 <div class="service-entries">
-  {
-    copy.groups.map((group, index) => (
-      <article class="ac-card service-entry">
-        <p class="portfolio-kind">
-          <span aria-hidden="true">0{index + 1} / </span>
-          {labels.serviceCount.replace(
-            '{count}',
-            String(group.services.length),
-          )}
-        </p>
-        <Heading class="ac-heading text-xl">
-          <a href={routePath(locale, group.id)}>{group.title}</a>
-        </Heading>
-        <p class="ac-muted mt-4 text-sm">{labels.groups[group.id].intro}</p>
-        <a class="text-link mt-5" href={routePath(locale, group.id)}>
-          {labels.viewDetails}
-          <Arrow />
-        </a>
-      </article>
-    ))
-  }
+  {copy.groups.map((group, index) => (
+    <article class="ac-card service-entry">
+      <p class="portfolio-kind">
+        <span aria-hidden="true">0{index + 1} / </span>
+        {labels.serviceCount.replace('{count}', String(group.services.length))}
+      </p>
+      <Heading class="ac-heading text-xl">
+        <a href={routePath(locale, group.id)}>{group.title}</a>
+      </Heading>
+      <p class="ac-muted mt-4 text-sm">{labels.groups[group.id].intro}</p>
+      <a class="text-link mt-5" href={routePath(locale, group.id)}>
+        {labels.viewDetails}
+        <Arrow />
+      </a>
+    </article>
+  ))}
 </div>
